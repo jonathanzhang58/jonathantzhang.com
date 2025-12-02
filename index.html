@@ -5,31 +5,92 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jonathan Zhang</title>
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
     body {
-      font-family: Arial, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      min-height: 100vh;
       margin: 0;
-      background: #fafafa;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      padding: 20px;
     }
-    h1 { margin-bottom: 20px; }
+    
+    .container {
+      background: white;
+      padding: 3rem 2.5rem;
+      border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      max-width: 500px;
+      width: 100%;
+      text-align: center;
+    }
+    
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #1a202c;
+      margin-bottom: 1rem;
+      letter-spacing: -0.5px;
+    }
+    
+    p {
+      font-size: 0.95rem;
+      color: #718096;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+    
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    
     a {
-      font-size: 1.2rem;
-      margin: 8px 0;
-      color: #0055cc;
+      display: block;
+      font-size: 1.05rem;
+      font-weight: 500;
+      padding: 14px 24px;
+      color: #667eea;
+      background: #f7fafc;
+      border: 2px solid #e2e8f0;
+      border-radius: 8px;
       text-decoration: none;
+      transition: all 0.3s ease;
     }
-    a:hover { text-decoration: underline; }
+    
+    a:hover {
+      background: #667eea;
+      color: white;
+      border-color: #667eea;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+    }
+    
+    a:active {
+      transform: translateY(0);
+    }
   </style>
 </head>
 
 <body>
-  <h1>Jonathan Zhang</h1>
-  <a href="https://www.linkedin.com/in/jonathan-zhang-bme" target="_blank">LinkedIn</a>
-  <a href="https://github.com/JonathanZhang21" target="_blank">GitHub</a>
-  <a href="mailto:jonathantzhang@gmail.com">Email Me</a>
+  <div class="container">
+    <h1>Jonathan Zhang</h1>
+    <p>This page is still under construction. See below for some of my links.</p>
+    <div class="links">
+      <a href="https://www.linkedin.com/in/jonathan-zhang-25702025b/" target="_blank">LinkedIn</a>
+      <a href="https://github.com/jonathanzhang58" target="_blank">GitHub</a>
+      <a href="mailto:jzhan367@jh.edu">Email Me</a>
+    </div>
+  </div>
 </body>
 </html>
