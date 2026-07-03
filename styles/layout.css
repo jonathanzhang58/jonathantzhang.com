@@ -76,3 +76,28 @@ body:not([data-page='home']) #grid-mount { display: none; }
   pointer-events: none;
 }
 .section-icon svg { display: block; width: 100%; height: auto; }
+
+@media (max-width: 760px) {
+  .nav { padding: 0 16px; }
+  .nav-logo { display: none; }
+  .nav-links { gap: 14px; overflow-x: auto; max-width: 100%; padding: 8px 0; }
+  .layout { grid-template-columns: 1fr; }
+  body[data-page='home'] .layout { grid-template-columns: 1fr; }
+  .sidebar {
+    height: auto;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-2);
+    padding: 10px 20px;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+    background: var(--bg);
+    z-index: 5;
+  }
+  .sidebar-face { width: 40px; }
+  .sidebar-name { font-size: 14px; margin-top: 0; }
+  .sidebar-name br { display: none; }
+  .sidebar-affil, .sidebar-splash { display: none; }
+  .page { padding: var(--space-4) 24px; }
+  .section-icon { display: none; }
+}

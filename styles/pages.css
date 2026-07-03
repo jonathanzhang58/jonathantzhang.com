@@ -88,3 +88,9 @@
 .cv-row { display: flex; gap: var(--space-3); align-items: baseline; }
 .cv-when { color: var(--accent); flex: 0 0 110px; }
 .contact-list { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+
+@media (max-width: 760px) {
+  .bio-grid { flex-direction: column; }
+  .portrait { flex: none; width: 200px; }
+  .cv-row { flex-direction: column; gap: 2px; }
+}

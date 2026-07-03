@@ -8,7 +8,7 @@ export function renderSidebar(el) {
         <path d="M36 60 Q50 72 64 60"/>
       </svg>
     </div>
-    <p class="sidebar-name">Your<br>Name</p>
+    <p class="sidebar-name">Your <br>Name</p>
     <p class="sidebar-affil u-label">PhD Student &mdash; Placeholder University</p>
     <p class="sidebar-splash">A one-or-two sentence mission statement lives here.</p>`
 }
