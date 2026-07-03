@@ -1,0 +1,16 @@
+:root {
+  --bg: #fdfdfc;
+  --ink: #17181c;
+  --ink-2: #43454d;
+  --accent: #1440c8;
+  --accent-soft: #dbe2f7;
+  --line: #d4d5da;
+  --font: Arial, Helvetica, sans-serif;
+  --nav-h: 64px;
+  --sidebar-w: 300px;
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 28px;
+  --space-4: 44px;
+  --space-5: 72px;
+}
