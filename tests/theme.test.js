@@ -19,13 +19,13 @@ describe('theme', () => {
     expect(getTheme()).toBe('dark')
   })
 
-  it('toggleTheme flips the theme and persists it', () => {
+  it('toggleTheme flips the theme, persists it, and returns the new theme', () => {
     initTheme()
-    toggleTheme()
+    expect(toggleTheme()).toBe('dark')
     expect(getTheme()).toBe('dark')
     expect(document.documentElement.dataset.theme).toBe('dark')
     expect(localStorage.getItem('theme')).toBe('dark')
-    toggleTheme()
+    expect(toggleTheme()).toBe('light')
     expect(getTheme()).toBe('light')
     expect(localStorage.getItem('theme')).toBe('light')
   })

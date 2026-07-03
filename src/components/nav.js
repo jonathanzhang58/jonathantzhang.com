@@ -1,4 +1,6 @@
+import { gsap } from 'gsap'
 import { pages } from '../pages/index.js'
+import { prefersReducedMotion } from '../animations/motion.js'
 
 export function createNav(el, onNavigate, onToggleTheme) {
   el.className = 'nav'
@@ -18,9 +20,45 @@ export function createNav(el, onNavigate, onToggleTheme) {
         </svg>
       </button>
     </div>`
+
+  const sun = el.querySelector('.icon-sun')
+  const moon = el.querySelector('.icon-moon')
+  let iconTl = null
+
+  // The icon shows the CURRENT mode: sun in light, moon in dark. On toggle the
+  // outgoing icon rotates away along a radial arc (origin far below center, so
+  // it sets like a sun below the horizon) while the incoming one rotates up.
+  function setThemeIcon(theme, { animate = false } = {}) {
+    const show = theme === 'light' ? sun : moon
+    const hide = theme === 'light' ? moon : sun
+    if (iconTl) {
+      iconTl.kill()
+      iconTl = null
+    }
+    if (!animate || prefersReducedMotion()) {
+      gsap.set(hide, { autoAlpha: 0 })
+      gsap.set(show, { autoAlpha: 1, rotation: 0 })
+      return
+    }
+    const origin = '50% 280%'
+    iconTl = gsap.timeline()
+      .to(hide, {
+        rotation: 120,
+        autoAlpha: 0,
+        transformOrigin: origin,
+        duration: 0.4,
+        ease: 'power2.in',
+      }, 0)
+      .fromTo(show,
+        { rotation: -120, autoAlpha: 0, transformOrigin: origin },
+        { rotation: 0, autoAlpha: 1, duration: 0.5, ease: 'back.out(1.8)' },
+      0.15)
+  }
+
   el.addEventListener('click', (e) => {
     if (e.target.closest('.theme-toggle')) {
-      onToggleTheme?.()
+      const next = onToggleTheme?.()
+      if (next) setThemeIcon(next, { animate: true })
       return
     }
     const a = e.target.closest('a[href]')
@@ -28,11 +66,13 @@ export function createNav(el, onNavigate, onToggleTheme) {
     e.preventDefault()
     onNavigate(a.getAttribute('href'))
   })
+
   return {
     setActive(path) {
       el.querySelectorAll('.nav-links a').forEach((a) => {
         a.classList.toggle('active', a.getAttribute('href') === path)
       })
     },
+    setThemeIcon,
   }
 }

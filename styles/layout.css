@@ -32,10 +32,13 @@
   opacity: 0.75;
 }
 .theme-toggle:hover { opacity: 1; }
-.theme-toggle svg { width: 15px; height: 15px; }
-.theme-toggle .icon-sun { display: none; }
-:root[data-theme='dark'] .theme-toggle .icon-sun { display: block; }
-:root[data-theme='dark'] .theme-toggle .icon-moon { display: none; }
+.theme-toggle { overflow: hidden; }
+.theme-toggle svg {
+  grid-area: 1 / 1;
+  width: 15px;
+  height: 15px;
+  visibility: hidden; /* JS reveals the current mode's icon */
+}
 
 .layout {
   position: relative;
