@@ -40,17 +40,18 @@ export function createNav(el, onNavigate, onToggleTheme) {
       gsap.set(show, { autoAlpha: 1, rotation: 0 })
       return
     }
+    // counter-clockwise, east to west: rise from the right, set to the left
     const origin = '50% 280%'
     iconTl = gsap.timeline()
       .to(hide, {
-        rotation: 120,
+        rotation: -120,
         autoAlpha: 0,
         transformOrigin: origin,
         duration: 0.4,
         ease: 'power2.in',
       }, 0)
       .fromTo(show,
-        { rotation: -120, autoAlpha: 0, transformOrigin: origin },
+        { rotation: 120, autoAlpha: 0, transformOrigin: origin },
         { rotation: 0, autoAlpha: 1, duration: 0.5, ease: 'back.out(1.8)' },
       0.15)
   }
