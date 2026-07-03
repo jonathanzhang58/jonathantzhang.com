@@ -1,6 +1,12 @@
 import { gsap } from 'gsap'
 import { DUR, EASE } from './motion.js'
 import { heroIntro } from './heroIntro.js'
+import { pages } from '../pages/index.js'
+
+// +1 = spin right (navigating to a later nav item), -1 = spin left
+export function flipDirection(from, to) {
+  return pages.indexOf(to) >= pages.indexOf(from) ? 1 : -1
+}
 
 function setPage(to, els, icon) {
   document.body.dataset.page = to.path === '/' ? 'home' : to.path.slice(1)
@@ -19,6 +25,7 @@ export function transition({ from, to, els, icon, onSpawn }) {
   const vw = window.innerWidth
   const fromHome = from.path === '/'
   const toHome = to.path === '/'
+  const dir = flipDirection(from, to)
 
   gsap.set(icon.el, { transformPerspective: 800 })
 
@@ -59,12 +66,14 @@ export function transition({ from, to, els, icon, onSpawn }) {
     }
   }
 
-  /* -- icon flip out -- */
-  tl.to(icon.el, { rotationY: 90, duration: DUR.flip / 2, ease: 'power2.in' }, 0)
+  /* -- icon flip out (toward the nav direction) -- */
+  tl.to(icon.el, { rotationY: dir * 90, duration: DUR.flip / 2, ease: 'power2.in' }, 0)
 
   /* -- swap DOM, then spawn the incoming timeline against the fresh DOM -- */
   tl.add(() => {
     setPage(to, els, icon)
+    // re-enter from the opposite side so the flip reads as one continuous spin
+    gsap.set(icon.el, { rotationY: -dir * 90 })
 
     const inTl = gsap.timeline()
     if (toHome) {
