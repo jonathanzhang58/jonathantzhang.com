@@ -1,5 +1,10 @@
 import { createRouter } from './router.js'
 import { createNav } from './components/nav.js'
+import { renderSidebar } from './components/sidebar.js'
+import { gridSVG } from './components/motifs.js'
+
+document.getElementById('grid-mount').innerHTML = gridSVG()
+renderSidebar(document.getElementById('sidebar'))
 
 const pageEl = document.getElementById('page')
 const nav = createNav(document.getElementById('nav'), (path) => router.navigate(path))
