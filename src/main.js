@@ -1,1 +1,14 @@
-document.getElementById('page').innerHTML = '<p>shell ok</p>'
+import { createRouter } from './router.js'
+import { createNav } from './components/nav.js'
+
+const pageEl = document.getElementById('page')
+const nav = createNav(document.getElementById('nav'), (path) => router.navigate(path))
+
+const router = createRouter((from, to) => {
+  document.body.dataset.page = to.path === '/' ? 'home' : to.path.slice(1)
+  pageEl.innerHTML = to.render()
+  nav.setActive(to.path)
+  document.title = to.path === '/' ? 'Your Name' : `${to.title} — Your Name`
+})
+
+router.start()
