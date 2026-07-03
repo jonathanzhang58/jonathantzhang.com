@@ -3,6 +3,8 @@ import { createNav } from './components/nav.js'
 import { renderSidebar } from './components/sidebar.js'
 import { createSectionIcon } from './components/sectionIcon.js'
 import { gridSVG } from './components/motifs.js'
+import { heroIntro } from './animations/heroIntro.js'
+import { prefersReducedMotion } from './animations/motion.js'
 
 document.getElementById('grid-mount').innerHTML = gridSVG()
 renderSidebar(document.getElementById('sidebar'))
@@ -17,6 +19,8 @@ const router = createRouter((from, to) => {
   icon.set(to.icon)
   nav.setActive(to.path)
   document.title = to.path === '/' ? 'Your Name' : `${to.title} — Your Name`
+
+  if (!from && to.path === '/' && !prefersReducedMotion()) heroIntro()
 })
 
 router.start()
