@@ -14,3 +14,12 @@
   --space-4: 44px;
   --space-5: 72px;
 }
+
+:root[data-theme='dark'] {
+  --bg: #101218;
+  --ink: #edeef2;
+  --ink-2: #b4b7c2;
+  --accent: #7d9bff;
+  --accent-soft: #252d4a;
+  --line: #2b2e3a;
+}

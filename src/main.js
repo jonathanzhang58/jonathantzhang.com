@@ -6,7 +6,9 @@ import { gridSVG } from './components/motifs.js'
 import { heroIntro } from './animations/heroIntro.js'
 import { transition } from './animations/pageTransition.js'
 import { prefersReducedMotion } from './animations/motion.js'
+import { initTheme, toggleTheme } from './theme.js'
 
+initTheme()
 document.getElementById('grid-mount').innerHTML = gridSVG()
 renderSidebar(document.getElementById('sidebar'))
 
@@ -16,7 +18,7 @@ const els = {
   grid: document.getElementById('grid-mount'),
 }
 const icon = createSectionIcon(document.getElementById('icon'))
-const nav = createNav(document.getElementById('nav'), (path) => router.navigate(path))
+const nav = createNav(document.getElementById('nav'), (path) => router.navigate(path), toggleTheme)
 
 let activeTl = null
 
