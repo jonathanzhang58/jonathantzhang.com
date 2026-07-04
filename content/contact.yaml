@@ -1,0 +1,14 @@
+# The Contact page.
+
+intro: Placeholder sign-off — say hi!
+
+# One block per link. mailto: links work too.
+links:
+  - label: placeholder@example.edu
+    url: mailto:placeholder@example.edu
+  - label: GitHub
+    url: ''
+  - label: Google Scholar
+    url: ''
+  - label: LinkedIn
+    url: ''

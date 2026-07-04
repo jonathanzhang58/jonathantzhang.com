@@ -1,0 +1,7 @@
+# The landing hero. Name/affiliation/splash come from site.yaml.
+
+# The little greeting above your name.
+kicker: Hello! I'm
+
+# The boxed status line at the bottom of the hero.
+currently: Currently — placeholder status

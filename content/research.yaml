@@ -1,0 +1,18 @@
+# The Research page.
+
+intro: Placeholder research statement — the questions you chase and why they matter.
+
+# Add one block per paper. "link" is optional (paper title becomes clickable).
+publications:
+  - title: 'Placeholder Paper Title 1: Something Interesting About Something'
+    authors: Author One, Your Name, Author Three
+    venue: Placeholder Venue 2021
+    link: ''
+  - title: 'Placeholder Paper Title 2: Something Interesting About Something'
+    authors: Author One, Your Name, Author Three
+    venue: Placeholder Venue 2022
+    link: ''
+  - title: 'Placeholder Paper Title 3: Something Interesting About Something'
+    authors: Author One, Your Name, Author Three
+    venue: Placeholder Venue 2023
+    link: ''

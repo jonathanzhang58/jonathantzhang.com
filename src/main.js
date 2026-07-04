@@ -7,6 +7,9 @@ import { heroIntro } from './animations/heroIntro.js'
 import { transition } from './animations/pageTransition.js'
 import { prefersReducedMotion } from './animations/motion.js'
 import { initTheme, toggleTheme, getTheme } from './theme.js'
+import site from '../content/site.yaml'
+
+const siteName = site.name_lines.join(' ')
 
 initTheme()
 document.getElementById('grid-mount').innerHTML = gridSVG()
@@ -46,7 +49,7 @@ const router = createRouter((from, to) => {
   }
 
   nav.setActive(to.path)
-  document.title = to.path === '/' ? 'Your Name' : `${to.title} — Your Name`
+  document.title = to.path === '/' ? siteName : `${to.title} — ${siteName}`
 
   if (!from || prefersReducedMotion()) {
     renderInstant(to)

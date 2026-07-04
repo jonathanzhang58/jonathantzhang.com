@@ -1,0 +1,13 @@
+# The CV page. One block per row, newest first.
+
+entries:
+  - when: 2024–now
+    what: PhD Student, Placeholder University
+  - when: 2020–2024
+    what: B.S. Placeholder Major, Placeholder College
+  - when: '2023'
+    what: Placeholder Award or Fellowship
+
+# Optional: path to your CV PDF, relative to public/ (e.g. files/cv.pdf).
+# Leave empty to keep the button as a dead link.
+pdf: ''

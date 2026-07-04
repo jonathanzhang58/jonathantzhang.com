@@ -1,21 +1,27 @@
+import { esc } from '../util.js'
+import content from '../../content/research.yaml'
+
 export default {
   path: '/research',
   title: 'Research',
   icon: 'atom',
   render() {
-    const pubs = [1, 2, 3]
-      .map(
-        (i) => `
+    const pubs = content.publications
+      .map((p) => {
+        const title = p.link
+          ? `<a href="${esc(p.link)}" target="_blank" rel="noopener">${esc(p.title)}</a>`
+          : esc(p.title)
+        return `
         <li class="pub">
-          <p class="pub-title">Placeholder Paper Title ${i}: Something Interesting About Something</p>
-          <p class="pub-meta u-label">Author One, Your Name, Author Three &mdash; Placeholder Venue 202${i}</p>
+          <p class="pub-title">${title}</p>
+          <p class="pub-meta u-label">${esc(p.authors)} — ${esc(p.venue)}</p>
         </li>`
-      )
+      })
       .join('')
     return `
     <section class="content">
       <h2 class="page-title">Research</h2>
-      <p class="content-intro">Placeholder research statement &mdash; the questions you chase and why they matter.</p>
+      <p class="content-intro">${esc(content.intro)}</p>
       <ul class="pub-list">${pubs}</ul>
     </section>`
   },

@@ -66,6 +66,9 @@
   background: var(--accent-soft);
   border: 1px solid var(--line);
 }
+img.portrait { display: block; width: 220px; object-fit: cover; }
+img.card-thumb { display: block; width: 100%; object-fit: cover; }
+.pub-title a:hover, .card-title a:hover { color: var(--hl-1); }
 .bio-text { display: flex; flex-direction: column; gap: var(--space-2); }
 .bio-text p { line-height: 1.6; color: var(--ink-2); }
 

@@ -1,0 +1,20 @@
+# The Projects page. Add one block per project.
+# "image" (relative to public/, e.g. images/proj1.png) and "link" are optional.
+
+projects:
+  - title: Placeholder Project 1
+    blurb: One-line description of what it does and why it's neat.
+    image: ''
+    link: ''
+  - title: Placeholder Project 2
+    blurb: One-line description of what it does and why it's neat.
+    image: ''
+    link: ''
+  - title: Placeholder Project 3
+    blurb: One-line description of what it does and why it's neat.
+    image: ''
+    link: ''
+  - title: Placeholder Project 4
+    blurb: One-line description of what it does and why it's neat.
+    image: ''
+    link: ''

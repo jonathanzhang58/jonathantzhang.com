@@ -1,0 +1,27 @@
+# Site-wide identity. Used in the hero, the sidebar, the nav logo, and tab titles.
+
+# Your name, split into the lines it should occupy in the big hero display.
+name_lines:
+  - Your
+  - Name
+
+# Short initials/logo shown at the left of the nav bar.
+initials: Y·N
+
+# The one-line affiliation shown under your name (hero + sidebar).
+affiliation: PhD Student — Placeholder University / Dept. of Placeholder
+
+# Shorter affiliation used in the narrow sidebar.
+affiliation_short: PhD Student — Placeholder University
+
+# Your mission / splash text (hero).
+splash: >-
+  A one-or-two sentence mission statement lives here — what you work on,
+  why it matters, and a hint of who you are.
+
+# Shorter splash used in the sidebar.
+splash_short: A one-or-two sentence mission statement lives here.
+
+# Optional: path to a small square face photo for the sidebar, relative to public/
+# (e.g. images/face.jpg). Leave empty to keep the smiley placeholder.
+face: ''

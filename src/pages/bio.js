@@ -1,16 +1,21 @@
+import { esc } from '../util.js'
+import content from '../../content/bio.yaml'
+
 export default {
   path: '/bio',
   title: 'Bio',
   icon: 'smiley',
   render() {
+    const portrait = content.portrait
+      ? `<img class="portrait" src="/${esc(content.portrait)}" alt="Portrait">`
+      : `<div class="portrait" aria-label="Portrait placeholder"></div>`
     return `
     <section class="content">
       <h2 class="page-title">Bio</h2>
       <div class="bio-grid">
-        <div class="portrait" aria-label="Portrait placeholder"></div>
+        ${portrait}
         <div class="bio-text">
-          <p>Placeholder bio paragraph one &mdash; where you're from, what you study, and the path that led you here. Two to four sentences of warm, human introduction.</p>
-          <p>Placeholder bio paragraph two &mdash; current focus, advisor/lab, and something a little personal to keep it playful.</p>
+          ${content.paragraphs.map((p) => `<p>${esc(p)}</p>`).join('\n')}
         </div>
       </div>
     </section>`

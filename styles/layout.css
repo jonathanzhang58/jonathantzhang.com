@@ -63,6 +63,13 @@ body[data-page='home'] .sidebar { display: none; }
 }
 .sidebar-face { width: 72px; color: var(--hl-3); }
 .sidebar-face svg { display: block; width: 100%; }
+.sidebar-face img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 50%;
+}
 .sidebar-name {
   font-size: 22px;
   font-weight: 800;

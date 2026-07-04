@@ -1,0 +1,15 @@
+# The Bio page.
+
+# Optional: path to your portrait photo, relative to public/
+# (e.g. images/portrait.jpg). Leave empty for the placeholder block.
+portrait: ''
+
+# Each list item is one paragraph.
+paragraphs:
+  - >-
+    Placeholder bio paragraph one — where you're from, what you study, and
+    the path that led you here. Two to four sentences of warm, human
+    introduction.
+  - >-
+    Placeholder bio paragraph two — current focus, advisor/lab, and
+    something a little personal to keep it playful.

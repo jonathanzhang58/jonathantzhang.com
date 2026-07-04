@@ -1,0 +1,15 @@
+# The Hobbies page. Add one block per hobby. "image" is optional.
+
+hobbies:
+  - title: Hobby One
+    blurb: A sentence about this hobby — placeholder.
+    image: ''
+  - title: Hobby Two
+    blurb: A sentence about this hobby — placeholder.
+    image: ''
+  - title: Hobby Three
+    blurb: A sentence about this hobby — placeholder.
+    image: ''
+  - title: Hobby Four
+    blurb: A sentence about this hobby — placeholder.
+    image: ''

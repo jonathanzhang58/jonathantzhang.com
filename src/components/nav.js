@@ -1,11 +1,13 @@
 import { gsap } from 'gsap'
 import { pages } from '../pages/index.js'
 import { prefersReducedMotion } from '../animations/motion.js'
+import { esc } from '../util.js'
+import site from '../../content/site.yaml'
 
 export function createNav(el, onNavigate, onToggleTheme) {
   el.className = 'nav'
   el.innerHTML = `
-    <a class="nav-logo" href="/">Y&middot;N</a>
+    <a class="nav-logo" href="/">${esc(site.initials)}</a>
     <div class="nav-right">
       <nav class="nav-links">
         ${pages.map((p) => `<a href="${p.path}">${p.title}</a>`).join('')}
