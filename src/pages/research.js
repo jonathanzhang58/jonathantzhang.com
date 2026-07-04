@@ -18,11 +18,25 @@ export default {
         </li>`
       })
       .join('')
+    const labs = (content.labs ?? [])
+      .map((lab) => {
+        const name = lab.link
+          ? `<a href="${esc(lab.link)}" target="_blank" rel="noopener">${esc(lab.name)}</a>`
+          : esc(lab.name)
+        return `
+        <div class="lab">
+          <p class="lab-focus u-label">${esc(lab.focus)}</p>
+          <h3 class="lab-name">${name}</h3>
+          ${lab.paragraphs.map((p) => `<p class="lab-text">${esc(p)}</p>`).join('\n')}
+        </div>`
+      })
+      .join('')
     return `
     <section class="content">
       <h2 class="page-title">Research</h2>
       <p class="content-intro">${esc(content.intro)}</p>
       <ul class="pub-list">${pubs}</ul>
+      <div class="lab-grid">${labs}</div>
     </section>`
   },
 }

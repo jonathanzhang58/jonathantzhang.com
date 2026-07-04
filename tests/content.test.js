@@ -16,6 +16,15 @@ describe('content propagates from yaml to pages', () => {
     for (const p of research.publications) expect(html).toContain(p.venue)
   })
 
+  it('research renders both labs with their paragraphs', () => {
+    const html = getPage('/research').render()
+    expect(research.labs).toHaveLength(2)
+    for (const lab of research.labs) {
+      expect(html).toContain(lab.name)
+      for (const p of lab.paragraphs) expect(html).toContain(p.slice(0, 40))
+    }
+  })
+
   it('contact renders every link label', () => {
     const html = getPage('/contact').render()
     for (const l of contact.links) expect(html).toContain(l.label)
