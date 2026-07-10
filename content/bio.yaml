@@ -2,14 +2,22 @@
 
 # Optional: path to your portrait photo, relative to public/
 # (e.g. images/portrait.jpg). Leave empty for the placeholder block.
-portrait: ''
+portrait: 'images/portrait.png'
 
 # Each list item is one paragraph.
 paragraphs:
   - >-
-    Placeholder bio paragraph one — where you're from, what you study, and
-    the path that led you here. Two to four sentences of warm, human
-    introduction.
+    I'm an undergraduate at Johns Hopkins University studying Applied
+    Mathematics & Statistics and Biomedical Engineering, with a minor in
+    Computer Science. I am interested in the intersection
+    of artificial intelligence, medicine, and biology.
   - >-
-    Placeholder bio paragraph two — current focus, advisor/lab, and
-    something a little personal to keep it playful.
+    In the Oberst Lab I work on causal bounds for ML-assisted
+    decision-making — my first-author paper on the topic was accepted at
+    UAI 2026 — and in the Feinberg Lab I analyze whole-genome sequencing
+    data. Outside the lab I TA graduate machine
+    learning and probability courses, and I co-founded Aspire, a planning
+    app for pre-med students.
+  - >-
+    (Placeholder — add something personal here: where you're from, what
+    you do for fun, what pulled you toward this work.)

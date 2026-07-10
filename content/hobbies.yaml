@@ -1,4 +1,6 @@
 # The Hobbies page. Add one block per hobby. "image" is optional.
+# Any hobby can also get its own blog-style page by adding a "page:" list —
+# see the Home Server example and comments in projects.yaml.
 
 hobbies:
   - title: Hobby One

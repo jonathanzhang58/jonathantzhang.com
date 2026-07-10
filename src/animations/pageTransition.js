@@ -3,9 +3,15 @@ import { DUR, EASE } from './motion.js'
 import { heroIntro } from './heroIntro.js'
 import { pages } from '../pages/index.js'
 
-// +1 = spin right (navigating to a later nav item), -1 = spin left
+// +1 = spin right (navigating to a later nav item), -1 = spin left.
+// Detail pages count as their parent section; within a section, drilling
+// into a card reads as forward and backing out reads as backward.
 export function flipDirection(from, to) {
-  return pages.indexOf(to) >= pages.indexOf(from) ? 1 : -1
+  const navIndex = (p) => pages.findIndex((q) => q.path === (p.parent ?? p.path))
+  const a = navIndex(from)
+  const b = navIndex(to)
+  if (a !== b) return b >= a ? 1 : -1
+  return to.parent ? 1 : -1
 }
 
 function setPage(to, els, icon) {
@@ -50,8 +56,10 @@ export function transition({ from, to, els, icon, onSpawn }) {
       stagger: 0.04,
     }, 0)
   } else {
+    // exit opposite the nav direction (matches the icon spin); going home is
+    // dir=-1 by construction, so the old exit-right special case falls out
     tl.to([...els.page.children], {
-      x: (toHome ? 1 : -1) * vw * 0.25,
+      x: -dir * vw * 0.25,
       opacity: 0,
       duration: DUR.page,
       ease: EASE.out,
@@ -88,7 +96,7 @@ export function transition({ from, to, els, icon, onSpawn }) {
         }, 0)
       }
       inTl.from([...els.page.children], {
-        x: vw * 0.25,
+        x: dir * vw * 0.25,
         opacity: 0,
         duration: DUR.page,
         ease: EASE.page,

@@ -1,12 +1,18 @@
 # The CV page. One block per row, newest first.
 
 entries:
+  - when: 2025–now
+    what: Machine Learning Researcher, Oberst Lab — Johns Hopkins University
+  - when: 2025–now
+    what: Bioinformatics Researcher, Feinberg Lab — Johns Hopkins University
   - when: 2024–now
-    what: PhD Student, Placeholder University
-  - when: 2020–2024
-    what: B.S. Placeholder Major, Placeholder College
-  - when: '2023'
-    what: Placeholder Award or Fellowship
+    what: Teaching Assistant, Graduate Machine Learning (EN.601.475/675) & Probability (EN.553.420/620)
+  - when: 2024–now
+    what: 'COO & Co-founder, Aspire: the Pre-Med Planner'
+  - when: '2024'
+    what: Immunology Researcher, Baumgarth Lab — Johns Hopkins University
+  - when: 2023–2027
+    what: BS Applied Mathematics & Statistics, BS Biomedical Engineering, CS minor — Johns Hopkins University
 
 # Optional: path to your CV PDF, relative to public/ (e.g. files/cv.pdf).
 # Leave empty to keep the button as a dead link.

@@ -9,9 +9,9 @@ touch the code. Each page has its own file:
 | `home.yaml` | The greeting and the "currently" status box |
 | `bio.yaml` | Portrait photo and bio paragraphs |
 | `research.yaml` | Research statement and publication list |
-| `projects.yaml` | Project cards |
+| `projects.yaml` | Project cards (and optional per-card detail pages) |
 | `cv.yaml` | CV timeline rows and the PDF download |
-| `hobbies.yaml` | Hobby cards |
+| `hobbies.yaml` | Hobby cards (and optional per-card detail pages) |
 | `contact.yaml` | Sign-off line and contact links |
 
 ## How to edit
@@ -57,3 +57,27 @@ touch the code. Each page has its own file:
 
 Empty string (`''`) on any image/link field means "use the placeholder /
 no link" — so you can fill things in gradually.
+
+## Giving a project or hobby its own page
+
+Add a `page:` list to any card in `projects.yaml` or `hobbies.yaml` and the
+card becomes clickable, opening a blog-style page with a back button:
+
+```yaml
+- title: Home Server
+  blurb: One-line card description.
+  image: ''
+  link: ''            # optional — shows as a "Visit" button on the page
+  page:
+    - >-
+      A plain string is a paragraph.
+    - heading: A section heading
+    - image: images/server.jpg
+      caption: An image with an optional caption.
+    - >-
+      Another paragraph. Mix and repeat blocks in any order.
+```
+
+Delete the whole `page:` block to remove the extra page. The page's URL
+comes from the title (`/projects/home-server`); add `slug: custom-url`
+next to `title:` if you want a different one.

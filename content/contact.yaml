@@ -1,14 +1,14 @@
 # The Contact page.
 
-intro: Placeholder sign-off — say hi!
+intro: Say hi — I'm always happy to talk research, startups, or anything in between.
 
 # One block per link. mailto: links work too.
 links:
-  - label: placeholder@example.edu
-    url: mailto:placeholder@example.edu
+  - label: jzhan367@jh.edu
+    url: mailto:jzhan367@jh.edu
   - label: GitHub
+    url: https://github.com/jonathanzhang58
+  - label: LinkedIn
     url: ''
   - label: Google Scholar
-    url: ''
-  - label: LinkedIn
     url: ''

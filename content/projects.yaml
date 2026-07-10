@@ -1,20 +1,55 @@
 # The Projects page. Add one block per project.
 # "image" (relative to public/, e.g. images/proj1.png) and "link" are optional.
+#
+# Any project (or hobby) can get its own blog-style page: add a "page:" list
+# to the card and the whole card becomes clickable. Delete the "page:" block
+# to turn the extra page off again. Inside "page:":
+#   - a plain string is a paragraph
+#   - "- heading: ..." is a section heading
+#   - "- image: images/foo.jpg" is a full-width image ("caption:" optional)
+# The URL is made from the title (e.g. /projects/home-server); add
+# "slug: my-url" next to "title:" to override it. "link:" still works —
+# it shows as a "Visit" button at the bottom of the page.
 
 projects:
-  - title: Placeholder Project 1
-    blurb: One-line description of what it does and why it's neat.
+  - title: Aspire — the Pre-Med Planner
+    blurb: >-
+      Cross-platform Flutter app for pre-med students with a Firebase
+      backend and an AI-powered advising chatbot. Co-founder & COO;
+      finalist at the SPARK and HopStart venture competitions.
+    image: ''
+    link: https://aspiredoctor.com
+  - title: Breast Cancer Identification Trainer
+    blurb: >-
+      Training app for radiology residents to practice breast cancer
+      identification on IRB-approved de-identified mammograms, built with
+      a JHSOM professor and practicing radiologist. Finalist in the JHU
+      CBID Healthcare Design Competition.
+    image: ''
+    link: https://github.com/jonathanzhang58/MammologyApp
+  - title: Kalman Filter Visualizer
+    blurb: >-
+      MATLAB implementation and visualizer of the Kalman filter, built
+      through the JHU Directed Reading Program and presented at a
+      departmental conference.
+    image: ''
+    link: https://github.com/jonathanzhang58/Kalman-filter-algorithm-and-visualizer-
+  - title: Home Server
+    blurb: >-
+      An old laptop reborn as an Ubuntu home server — Dockerized file
+      storage, video streaming, and VPN access to the home network.
     image: ''
     link: ''
-  - title: Placeholder Project 2
-    blurb: One-line description of what it does and why it's neat.
-    image: ''
-    link: ''
-  - title: Placeholder Project 3
-    blurb: One-line description of what it does and why it's neat.
-    image: ''
-    link: ''
-  - title: Placeholder Project 4
-    blurb: One-line description of what it does and why it's neat.
-    image: ''
-    link: ''
+    # Example detail page — edit or delete this block.
+    page:
+      - >-
+        Placeholder opening paragraph — the story of the project. Why you
+        started it, what it does, what you learned along the way.
+      - heading: How it works
+      - >-
+        Placeholder detail paragraph. Plain strings like this one become
+        paragraphs; add as many as you like.
+      - image: ''
+        caption: Placeholder image — drop a file in public/images/ and put its path above.
+      - >-
+        Placeholder closing paragraph.

@@ -110,6 +110,61 @@ img.card-thumb { display: block; width: 100%; object-fit: cover; }
 .card-title { font-weight: 700; }
 .card-blurb { font-size: 13px; line-height: 1.5; color: var(--ink-2); margin-top: var(--space-1); }
 
+/* cards that open a detail page */
+.card-clickable { padding: 0; transition: border-color 0.15s ease; }
+.card-clickable:hover { border-color: var(--ink); }
+.card-link { display: block; padding: var(--space-2); color: inherit; }
+.card-more {
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--hl-2);
+  margin-top: var(--space-2);
+}
+.card-clickable:hover .card-more { color: var(--hl-1); }
+
+/* ---- card detail pages ---- */
+.detail-back {
+  display: inline-block;
+  border: 1px solid var(--line);
+  padding: 6px 12px;
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ink-2);
+  margin-bottom: var(--space-4);
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+.detail-back:hover { border-color: var(--ink); color: var(--ink); }
+.detail-body { max-width: 62ch; }
+.detail-p { font-size: 15px; line-height: 1.7; color: var(--ink-2); }
+.detail-p + .detail-p { margin-top: var(--space-2); }
+.detail-h {
+  font-size: 19px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  margin: var(--space-4) 0 var(--space-2);
+}
+.detail-h:first-child { margin-top: 0; }
+.detail-h + .detail-p { margin-top: 0; }
+.detail-fig { margin: var(--space-3) 0; }
+.detail-img { display: block; width: 100%; border: 1px solid var(--line); }
+.detail-cap { font-size: 12px; color: var(--ink-2); margin-top: 8px; }
+.detail-ext {
+  display: inline-block;
+  border: 1px solid var(--ink);
+  padding: 7px 14px;
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-top: var(--space-4);
+}
+.detail-ext:hover { color: var(--hl-1); border-color: var(--hl-1); }
+
 .cv-list { display: flex; flex-direction: column; gap: var(--space-2); margin-bottom: var(--space-4); }
 .cv-row { display: flex; gap: var(--space-3); align-items: baseline; }
 .cv-when { color: var(--hl-2); flex: 0 0 110px; }

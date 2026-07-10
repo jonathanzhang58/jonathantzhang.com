@@ -1,20 +1,20 @@
 # The Research page.
 
-intro: Placeholder research statement — the questions you chase and why they matter.
+intro: >-
+  I'm interested in what we can honestly say about an ML model's impact
+  before it's ever deployed — partial identification and causal inference
+  for decision-support systems — and in applying statistical thinking to
+  genomics and medicine.
 
 # Add one block per paper. "link" is optional (paper title becomes clickable).
 publications:
-  - title: 'Placeholder Paper Title 1: Something Interesting About Something'
-    authors: Author One, Your Name, Author Three
-    venue: Placeholder Venue 2021
-    link: ''
-  - title: 'Placeholder Paper Title 2: Something Interesting About Something'
-    authors: Author One, Your Name, Author Three
-    venue: Placeholder Venue 2022
-    link: ''
-  - title: 'Placeholder Paper Title 3: Something Interesting About Something'
-    authors: Author One, Your Name, Author Three
-    venue: Placeholder Venue 2023
+  - title: Bounding the Causal Impact of ML-assisted Decision-Making via Counterfactual Correctness
+    authors: Jonathan Zhang, et al. (fill in coauthor list)
+    venue: UAI 2026
+    link: ''  # add the arXiv link once it's up
+  - title: Impact of a mammography training app on radiology residents (in preparation)
+    authors: Jonathan Zhang, et al. — with JHSOM collaborators
+    venue: Working paper, 2026
     link: ''
 
 # The two labs you work in, shown side by side under the publications.
@@ -22,24 +22,27 @@ publications:
 # (lab name becomes clickable). Add as many paragraphs as you like — the
 # page scrolls.
 labs:
-  - name: Placeholder Lab One
-    focus: What you work on there, in a phrase
+  - name: Oberst Lab
+    focus: Machine learning & causal inference
     link: ''
     paragraphs:
       - >-
-        Placeholder description of your work in this lab — the questions,
-        the methods, what you're building or measuring, and where it's
-        headed. A few sentences is plenty, but write as much as you want.
-      - >-
-        Optional second paragraph for more detail, collaborators, or a
-        favorite result.
-  - name: Placeholder Lab Two
-    focus: What you work on there, in a phrase
+        Once a clinical trial has evaluated one ML decision-support model,
+        what can it tell us about a new model that was never trialed? I
+        work on partial-identification bounds for the downstream causal
+        impact of untrialed models, using the idea of counterfactual
+        correctness — whether the new model would have been right on trial
+        subjects — together with a doubly-robust estimator that is
+        consistent and asymptotically normal. This work was accepted at
+        UAI 2026, where I'm the first author.
+  - name: Feinberg Lab
+    focus: Bioinformatics & epigenetics
     link: ''
     paragraphs:
       - >-
-        Placeholder description of your work in the second lab — how it
-        complements the first, what's different about the approach, and
-        what you're excited about.
-      - >-
-        Optional second paragraph.
+        I analyze whole-genome sequencing data in R and Julia on a remote
+        Linux cluster, using mediation analysis to statistically rule out
+        confounding in existing lab experiments. Along the way I
+        consolidated the lab's scattered analysis scripts into unified
+        pipelines, cutting required user input by more than half and
+        speeding up runtime by 15%.

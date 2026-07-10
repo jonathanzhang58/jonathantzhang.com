@@ -2,25 +2,26 @@
 
 # Your name, split into the lines it should occupy in the big hero display.
 name_lines:
-  - Your
-  - Name
+  - Jonathan
+  - Zhang
 
 # Short initials/logo shown at the left of the nav bar.
-initials: Y·N
+initials: J·Z
 
 # The one-line affiliation shown under your name (hero + sidebar).
-affiliation: PhD Student — Placeholder University / Dept. of Placeholder
+affiliation: Undergraduate — Johns Hopkins University / Applied Math & Statistics + Biomedical Engineering
 
 # Shorter affiliation used in the narrow sidebar.
-affiliation_short: PhD Student — Placeholder University
+affiliation_short: Undergraduate — Johns Hopkins University
 
 # Your mission / splash text (hero).
 splash: >-
-  A one-or-two sentence mission statement lives here — what you work on,
-  why it matters, and a hint of who you are.
+  I'm interested in the intersection of artificial intelligence, medicine, and causal inference.
+
+  I've published research in causal inference and machine learning evaluation. Over three years of research experience, I've also developed skills in bioinformatics, data analysis, software engineering, and wet lab techniques.
 
 # Shorter splash used in the sidebar.
-splash_short: A one-or-two sentence mission statement lives here.
+splash_short: Machine learning, causal inference, and tools for medicine.
 
 # Optional: path to a small square face photo for the sidebar, relative to public/
 # (e.g. images/face.jpg). Leave empty to keep the smiley placeholder.

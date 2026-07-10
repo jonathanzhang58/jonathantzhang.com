@@ -17,7 +17,7 @@ export default {
         ${starSVG()}
       </div>
       <p class="titles u-label" data-fly="left">${esc(site.affiliation)}</p>
-      <p class="splash" data-fly="right">${esc(site.splash)}</p>
+      ${site.splash.split('\n').filter(Boolean).map(p => `<p class="splash" data-fly="right">${esc(p)}</p>`).join('')}
       <p class="extra" data-fly="left">${esc(content.currently)}</p>
     </section>`
   },

@@ -9,7 +9,7 @@ export default {
     return `
     <section class="content">
       <h2 class="page-title">Hobbies</h2>
-      <ul class="card-grid">${content.hobbies.map(cardHTML).join('')}</ul>
+      <ul class="card-grid">${content.hobbies.map((h) => cardHTML(h, '/hobbies')).join('')}</ul>
     </section>`
   },
 }

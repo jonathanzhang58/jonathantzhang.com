@@ -1,0 +1,42 @@
+- generic [active] [ref=f2e1]:
+  - banner [ref=f2e2]:
+    - link "J·Z" [ref=f2e3] [cursor=pointer]:
+      - /url: /
+    - generic [ref=f2e4]:
+      - navigation [ref=f2e5]:
+        - link "Home" [ref=f2e6] [cursor=pointer]:
+          - /url: /
+        - link "Bio" [ref=f2e7] [cursor=pointer]:
+          - /url: /bio
+        - link "Research" [ref=f2e8] [cursor=pointer]:
+          - /url: /research
+        - link "Projects" [ref=f2e9] [cursor=pointer]:
+          - /url: /projects
+        - link "CV" [ref=f2e10] [cursor=pointer]:
+          - /url: /cv
+        - link "Hobbies" [ref=f2e11] [cursor=pointer]:
+          - /url: /hobbies
+        - link "Contact" [ref=f2e12] [cursor=pointer]:
+          - /url: /contact
+      - button "Toggle dark mode" [ref=f2e13] [cursor=pointer]:
+        - img [ref=f2e14]
+  - generic [ref=f2e17]:
+    - complementary [ref=f2e18]:
+      - img [ref=f2e20]
+      - paragraph [ref=f2e25]:
+        - text: Jonathan
+        - text: Zhang
+      - paragraph [ref=f2e26]: Undergraduate — Johns Hopkins University
+      - paragraph [ref=f2e27]: Machine learning, causal inference, and tools for medicine.
+    - main [ref=f2e28]:
+      - generic [ref=f2e29]:
+        - link "← Projects" [ref=f2e30] [cursor=pointer]:
+          - /url: /projects
+        - heading "Home Server" [level=2] [ref=f2e31]
+        - generic [ref=f2e32]:
+          - paragraph [ref=f2e33]: Placeholder opening paragraph — the story of the project. Why you started it, what it does, what you learned along the way.
+          - heading "How it works" [level=3] [ref=f2e34]
+          - paragraph [ref=f2e35]: Placeholder detail paragraph. Plain strings like this one become paragraphs; add as many as you like.
+          - paragraph [ref=f2e36]: Placeholder closing paragraph.
+  - generic:
+    - img

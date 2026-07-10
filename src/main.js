@@ -48,7 +48,8 @@ const router = createRouter((from, to) => {
     }
   }
 
-  nav.setActive(to.path)
+  // detail pages highlight their parent section in the nav
+  nav.setActive(to.parent ?? to.path)
   document.title = to.path === '/' ? siteName : `${to.title} — ${siteName}`
 
   if (!from || prefersReducedMotion()) {
@@ -58,6 +59,15 @@ const router = createRouter((from, to) => {
   }
 
   activeTl = transition({ from, to, els, icon, onSpawn: (inTl) => { activeTl = inTl } })
+})
+
+// In-page internal links (clickable cards, detail back buttons) route through
+// the SPA router instead of a full page load. #page persists across swaps.
+els.page.addEventListener('click', (e) => {
+  const a = e.target.closest('a[data-nav]')
+  if (!a) return
+  e.preventDefault()
+  router.navigate(a.getAttribute('href'))
 })
 
 router.start()

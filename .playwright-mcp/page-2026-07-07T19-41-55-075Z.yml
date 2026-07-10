@@ -1,0 +1,57 @@
+- generic [active] [ref=f1e1]:
+  - banner [ref=f1e2]:
+    - link "J·Z" [ref=f1e3] [cursor=pointer]:
+      - /url: /
+    - generic [ref=f1e4]:
+      - navigation [ref=f1e5]:
+        - link "Home" [ref=f1e6] [cursor=pointer]:
+          - /url: /
+        - link "Bio" [ref=f1e7] [cursor=pointer]:
+          - /url: /bio
+        - link "Research" [ref=f1e8] [cursor=pointer]:
+          - /url: /research
+        - link "Projects" [ref=f1e9] [cursor=pointer]:
+          - /url: /projects
+        - link "CV" [ref=f1e10] [cursor=pointer]:
+          - /url: /cv
+        - link "Hobbies" [ref=f1e11] [cursor=pointer]:
+          - /url: /hobbies
+        - link "Contact" [ref=f1e12] [cursor=pointer]:
+          - /url: /contact
+      - button "Toggle dark mode" [ref=f1e13] [cursor=pointer]:
+        - img [ref=f1e14]
+  - generic [ref=f1e17]:
+    - complementary [ref=f1e18]:
+      - img [ref=f1e20]
+      - paragraph [ref=f1e25]:
+        - text: Jonathan
+        - text: Zhang
+      - paragraph [ref=f1e26]: Undergraduate — Johns Hopkins University
+      - paragraph [ref=f1e27]: Machine learning, causal inference, and tools for medicine.
+    - main [ref=f1e28]:
+      - generic [ref=f1e61]:
+        - heading "Projects" [level=2] [ref=f1e62]
+        - list [ref=f1e63]:
+          - listitem [ref=f1e64]:
+            - paragraph [ref=f1e66]:
+              - link "Aspire — the Pre-Med Planner" [ref=f1e67] [cursor=pointer]:
+                - /url: https://aspiredoctor.com
+            - paragraph [ref=f1e68]: Cross-platform Flutter app for pre-med students with a Firebase backend and an AI-powered advising chatbot. Co-founder & COO; finalist at the SPARK and HopStart venture competitions.
+          - listitem [ref=f1e69]:
+            - paragraph [ref=f1e71]:
+              - link "Breast Cancer Identification Trainer" [ref=f1e72] [cursor=pointer]:
+                - /url: https://github.com/jonathanzhang58/MammologyApp
+            - paragraph [ref=f1e73]: Training app for radiology residents to practice breast cancer identification on IRB-approved de-identified mammograms, built with a JHSOM professor and practicing radiologist. Finalist in the JHU CBID Healthcare Design Competition.
+          - listitem [ref=f1e74]:
+            - paragraph [ref=f1e76]:
+              - link "Kalman Filter Visualizer" [ref=f1e77] [cursor=pointer]:
+                - /url: https://github.com/jonathanzhang58/Kalman-filter-algorithm-and-visualizer-
+            - paragraph [ref=f1e78]: MATLAB implementation and visualizer of the Kalman filter, built through the JHU Directed Reading Program and presented at a departmental conference.
+          - listitem [ref=f1e79]:
+            - link "Home Server An old laptop reborn as an Ubuntu home server — Dockerized file storage, video streaming, and VPN access to the home network. Read more →" [ref=f1e80] [cursor=pointer]:
+              - /url: /projects/home-server
+              - paragraph [ref=f1e82]: Home Server
+              - paragraph [ref=f1e83]: An old laptop reborn as an Ubuntu home server — Dockerized file storage, video streaming, and VPN access to the home network.
+              - paragraph [ref=f1e84]: Read more →
+  - generic:
+    - img
