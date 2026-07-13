@@ -24,7 +24,7 @@ projects:
   - title: Aspire — the Pre-Med Planner
     blurb: >-
       500+ user cross-platform planning app for pre-med students with an AI-powered advising chatbot. Co-founder & COO;
-      finalist at the SPARK and HopStart venture competitions.
+      finalist at the SPARK ($500) and HopStart venture competitions.
     image: images/aspire-bw.png
     link: https://aspiredoctor.com
   - title: Breast Cancer Identification Trainer
@@ -35,6 +35,13 @@ projects:
       CBID Healthcare Design Competition.
     image: images/appScreenshot.png
     link: https://github.com/jonathanzhang58/MammologyApp
+  - title: DeltaP - Bioimpedance Urine Output Monitor
+    blurb: >-
+      Bioimpedance-based urine output monitor for ICU patients to prevent acute kidney injury. Built with a
+      JHSOM professor and practicing nephrologist, as part of JHU BME Design Teams. 1st place winner of SPARK SP2026 showcase ($2500), presented at JHU Design Day showcase. 
+    image: images/DeltaP.png
+    image_fit: contain
+    link: /files/deltap-spark-pitch-deck.pdf
   - title: Kalman Filter Visualizer
     blurb: >-
       MATLAB implementation and visualization of the Kalman filter, built
