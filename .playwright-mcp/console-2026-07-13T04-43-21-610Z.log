@@ -1,0 +1,14 @@
+[    1629ms] [INFO] %c[libdiscore] 
+font-weight: bold;
+color: purple;
+ [experiment_manager] Loaded experiments from cache @ https://discord.com/assets/56707.439411ea39eb4c15.js:464
+[    1759ms] [LOG] %c[ProcessUtilsElectron] 
+font-weight: bold;
+color: purple;
+ setMemoryInformation not available. @ https://discord.com/assets/56707.439411ea39eb4c15.js:464
+[    2158ms] [LOG] %c[default] 
+font-weight: bold;
+color: purple;
+ [BUILD INFO] Release Channel: stable, Build Number: 576754, Version Hash: 4e71fda896dc6a3755145af5ee328bcf3975f9cf @ https://discord.com/assets/56707.439411ea39eb4c15.js:464
+[    2165ms] [LOG] AppCrashedFatalReport: getLastCrash not supported. @ https://discord.com/assets/56707.439411ea39eb4c15.js:464
+[   11594ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://discord.com/api/v9/promotions?locale=en-US&platform=0:0

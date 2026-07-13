@@ -1,0 +1,96 @@
+- generic [active] [ref=f1e1]:
+  - banner [ref=f1e2]:
+    - generic [ref=f1e3]:
+      - navigation [ref=f1e4]:
+        - link "Home" [ref=f1e5] [cursor=pointer]:
+          - /url: /
+        - link "Bio" [ref=f1e6] [cursor=pointer]:
+          - /url: /bio
+        - link "Research" [ref=f1e7] [cursor=pointer]:
+          - /url: /research
+        - link "Projects" [ref=f1e8] [cursor=pointer]:
+          - /url: /projects
+        - link "CV" [ref=f1e9] [cursor=pointer]:
+          - /url: /cv
+        - link "Hobbies" [ref=f1e10] [cursor=pointer]:
+          - /url: /hobbies
+        - link "Contact" [ref=f1e11] [cursor=pointer]:
+          - /url: /contact
+      - button "Toggle dark mode" [ref=f1e12] [cursor=pointer]
+  - generic [ref=f1e16]:
+    - complementary [ref=f1e17]:
+      - paragraph [ref=f1e19]: Jonathan Zhang
+    - main [ref=f1e20]:
+      - generic [ref=f1e21]:
+        - link "← Hobbies" [ref=f1e22] [cursor=pointer]:
+          - /url: /hobbies
+        - heading "Travelling" [level=2] [ref=f1e23]
+        - generic [ref=f1e24]:
+          - paragraph [ref=f1e25]: Travelling is also fun. World's most basic hobby, I know, but basic things are basic because they're good. Technically, camping is travelling too, but the defining differentiator is whether or not a roof is above my head. Here's some of my favorite trips.
+          - heading "Taipei 2026" [level=3] [ref=f1e26]
+          - paragraph [ref=f1e27]: "Final Rating: 10/10"
+          - figure "Taipei 101 from Elephant Mountain" [ref=f1e28]:
+            - img "Taipei 101 from Elephant Mountain" [ref=f1e29]
+          - paragraph [ref=f1e31]: This trip actually redefined my worldview. For anyone interested in any East Asian culture, Taiwan is the destination. It has tastes of Korea, Japan, and Mainland China, concentrated together. Basically the best of each destination, with none of the downsides. Taipei is just as impressive as other Asian megacities, but not nearly over-touristed. A bonus personally was that I could communicate to locals in Mandarin. People dream of Japan trips, but if I had to choose, I think I'd go back to Taiwan.
+          - figure "Raohe Night Market" [ref=f1e32]:
+            - img "Raohe Night Market" [ref=f1e33]
+          - heading "Changchun 2025" [level=3] [ref=f1e35]
+          - paragraph [ref=f1e36]: "Final Rating: 9/10"
+          - figure "Literally a random park in Changchun at night" [ref=f1e37]:
+            - img "Literally a random park in Changchun at night" [ref=f1e38]
+          - paragraph [ref=f1e40]: Changchun is the capital of Jilin province in Northeast China. Not a normally tourist attraction, but I think it's my favorite city in China so far. The zoo is great with basically every animal you could imagine, and the atmosphere is very cheery and pleasant. It's also a nice break from the extreme hustle of some bigger cities, but still plenty to do.
+          - figure "Changchun Zoo" [ref=f1e41]:
+            - img "Changchun Zoo" [ref=f1e42]
+          - heading "Shenyang 2025" [level=3] [ref=f1e44]
+          - paragraph [ref=f1e45]: "Final Rating: 8.5/10"
+          - figure "Night market in Shenyang" [ref=f1e46]:
+            - img "Night market in Shenyang" [ref=f1e47]
+          - paragraph [ref=f1e49]: Shenyang is the capital of Liaoning province in Northeast China. Also a less travelled Chinese city, but still a great place to visit. I think it's almost Beijing-lite, a smaller city but still with great history, food, and attractions, without being too crowded. Not to mention there is a high speed rail connecting the two cities.
+          - figure "Mukden Palace in Shenyang" [ref=f1e50]:
+            - img "Mukden Palace in Shenyang" [ref=f1e51]
+          - figure "Guaipo Park in Shenyang. The name means \"strange slope\", and the park is known for a slope that looks like it's going up, but is actually going down. The slope itself was a bit anticlimactic and more a photo trick, but the glass bridge, tiger exhibit, and other parts of the park were very fun." [ref=f1e53]:
+            - img "Guaipo Park in Shenyang. The name means \"strange slope\", and the park is known for a slope that looks like it's going up, but is actually going down. The slope itself was a bit anticlimactic and more a photo trick, but the glass bridge, tiger exhibit, and other parts of the park were very fun." [ref=f1e54]
+          - heading "Beijing 2025" [level=3] [ref=f1e56]
+          - paragraph [ref=f1e57]: "Final Rating: 6.5/10"
+          - figure "The Forbidden City in Beijing" [ref=f1e58]:
+            - img "The Forbidden City in Beijing" [ref=f1e59]
+          - paragraph [ref=f1e61]: Obviously, there is no shortage of things to do and see in Beijing. From the Great Wall to the Forbidden City, there really is no place on Earth like it. However, my experience was a bit marred by the tighter security, possibly due to a parade that was happening shortly after my visit. Regardless, if you only get to visit China once, Beijing is still the destination.
+          - figure "Somewhere in Beijing." [ref=f1e62]:
+            - img "Somewhere in Beijing." [ref=f1e63]
+          - heading "Boston 2025" [level=3] [ref=f1e65]
+          - paragraph [ref=f1e66]: "Final Rating: 8/10"
+          - figure "River in Boston" [ref=f1e67]:
+            - img "River in Boston" [ref=f1e68]
+          - paragraph [ref=f1e70]: Boston is a really unique American city. In fact, it's probably the only city in the US that feels a little European. The river is really beautiful and the nearby universities have some really breathtaking architecture.
+          - figure "Harvard University" [ref=f1e71]:
+            - img "Harvard University" [ref=f1e72]
+          - figure "MIT" [ref=f1e74]:
+            - img "MIT" [ref=f1e75]
+          - heading "New York 2025" [level=3] [ref=f1e77]
+          - paragraph [ref=f1e78]: "Final Rating: 9/10"
+          - figure "Times Square in New York" [ref=f1e79]:
+            - img "Times Square in New York" [ref=f1e80]
+          - paragraph [ref=f1e82]: I think NYC is my favorite American city. It's just so quintessentially American, and you feel like you're in a movie. The skyline is great, Central Park has some great juxtaposition, and the museums have some extremely famous exhibits. Definetely need to return.
+          - figure "A street near Central Park" [ref=f1e83]:
+            - img "A street near Central Park" [ref=f1e84]
+          - heading "Washington D.C. 2025" [level=3] [ref=f1e86]
+          - paragraph [ref=f1e87]: "Final Rating: 7/10"
+          - figure "B-52 and B-1B bombers overhead in DC." [ref=f1e88]:
+            - img "B-52 and B-1B bombers overhead in DC." [ref=f1e89]
+          - paragraph [ref=f1e91]: NOT A POLITICAL STATEMENT. I go to college in Baltimore so I decided might as well see the planes in the state fair. The planes were really cool.
+          - figure "250th Anniversary State fair" [ref=f1e92]:
+            - img "250th Anniversary State fair" [ref=f1e93]
+          - heading "Raleigh, NC 2026" [level=3] [ref=f1e95]
+          - paragraph [ref=f1e96]: "Final Rating: 5/10"
+          - figure "North Carolina Capitol Building" [ref=f1e97]:
+            - img "North Carolina Capitol Building" [ref=f1e98]
+          - paragraph [ref=f1e100]: Raleigh is the capitol of North Carolina. The art museum is really cool. However, as you might expect, there's not a great deal to do in Raleigh. Sorry North Carolina.
+          - figure "Presidential Statues in Raleigh" [ref=f1e101]:
+            - img "Presidential Statues in Raleigh" [ref=f1e102]
+          - heading "Richmond, VA 2026" [level=3] [ref=f1e104]
+          - paragraph [ref=f1e105]: "Final Rating: 7/10"
+          - figure "Civil War History Museum" [ref=f1e106]:
+            - img "Civil War History Museum" [ref=f1e107]
+          - paragraph [ref=f1e109]: Richmond is the capital of Virginia, and the site of a great deal of American history. The museum was very well done and informative. Many historical figures are also buried here. For fellow history enjoyers, I think Richmond is one of the must sees in the US.
+          - figure "James Monroe's grave in Richmond" [ref=f1e110]:
+            - img "James Monroe's grave in Richmond" [ref=f1e111]

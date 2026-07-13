@@ -156,7 +156,7 @@ hobbies:
       - >-
         University of Pennsylvania's conference. I did not win anything ;(  
   - title: Modded Minecraft
-    image: ''
+    image: 'public\images\hobbies\MC.png'
     page:   
       - >-
         Modded Minecraft is my go to video game. I think learning all the new mods and their mechanics really appeals to me somehow. Sometimes I find it so fun I have to take a proactive break from it. Here are some of my favorite modpacks.
@@ -167,7 +167,7 @@ hobbies:
         ATM10 really is the pinnacle of the ATM series. It's still technically in development, so it may change up, but I think my opinion will stay the same. I'm excited to see how ATM11 will pan out. As with all the ATM modpacks, the progression is just second to none, and the questbook is phenomenal. Additionally, despite advertising itself as a "kitchen sink" modpack, it really is an automation modpack. ATM10 differs from ATM9 in a couple ways, most of which I think are good. The exclusion of Gregtech reduces the complexity significantly, replacing it with the friendlier Modern Industrialization mods. Additionally, getting rid of Alchemistry and Ad Astra really focus the modpack on its central goal of creating the ATM star. I did have some performance issues compared to ATM9 and 8, but its still very playable. Overall, great experience, but I'm not sure if I would recommend it to a new player.
       - heading: All the Mods 9
       - >-
-        Final Rating: 7.5/10
+        Final Rating: 7/10
       - >-
         Not gonna repeat myself with the ATM series. In theory, it's better than ATM8, but I personally preferred ATM8. It lies in a bit of an awkward middle ground between ATM8 and ATM10. It's too cluttered without enough guidance, and unlike ATM10, there isn't nearly as much online resources to help you. I would suggest skipping it and going straight to ATM10. Nevertheless, it still has that ATM level of quality. 
       - heading: All the Mods 8
@@ -175,8 +175,61 @@ hobbies:
         Final Rating: 8/10
       - >-
         I think ATM8 is a good intro to the ATM series. It's not as overwhelmingly complex as ATM9 or 10. Without the ore hammer and its easy ore doubling, the early game is a lot more Mekanism heavy, which forces you to learn the mod. It also introduces archeology, which becomes the standard for acquiring ATM gear in the later modpacks. Only complaint (not at the fault of the modpack) is that the Sophisticated Storage chests don't yet double chest in this version, but not much they can do there. I'd reccomend beginners start their ATM journey here, and then move on to ATM10. 
-      - heading: Society: Sunlit Valley
-
+      - heading: "Society: Sunlit Valley"
+      - >-
+        Final Rating: 7.5/10
+      - >-
+        Sunlit Valley is a farming modpack. And I mean farming. You literally plant crops, ranch animals, and sell your product. Hostile mobs don't even spawn on the surface. It's meant to mimic Stardew Valley, and it does a really good job of it. There's also slime ranching too. There is some automation involved through Create, but it's not the focus. In fact you generally get rewarded for doing things manually. The only complaints I have is that by the middle-game, the costs of items needed to progress increases faster than the money you can make, causing it to be a grindy. Also without automation, you find yourself getting into the trap of waking up, watering your crops, feeding your animals, making your products, and by then it's already night, keeping you in an endless loop. 
+      - heading: "Society: Sunlit Cobblemon"
+      - >-
+        Final Rating: 9/10
+      - >- 
+        Sunlit Cobblemon is basically Sunlit Valley, but with Cobblemon (sorry Pixelmon). The integration is really well done. The Cobblemon can be ranched, put to work in the farm, or just fought for coins. The extra income from them really prevents that grindy mid-game that Sunlit Valley has, really perfecting the modpack. The only complaint I have is that the endgame could use a bit more content and there should be other Cobblemon trainers in the game. 
+      - heading: "Protocol Zero"
+      - >-
+        Final Rating: 5/10
+      - >-
+        I think this modpack had some good potential, but really blew it. The custom structures are really cool and the premise is interesting. However, some issues arise. First, the guidance is minimal, so I wouldn't recommend it to a new player. The biggest issue is the inclusion of the "Spore: Inquisition" mod, which dominates the experience. This mod creates a growing mass at 0,0,0 that grows too quickly and completely destroys and transforms the world, forcing you to constantly. It also will randomly teleport you to a dimension where you will certainly die. The worst part is that there is literally zero documentation on this incredibly intrusive mod, unless you join the developer's discord and ask him. Sure, the modpack is advertised as "challenging", but this is just frustrating. 
+      - heading: "FTB StoneBlock 4"
+      - >-
+        Final Rating: 8/10
+      - >-
+        Stoneblock puts you underground in stone and forces you to use mods to progress as you learn more about the world. As with most FTB mods, the production quality is unmatched. There's lore, custom NPCs, and literal voice acting. This modpack is a great intro to modded Minecraft, especially automation centered ones. The only issue, and with many FTB mods as a whole, is that the beginning is quite novel, but the mid-game is largely the same automation progression. 
+      - heading: "Reclamation - Reclaim the World!"
+      - >-
+        Final Rating: 9/10
+      - >-
+        Reclamation is like an FTB automation modpack done right. You are placed in a nearly barren world, void of plants, animals, and ore. You must use mods to reclaim the world and make it habitable again. The modpack is very well done, with a great questbook and a lot of guidance. Best of all, the environment continues to affect your play as you progress, instead of merely being an early game gimmick. Different mods are creatively integrated, and each little step unlocks something new you can do with the seemingly minimal resources around. Would reccomend, and makes a good intro to many different mods for a new player. The only complaint is the endgame has a bit too much complexity creep, which could be resolved if they fleshed out the questbook a bit more.
+      - heading: "Better Minecraft 5"
+      - >-
+        Final Rating: 4/10
+      - >-
+        After playing so many other modpacks, the BMC modpack just starts to fall flat. I think it's more an exploration modpack if anything, but the exploration just fails to be as interesting. The questbook is really small, and weirdly enough, compared to BMC4, the world felt empty. I just feel like there isn't nearly enough to do. A decent first modpack though, I suppose. I think the loss of Alex's Mobs really did a number on the pack. 
+      - heading: "Better Minecraft 4"
+      - >- 
+        Final Rating: 7/10
+      - >-
+        BMC4 was my intro to modded Minecraft, so I view it through rose-tinted glasses. It was really cool experiencing the core mods for the first time, like Farmer's Delight or Biomes O' Plenty. It really tries to mantain the core minecraft experience, meaning it doesn't really add any new mechanics, feautres, or directions. Which is fine if that's the goal. There's no real automation and the endgame is a bit lacking. Regardless, it does its job of being Vanilla+, and I think it's the best one there is. Also Alex's Mobs is in it, which is just a great mod. 
+      - heading: "MC Eternal 2"
+      - >-
+        Final Rating: 7.5/10
+      - >-
+        MC Eternal 2 really does the kitchen sink modpack justice. You can really do just about anything. For those who want that, there's no better modpack. The questbook is quite good, and the new structures are really fun to explore. I think it's like a version ATM that's tuned away from automation or progression and more towards exploration and just having fun.
+      - heading: "Homestead - A Cozy Survival Experience"
+      - >-
+        Final Rating: 6.5/10
+      - >-
+       Homestead was the closest thing for me to a modernized BMC4. There's plenty of new structures to explore and things to do, even without Alex's Mobs. The only complaint I have is the AI-generated art in the questbook, which gives it a bit of a sloppy feel. The quest book also is a little bit too rewarding and fails to be helpful at all past the midgame.
+      - heading: Roguelike Adventures and Dungeons 2
+      - >- 
+        Final Rating: 9/10
+      - >-
+        R.A.D. 2 is a modpack that focuses on exploration and adventure. A lot of modpacks claim to be RPG modpacks, but I think only R.A.D. 2 really delivers on that promise. The world is full of dungeons, structures, and new mobs to fight, which get stronger with you. The questbook is also very well done, and the modpack is very well balanced. 
+      - heading: "Raspberry Flavoured"
+      - >-
+        Final Rating: 9/10
+      - >-
+        Raspberry Flavoured is a Vanilla+ modpack, but I'd like to instead call it Vanilla*. It augments the vanilla experience, removing some mechanics and adding others. It ditches the questbook in favor of a very expansive advancements system, and really slows down the progression of Minecraft in a good way. The modpack is very well balanced, and the world is very well designed. Would recommend for those looking for a more relaxing modded Minecraft experience.
   - title: Table Tennis
     image: images/hobbies/table-tennis/table-tennis.svg
     page:
