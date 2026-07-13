@@ -15,16 +15,18 @@
   margin-bottom: 44px;
 }
 .kicker-arrow { color: var(--hl-3); }
-.name-wrap { position: relative; align-self: flex-start; }
+/* font-size lives on the wrap so the motifs can position in em and scale
+   in lockstep with the name (at the 68px cap these match the old px values) */
+.name-wrap { position: relative; align-self: flex-start; font-size: clamp(44px, 7vw, 68px); }
 .name {
-  font-size: clamp(44px, 7vw, 68px);
+  font-size: 1em;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: -0.035em;
   line-height: 1.02;
 }
-.emph { position: absolute; top: -34px; left: -40px; width: 64px; }
-.star5 { position: absolute; right: 70px; bottom: -17.5px; width: 50px; transform: rotate(15deg); cursor: pointer; }
+.emph { position: absolute; top: -0.5em; left: -0.59em; width: 0.94em; }
+.star5 { position: absolute; right: 1.03em; bottom: -0.26em; width: 0.735em; transform: rotate(15deg); cursor: pointer; }
 .titles { color: var(--hl-2); margin-top: 34px; }
 .splash {
   font-size: 16.5px;

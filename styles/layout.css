@@ -47,6 +47,9 @@
   padding-top: var(--nav-h);
   display: grid;
   grid-template-columns: var(--sidebar-w) 1fr;
+  /* clip (not hidden: keeps the sticky sidebar working) so the falling
+     star's transform can't grow the document and flash a scrollbar */
+  overflow: clip;
 }
 body[data-page='home'] .layout { grid-template-columns: 1fr; }
 body[data-page='home'] .sidebar { display: none; }
