@@ -1,32 +1,34 @@
 import { esc, slugify } from '../util.js'
 import content from '../../content/projects.yaml'
 
-// An item with a `page:` block becomes a fully clickable card that routes to
-// its detail page; otherwise only an external `link:` (if any) is clickable.
+// A card with a `link:` is fully clickable to that external link — hovering
+// anywhere highlights the border and title. A `page:` block adds a
+// "Read more" line, and only that line routes to the detail page.
 export function cardHTML(item, basePath) {
+  const fit = item.image_fit === 'contain' ? ' card-thumb-contain' : ''
   const thumb = item.image
-    ? `<img class="card-thumb" src="/${esc(item.image)}" alt="">`
+    ? `<img class="card-thumb${fit}" src="/${esc(item.image)}" alt="">`
     : `<div class="card-thumb" aria-hidden="true"></div>`
-  if (item.page) {
-    const href = `${basePath}/${item.slug || slugify(item.title)}`
+  const more = item.page
+    ? `<a class="card-more" href="${basePath}/${item.slug || slugify(item.title)}" data-nav>Read more &rarr;</a>`
+    : ''
+  if (item.link) {
     return `
     <li class="card card-clickable">
-      <a class="card-link" href="${href}" data-nav>
+      <a class="card-link" href="${esc(item.link)}" target="_blank" rel="noopener">
         ${thumb}
-        <p class="card-title">${esc(item.title)}</p>
+        <p class="card-title card-title-linked">${esc(item.title)}</p>
         <p class="card-blurb">${esc(item.blurb)}</p>
-        <p class="card-more">Read more &rarr;</p>
       </a>
+      ${more}
     </li>`
   }
-  const title = item.link
-    ? `<a href="${esc(item.link)}" target="_blank" rel="noopener">${esc(item.title)}</a>`
-    : esc(item.title)
   return `
     <li class="card">
       ${thumb}
-      <p class="card-title">${title}</p>
+      <p class="card-title">${esc(item.title)}</p>
       <p class="card-blurb">${esc(item.blurb)}</p>
+      ${more}
     </li>`
 }
 

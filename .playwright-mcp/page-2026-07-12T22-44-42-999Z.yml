@@ -1,0 +1,68 @@
+- generic [active] [ref=f34e1]:
+  - banner [ref=f34e2]:
+    - link "J·Z" [ref=f34e3] [cursor=pointer]:
+      - /url: /
+    - generic [ref=f34e4]:
+      - navigation [ref=f34e5]:
+        - link "Home" [ref=f34e6] [cursor=pointer]:
+          - /url: /
+        - link "Bio" [ref=f34e7] [cursor=pointer]:
+          - /url: /bio
+        - link "Research" [ref=f34e8] [cursor=pointer]:
+          - /url: /research
+        - link "Projects" [ref=f34e9] [cursor=pointer]:
+          - /url: /projects
+        - link "CV" [ref=f34e10] [cursor=pointer]:
+          - /url: /cv
+        - link "Hobbies" [ref=f34e11] [cursor=pointer]:
+          - /url: /hobbies
+        - link "Contact" [ref=f34e12] [cursor=pointer]:
+          - /url: /contact
+      - button "Toggle dark mode" [ref=f34e13] [cursor=pointer]
+  - generic [ref=f34e17]:
+    - complementary [ref=f34e18]:
+      - paragraph [ref=f34e20]: Jonathan Zhang
+      - paragraph [ref=f34e21]: Undergraduate — Johns Hopkins University
+      - navigation "Social links" [ref=f34e22]:
+        - link "LinkedIn" [ref=f34e23] [cursor=pointer]:
+          - /url: /https://www.linkedin.com/in/jonathan-zhang-25702025b/
+        - link "GitHub" [ref=f34e24] [cursor=pointer]:
+          - /url: /https://github.com/jonathanzhang58
+        - link "Download CV" [ref=f34e25] [cursor=pointer]:
+          - /url: /files/cv.pdf
+    - main [ref=f34e26]:
+      - generic [ref=f34e27]:
+        - heading "Projects" [level=2] [ref=f34e28]
+        - list [ref=f34e29]:
+          - listitem [ref=f34e30]:
+            - link [ref=f34e31] [cursor=pointer]:
+              - /url: https://jhuparkinsonspals.jonathantzhang.com/
+              - paragraph [ref=f34e32]: Parkinson's Pals at JHU
+              - paragraph [ref=f34e33]: Volunteer organization that pairs undergraduate students at JHU with Parkinson's patients to provide companionship and support. I founded and lead the organization at JHU, which has grown to 50+ members and 20+ patient pairs.
+          - listitem [ref=f34e34]:
+            - link [ref=f34e35] [cursor=pointer]:
+              - /url: https://aspiredoctor.com
+              - paragraph [ref=f34e36]: Aspire — the Pre-Med Planner
+              - paragraph [ref=f34e37]: 500+ user cross-platform planning app for pre-med students with an AI-powered advising chatbot. Co-founder & COO; finalist at the SPARK and HopStart venture competitions.
+          - listitem [ref=f34e38]:
+            - link [ref=f34e39] [cursor=pointer]:
+              - /url: https://github.com/jonathanzhang58/MammologyApp
+              - paragraph [ref=f34e40]: Breast Cancer Identification Trainer
+              - paragraph [ref=f34e41]: Training app for 50+ JHSOM radiology residents to practice breast cancer identification on IRB-approved de-identified mammograms, built with a JHSOM professor and practicing radiologist. Finalist in the JHU CBID Healthcare Design Competition.
+          - listitem [ref=f34e42]:
+            - link [ref=f34e43] [cursor=pointer]:
+              - /url: https://github.com/jonathanzhang58/Kalman-filter-algorithm-and-visualizer-
+              - paragraph [ref=f34e44]: Kalman Filter Visualizer
+              - paragraph [ref=f34e45]: MATLAB implementation and visualization of the Kalman filter, built through the JHU AMS Directed Reading Program and presented at a departmental conference.
+            - link "Read more →" [ref=f34e46] [cursor=pointer]:
+              - /url: /projects/kalman-filter-visualizer
+          - listitem [ref=f34e47]:
+            - paragraph [ref=f34e48]: Home Server
+            - paragraph [ref=f34e49]: Repurposed old laptop as an Ubuntu home server used for file storage, video streaming, and VPN access to the home network.
+          - listitem [ref=f34e50]:
+            - link [ref=f34e51] [cursor=pointer]:
+              - /url: https://example.com
+              - paragraph [ref=f34e53]: "Test: Link + Page"
+              - paragraph [ref=f34e54]: A card with both an external link and a detail page.
+            - link "Read more →" [ref=f34e55] [cursor=pointer]:
+              - /url: /projects/test

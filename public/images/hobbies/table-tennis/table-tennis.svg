@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="#dbe2f7"/>
+  <!-- paddle: solid blade + chunky handle, tilted -->
+  <g transform="rotate(-32 370 250)">
+    <rect x="346" y="300" width="48" height="118" rx="14" fill="#17181c"/>
+    <circle cx="370" cy="212" r="100" fill="#1440c8"/>
+  </g>
+  <!-- ball -->
+  <circle cx="565" cy="155" r="17" fill="none" stroke="#17181c" stroke-width="6"/>
+</svg>

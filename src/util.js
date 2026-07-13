@@ -7,6 +7,21 @@ export function esc(s = '') {
     .replace(/"/g, '&quot;')
 }
 
+// Escape text, then turn [label](url) markdown links into anchors.
+// Only http(s) URLs are linkified; everything else stays escaped text.
+export function mdLinks(s = '') {
+  return esc(s).replace(
+    /\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g,
+    (_, label, url) =>
+      `<a href="${url}" target="_blank" rel="noopener">${label}</a>`,
+  )
+}
+
+// Escape text, then turn __text__ into underlined text.
+export function mdUnderline(s = '') {
+  return esc(s).replace(/__([^_]+)__/g, '<u>$1</u>')
+}
+
 // "Home Server!" -> "home-server", for card detail-page URLs.
 export function slugify(s = '') {
   return String(s)

@@ -1,0 +1,59 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - link "J·Z" [ref=e3] [cursor=pointer]:
+      - /url: /
+    - generic [ref=e4]:
+      - navigation [ref=e5]:
+        - link "Home" [ref=e6] [cursor=pointer]:
+          - /url: /
+        - link "Bio" [ref=e7] [cursor=pointer]:
+          - /url: /bio
+        - link "Research" [ref=e8] [cursor=pointer]:
+          - /url: /research
+        - link "Projects" [ref=e9] [cursor=pointer]:
+          - /url: /projects
+        - link "CV" [ref=e10] [cursor=pointer]:
+          - /url: /cv
+        - link "Hobbies" [ref=e11] [cursor=pointer]:
+          - /url: /hobbies
+        - link "Contact" [ref=e12] [cursor=pointer]:
+          - /url: /contact
+      - button "Toggle dark mode" [ref=e13] [cursor=pointer]
+  - generic [ref=e17]:
+    - complementary [ref=e18]:
+      - paragraph [ref=e20]: Jonathan Zhang
+      - paragraph [ref=e21]: Undergraduate — Johns Hopkins University
+      - navigation "Social links" [ref=e22]:
+        - link "LinkedIn" [ref=e23] [cursor=pointer]:
+          - /url: /https://www.linkedin.com/in/jonathan-zhang-25702025b/
+        - link "GitHub" [ref=e24] [cursor=pointer]:
+          - /url: /https://github.com/jonathanzhang58
+        - link "Download CV" [ref=e25] [cursor=pointer]:
+          - /url: /files/cv.pdf
+    - main [ref=e26]:
+      - generic [ref=e27]:
+        - link "← Hobbies" [ref=e28] [cursor=pointer]:
+          - /url: /hobbies
+        - heading "Camping" [level=2] [ref=e29]
+        - generic [ref=e30]:
+          - paragraph [ref=e31]: I was a boy scout as a kid, so I've always enjoyed the great outdoors. One day I hope to visit all the US national parks. Here are some of my favorite trips.
+          - heading "Acadia 2026" [level=3] [ref=e32]
+          - paragraph [ref=e33]: "Final Rating: 10/10"
+          - figure "Mountain in Acadia" [ref=e34]:
+            - img "Mountain in Acadia" [ref=e35]
+          - paragraph [ref=e37]: Acadia is by far the best camping experience I've had. The nature is incredible and extremely diverse. There were beaches, mountains, forest trails all within 15 minutes drive within each other. It's also very close to a small town, so we were able to get groceries in the middle of the trip. Only advice would be to use the YMCAs for showering, instead of scammy coin operated showers.
+          - figure "Beach in Acadia" [ref=e38]:
+            - img "Beach in Acadia" [ref=e39]
+          - figure "Lake in Acadia" [ref=e41]:
+            - img "Lake in Acadia" [ref=e42]
+          - heading "Shenandoah 2025" [level=3] [ref=e44]
+          - paragraph [ref=e45]: "Final Rating: 7/10"
+          - figure "Mountain Overlook in Shenandoah" [ref=e46]:
+            - img "Mountain Overlook in Shenandoah" [ref=e47]
+          - paragraph [ref=e49]: Shenandoah was a fun trip. I think it really encompasses a great vanilla camping experience. There's some nice hikes with cool river crossings and some great views on nearby mountains. The best part has to be the drive up to the campsite, why you get to see some incredible mountain overlooks. If you're going camping for the first time, I think its a great intro to national parks.
+          - figure "Mountain in Shenandoah" [ref=e50]:
+            - img "Mountain in Shenandoah" [ref=e51]
+          - figure "Forest in Shenandoah" [ref=e53]:
+            - img "Forest in Shenandoah" [ref=e54]
+          - figure "Waterfall in Shenandoah" [ref=e56]:
+            - img "Waterfall in Shenandoah" [ref=e57]

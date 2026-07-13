@@ -1,0 +1,56 @@
+- generic [active] [ref=f9e1]:
+  - banner [ref=f9e2]:
+    - link "J·Z" [ref=f9e3] [cursor=pointer]:
+      - /url: /
+    - generic [ref=f9e4]:
+      - navigation [ref=f9e5]:
+        - link "Home" [ref=f9e6] [cursor=pointer]:
+          - /url: /
+        - link "Bio" [ref=f9e7] [cursor=pointer]:
+          - /url: /bio
+        - link "Research" [ref=f9e8] [cursor=pointer]:
+          - /url: /research
+        - link "Projects" [ref=f9e9] [cursor=pointer]:
+          - /url: /projects
+        - link "CV" [ref=f9e10] [cursor=pointer]:
+          - /url: /cv
+        - link "Hobbies" [ref=f9e11] [cursor=pointer]:
+          - /url: /hobbies
+        - link "Contact" [ref=f9e12] [cursor=pointer]:
+          - /url: /contact
+      - button "Toggle dark mode" [ref=f9e13] [cursor=pointer]
+  - generic [ref=f9e17]:
+    - complementary [ref=f9e18]:
+      - paragraph [ref=f9e20]: Jonathan Zhang
+      - paragraph [ref=f9e21]: Undergraduate — Johns Hopkins University
+      - navigation "Social links" [ref=f9e22]:
+        - link "LinkedIn" [ref=f9e23] [cursor=pointer]:
+          - /url: /https://www.linkedin.com/in/jonathan-zhang-25702025b/
+        - link "GitHub" [ref=f9e24] [cursor=pointer]:
+          - /url: /https://github.com/jonathanzhang58
+        - link "Download CV" [ref=f9e25] [cursor=pointer]:
+          - /url: /files/cv.pdf
+    - main [ref=f9e26]:
+      - generic [ref=f9e27]:
+        - heading "Hobbies" [level=2] [ref=f9e28]
+        - list [ref=f9e29]:
+          - listitem [ref=f9e30]:
+            - link [ref=f9e31] [cursor=pointer]:
+              - /url: /hobbies/camping
+              - paragraph [ref=f9e33]: Camping
+          - listitem [ref=f9e34]:
+            - link [ref=f9e35] [cursor=pointer]:
+              - /url: /hobbies/travelling
+              - paragraph [ref=f9e37]: Travelling
+          - listitem [ref=f9e38]:
+            - link [ref=f9e39] [cursor=pointer]:
+              - /url: /hobbies/model-united-nations
+              - paragraph [ref=f9e41]: Model United Nations
+          - listitem [ref=f9e42]:
+            - link [ref=f9e43] [cursor=pointer]:
+              - /url: /hobbies/modded-minecraft
+              - paragraph [ref=f9e45]: Modded Minecraft
+          - listitem [ref=f9e46]:
+            - link [ref=f9e47] [cursor=pointer]:
+              - /url: /hobbies/table-tennis
+              - paragraph [ref=f9e48]: Table Tennis

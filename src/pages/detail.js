@@ -42,7 +42,9 @@ function makeDetailPage(item, parent) {
   }
 }
 
+// Every hobby gets a detail page (empty until it grows a `page:` list);
+// projects only get one once `page:` is added.
 export const detailPages = [
   ...(projectContent.projects ?? []).filter((p) => p.page).map((p) => makeDetailPage(p, projectsPage)),
-  ...(hobbyContent.hobbies ?? []).filter((h) => h.page).map((h) => makeDetailPage(h, hobbiesPage)),
+  ...(hobbyContent.hobbies ?? []).map((h) => makeDetailPage(h, hobbiesPage)),
 ]

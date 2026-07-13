@@ -23,7 +23,7 @@ export function emphasisSVG() {
 
 export function starSVG() {
   return `
-  <svg class="star4" viewBox="0 0 46 46" aria-hidden="true">
-    <path fill="var(--hl-3)" d="M23 0 L26 20 L46 23 L26 26 L23 46 L20 26 L0 23 L20 20 Z"/>
+  <svg class="star5" viewBox="0 0 46 46" aria-hidden="true">
+    <path fill="var(--hl-3)" d="M23 1.5 L28.6 16.8 L44.9 17.4 L32 27.4 L36.5 43.1 L23 34 L9.5 43.1 L14 27.4 L1.1 17.4 L17.4 16.8 Z"/>
   </svg>`
 }

@@ -1,0 +1,53 @@
+- generic [active] [ref=f2e1]:
+  - banner [ref=f2e2]:
+    - link "J·Z" [ref=f2e3] [cursor=pointer]:
+      - /url: /
+    - generic [ref=f2e4]:
+      - navigation [ref=f2e5]:
+        - link "Home" [ref=f2e6] [cursor=pointer]:
+          - /url: /
+        - link "Bio" [ref=f2e7] [cursor=pointer]:
+          - /url: /bio
+        - link "Research" [ref=f2e8] [cursor=pointer]:
+          - /url: /research
+        - link "Projects" [ref=f2e9] [cursor=pointer]:
+          - /url: /projects
+        - link "CV" [ref=f2e10] [cursor=pointer]:
+          - /url: /cv
+        - link "Hobbies" [ref=f2e11] [cursor=pointer]:
+          - /url: /hobbies
+        - link "Contact" [ref=f2e12] [cursor=pointer]:
+          - /url: /contact
+      - button "Toggle dark mode" [ref=f2e13] [cursor=pointer]
+  - generic [ref=f2e17]:
+    - complementary [ref=f2e18]:
+      - paragraph [ref=f2e20]: Jonathan Zhang
+      - paragraph [ref=f2e21]: Undergraduate — Johns Hopkins University
+      - navigation "Social links" [ref=f2e22]:
+        - link "LinkedIn" [ref=f2e23] [cursor=pointer]:
+          - /url: /https://www.linkedin.com/in/jonathan-zhang-25702025b/
+        - link "GitHub" [ref=f2e24] [cursor=pointer]:
+          - /url: /https://github.com/jonathanzhang58
+        - link "Download CV" [ref=f2e25] [cursor=pointer]:
+          - /url: /files/cv.pdf
+    - main [ref=f2e26]:
+      - generic [ref=f2e27]:
+        - link "← Hobbies" [ref=f2e28] [cursor=pointer]:
+          - /url: /hobbies
+        - heading "Model United Nations" [level=2] [ref=f2e29]
+        - generic [ref=f2e30]:
+          - paragraph [ref=f2e31]: I did MUN in high school and I thought it was great, but my club was less a team and more "let's sit in a circle with the history teacher and talk about world politics." Surely collegiate MUN is the same thing right? NO. Competitive MUN is a unique and frightening experience that I can only describe as "competitive work politics". To award, it matters less so what laws are passed, and more so how well you "command" the room. As a result, you have a bunch of strong personalities in a room pretending to collaborate when really they're trying to make the other their pawn. It can be really frustrating sometimes, but also sometimes fun. Sometimes. Luckily for me it's just a hobby because I'm a STEM student. Here's some conferences I went to.
+          - heading "UNCMUNC 2025" [level=3] [ref=f2e32]
+          - paragraph [ref=f2e33]: UNC Chapel Hill's Conference. I did not win anything ;(
+          - figure "A very tired me after the conference finished." [ref=f2e34]:
+            - img "A very tired me after the conference finished." [ref=f2e35]
+          - figure "UNC Chapel Hill Old Well" [ref=f2e37]:
+            - img "UNC Chapel Hill Old Well" [ref=f2e38]
+          - heading "HOPMUNC 2026" [level=3] [ref=f2e40]
+          - paragraph [ref=f2e41]: JHU's conference. Obviously, I go here. I was a staffer, so I didn't compete.
+          - figure "JHU School of International Studies Building, where the conference was held." [ref=f2e42]:
+            - img "JHU School of International Studies Building, where the conference was held." [ref=f2e43]
+          - heading "&MUN 2026" [level=3] [ref=f2e45]
+          - paragraph [ref=f2e46]: William and Mary College's conference. I did not win anything ;(
+          - heading "UPMUNC 2023" [level=3] [ref=f2e47]
+          - paragraph [ref=f2e48]: University of Pennsylvania's conference. I did not win anything ;(

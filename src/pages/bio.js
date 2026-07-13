@@ -1,4 +1,4 @@
-import { esc } from '../util.js'
+import { esc, mdLinks } from '../util.js'
 import content from '../../content/bio.yaml'
 
 export default {
@@ -15,7 +15,7 @@ export default {
       <div class="bio-grid">
         ${portrait}
         <div class="bio-text">
-          ${content.paragraphs.map((p) => `<p>${esc(p)}</p>`).join('\n')}
+          ${content.paragraphs.map((p) => `<p>${mdLinks(p)}</p>`).join('\n')}
         </div>
       </div>
     </section>`

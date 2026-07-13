@@ -1,0 +1,67 @@
+- generic [active] [ref=f20e1]:
+  - banner [ref=f20e2]:
+    - link "J·Z" [ref=f20e3] [cursor=pointer]:
+      - /url: /
+    - generic [ref=f20e4]:
+      - navigation [ref=f20e5]:
+        - link "Home" [ref=f20e6] [cursor=pointer]:
+          - /url: /
+        - link "Bio" [ref=f20e7] [cursor=pointer]:
+          - /url: /bio
+        - link "Research" [ref=f20e8] [cursor=pointer]:
+          - /url: /research
+        - link "Projects" [ref=f20e9] [cursor=pointer]:
+          - /url: /projects
+        - link "CV" [ref=f20e10] [cursor=pointer]:
+          - /url: /cv
+        - link "Hobbies" [ref=f20e11] [cursor=pointer]:
+          - /url: /hobbies
+        - link "Contact" [ref=f20e12] [cursor=pointer]:
+          - /url: /contact
+      - button "Toggle dark mode" [ref=f20e13] [cursor=pointer]
+  - generic [ref=f20e17]:
+    - complementary [ref=f20e18]:
+      - paragraph [ref=f20e20]: Jonathan Zhang
+      - paragraph [ref=f20e21]: Undergraduate — Johns Hopkins University
+      - navigation "Social links" [ref=f20e22]:
+        - link "LinkedIn" [ref=f20e23] [cursor=pointer]:
+          - /url: /https://www.linkedin.com/in/jonathan-zhang-25702025b/
+        - link "GitHub" [ref=f20e24] [cursor=pointer]:
+          - /url: /https://github.com/jonathanzhang58
+        - link "Download CV" [ref=f20e25] [cursor=pointer]:
+          - /url: /files/cv.pdf
+    - main [ref=f20e26]:
+      - generic [ref=f20e27]:
+        - heading "Projects" [level=2] [ref=f20e28]
+        - list [ref=f20e29]:
+          - listitem [ref=f20e30]:
+            - link [ref=f20e31] [cursor=pointer]:
+              - /url: https://jhuparkinsonspals.jonathantzhang.com/
+            - paragraph [ref=f20e32]:
+              - link "Parkinson's Pals at JHU" [ref=f20e33] [cursor=pointer]:
+                - /url: https://jhuparkinsonspals.jonathantzhang.com/
+            - paragraph [ref=f20e34]: Parkinson's Pals is a volunteer organization that pairs undergraduate students at JHU with Parkinson's patients to provide companionship and support. I founded and lead the organization at JHU, which has grown to 50+ members and 20+ patient pairs.
+          - listitem [ref=f20e35]:
+            - link [ref=f20e36] [cursor=pointer]:
+              - /url: https://aspiredoctor.com
+            - paragraph [ref=f20e37]:
+              - link "Aspire — the Pre-Med Planner" [ref=f20e38] [cursor=pointer]:
+                - /url: https://aspiredoctor.com
+            - paragraph [ref=f20e39]: 500+ user cross-platform planning app for pre-med students with an AI-powered advising chatbot. Co-founder & COO; finalist at the SPARK and HopStart venture competitions.
+          - listitem [ref=f20e40]:
+            - link [ref=f20e41] [cursor=pointer]:
+              - /url: https://github.com/jonathanzhang58/MammologyApp
+            - paragraph [ref=f20e42]:
+              - link "Breast Cancer Identification Trainer" [ref=f20e43] [cursor=pointer]:
+                - /url: https://github.com/jonathanzhang58/MammologyApp
+            - paragraph [ref=f20e44]: Training app for 50+ JHSOM radiology residents to practice breast cancer identification on IRB-approved de-identified mammograms, built with a JHSOM professor and practicing radiologist. Finalist in the JHU CBID Healthcare Design Competition.
+          - listitem [ref=f20e45]:
+            - link [ref=f20e46] [cursor=pointer]:
+              - /url: https://github.com/jonathanzhang58/Kalman-filter-algorithm-and-visualizer-
+            - paragraph [ref=f20e47]:
+              - link "Kalman Filter Visualizer" [ref=f20e48] [cursor=pointer]:
+                - /url: https://github.com/jonathanzhang58/Kalman-filter-algorithm-and-visualizer-
+            - paragraph [ref=f20e49]: MATLAB implementation and visualization of the Kalman filter, built through the JHU AMS Directed Reading Program and presented at a departmental conference.
+          - listitem [ref=f20e50]:
+            - paragraph [ref=f20e51]: Home Server
+            - paragraph [ref=f20e52]: Repurposed old laptop as an Ubuntu home server used for file storage, video streaming, and VPN access to the home network.

@@ -1,48 +1,53 @@
 # The Research page.
 
 intro: >-
-  I'm interested in what we can honestly say about an ML model's impact
-  before it's ever deployed — partial identification and causal inference
-  for decision-support systems — and in applying statistical thinking to
-  genomics and medicine.
-
-# Add one block per paper. "link" is optional (paper title becomes clickable).
+  I'm involved in two labs at Johns Hopkins University. In the Oberst Lab, I do research on machine learning, causal inference, and statstical methodology. In the Feinberg Lab, I apply my statistical knowledge to bioinformatics and epigenetics.
 publications:
   - title: Bounding the Causal Impact of ML-assisted Decision-Making via Counterfactual Correctness
-    authors: Jonathan Zhang, et al. (fill in coauthor list)
-    venue: UAI 2026
+    authors: Jonathan Zhang, Erik Skalnes, Jacob Chen, Michael Oberst
+    venue: UAI 2026 (accepted)
+    note: Pre-print pending
     link: ''  # add the arXiv link once it's up
-  - title: Impact of a mammography training app on radiology residents (in preparation)
-    authors: Jonathan Zhang, et al. — with JHSOM collaborators
-    venue: Working paper, 2026
-    link: ''
 
 # The two labs you work in, shown side by side under the publications.
 # "focus" is the small eyebrow line above the lab name. "link" is optional
-# (lab name becomes clickable). Add as many paragraphs as you like — the
-# page scrolls.
+# (lab name becomes clickable). Each lab lists projects under "current"
+# and "completed" — one block per project with a title and description.
+# A project's "link" is optional: leave it '' for plain text, or set a URL
+# to make the title a hyperlink. Empty lists are hidden.
 labs:
   - name: Oberst Lab
     focus: Machine learning & causal inference
     link: ''
-    paragraphs:
-      - >-
-        Once a clinical trial has evaluated one ML decision-support model,
-        what can it tell us about a new model that was never trialed? I
-        work on partial-identification bounds for the downstream causal
-        impact of untrialed models, using the idea of counterfactual
-        correctness — whether the new model would have been right on trial
-        subjects — together with a doubly-robust estimator that is
-        consistent and asymptotically normal. This work was accepted at
-        UAI 2026, where I'm the first author.
+    projects:
+      current:
+        - title: Evaluating Computer-Aided Biopsy Systems
+          link: ''
+          description: >-
+            Ideally, if a computer system reduces the number of malignant anomalies missed, it is better. However, identifying the false negative rate is challenging, because the danger of an anomaly is not known until after a biopsy is performed, and removing every anomaly is infeasible. Can we determine if these systems improve biopsies despite these challenges? 
+      completed:
+        - title: Bounding the Causal Impact of ML-assisted Decision-Making via Counterfactual Correctness
+          link: ''
+          description: >-
+            Novel partial-identification bounds on the downstream causal impact of
+            untrialed ML decision-support models without randomized controlled trials. Presented at 2025 JHU Research Symposium on Engineering in Healthcare. Accepted at UAI 2026.
   - name: Feinberg Lab
     focus: Bioinformatics & epigenetics
     link: ''
-    paragraphs:
-      - >-
-        I analyze whole-genome sequencing data in R and Julia on a remote
-        Linux cluster, using mediation analysis to statistically rule out
-        confounding in existing lab experiments. Along the way I
-        consolidated the lab's scattered analysis scripts into unified
-        pipelines, cutting required user input by more than half and
-        speeding up runtime by 15%.
+    projects:
+      current:
+        - title: Using e-values for differential methylation region identification.
+          link: ''
+          description: >-
+            E-values are a new statistical tool with advantages over p-values in particular settings. DMR analysis requires testing millions of hypotheses simultaneously. Using an e-value approach can help to reduce FPR and improve power compared to Benjamini-Yekutieli adjusted p-values.  
+      completed:
+        - title: Mediation analysis for fat gain study in mice. 
+          link: ''
+          description: >-
+            We are studying the effects of a reduced methyline diet on fat gain in mice. However, the fat changes may be confounded by reduced apetite due to diet change. I developed a mediation analysis framework to quantify the direct and indirect effects of diet on fat gain, and applied it to find the mediating effect of appetite on fat gain was insignificant.
+        - title: Unified analysis pipelines
+          link: ''
+          description: >-
+            Consolidated the lab's scattered analysis scripts into unified
+            pipelines, cutting required user input by more than half and
+            speeding up runtime by 15%.

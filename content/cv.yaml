@@ -16,4 +16,4 @@ entries:
 
 # Optional: path to your CV PDF, relative to public/ (e.g. files/cv.pdf).
 # Leave empty to keep the button as a dead link.
-pdf: ''
+pdf: files/cv.pdf

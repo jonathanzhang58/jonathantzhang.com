@@ -45,7 +45,7 @@ export function transition({ from, to, els, icon, onSpawn }) {
       ease: EASE.out,
       stagger: 0.04,
     }, 0)
-    tl.to('[data-fly], .emph, .star4', {
+    tl.to('[data-fly], .emph, .star5', {
       x: -vw * 0.3,
       y: -40,
       scale: 0.7,

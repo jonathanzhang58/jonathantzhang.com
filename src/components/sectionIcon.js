@@ -1,6 +1,6 @@
 const ICONS = {
   star: `<svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round">
-    <path d="M50 6 L57 43 L94 50 L57 57 L50 94 L43 57 L6 50 L43 43 Z"/></svg>`,
+    <path d="M50 8 L61.2 38.6 L93.7 39.8 L68.1 59.9 L77 91.2 L50 73 L23 91.2 L31.9 59.9 L6.3 39.8 L38.8 38.6 Z"/></svg>`,
   smiley: `<svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3">
     <circle cx="50" cy="50" r="38"/>
     <circle cx="37" cy="42" r="2.5" fill="currentColor"/>

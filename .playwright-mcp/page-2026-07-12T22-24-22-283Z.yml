@@ -1,0 +1,60 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - link "J·Z" [ref=e3] [cursor=pointer]:
+      - /url: /
+    - generic [ref=e4]:
+      - navigation [ref=e5]:
+        - link "Home" [ref=e6] [cursor=pointer]:
+          - /url: /
+        - link "Bio" [ref=e7] [cursor=pointer]:
+          - /url: /bio
+        - link "Research" [ref=e8] [cursor=pointer]:
+          - /url: /research
+        - link "Projects" [ref=e9] [cursor=pointer]:
+          - /url: /projects
+        - link "CV" [ref=e10] [cursor=pointer]:
+          - /url: /cv
+        - link "Hobbies" [ref=e11] [cursor=pointer]:
+          - /url: /hobbies
+        - link "Contact" [ref=e12] [cursor=pointer]:
+          - /url: /contact
+      - button "Toggle dark mode" [ref=e13] [cursor=pointer]
+  - generic [ref=e17]:
+    - complementary [ref=e18]:
+      - paragraph [ref=e20]: Jonathan Zhang
+      - paragraph [ref=e21]: Undergraduate — Johns Hopkins University
+      - navigation "Social links" [ref=e22]:
+        - link "LinkedIn" [ref=e23] [cursor=pointer]:
+          - /url: /https://www.linkedin.com/in/jonathan-zhang-25702025b/
+        - link "GitHub" [ref=e24] [cursor=pointer]:
+          - /url: /https://github.com/jonathanzhang58
+        - link "Download CV" [ref=e25] [cursor=pointer]:
+          - /url: /files/cv.pdf
+    - main [ref=e26]:
+      - generic [ref=e27]:
+        - heading "Projects" [level=2] [ref=e28]
+        - list [ref=e29]:
+          - listitem [ref=e30]:
+            - paragraph [ref=e31]:
+              - link "Aspire — the Pre-Med Planner" [ref=e32] [cursor=pointer]:
+                - /url: https://aspiredoctor.com
+            - paragraph [ref=e33]: 500+ user cross-platform planning app for pre-med students with an AI-powered advising chatbot. Co-founder & COO; finalist at the SPARK and HopStart venture competitions.
+          - listitem [ref=e34]:
+            - paragraph [ref=e35]:
+              - link "Breast Cancer Identification Trainer" [ref=e36] [cursor=pointer]:
+                - /url: https://github.com/jonathanzhang58/MammologyApp
+            - paragraph [ref=e37]: Training app for 50+ JHSOM radiology residents to practice breast cancer identification on IRB-approved de-identified mammograms, built with a JHSOM professor and practicing radiologist. Finalist in the JHU CBID Healthcare Design Competition.
+          - listitem [ref=e38]:
+            - paragraph [ref=e39]:
+              - link "Kalman Filter Visualizer" [ref=e40] [cursor=pointer]:
+                - /url: https://github.com/jonathanzhang58/Kalman-filter-algorithm-and-visualizer-
+            - paragraph [ref=e41]: MATLAB implementation and visualization of the Kalman filter, built through the JHU AMS Directed Reading Program and presented at a departmental conference.
+          - listitem [ref=e42]:
+            - link [ref=e43] [cursor=pointer]:
+              - /url: /projects/home-server
+              - paragraph [ref=e44]: Home Server
+              - paragraph [ref=e45]: Repurposed old laptop as an Ubuntu home server used for file storage, video streaming, and VPN access to the home network.
+              - paragraph [ref=e46]: Read more →
+          - listitem [ref=e47]:
+            - paragraph [ref=e49]: New Project
+            - paragraph [ref=e50]: One- or two-sentence description of the project goes here.

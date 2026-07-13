@@ -29,6 +29,6 @@ describe('page registry', () => {
     expect(html).toContain('data-fly="left"')
     expect(html).toContain('data-fly="right"')
     expect(html).toContain('class="emph"')
-    expect(html).toContain('class="star4"')
+    expect(html).toContain('class="star5"')
   })
 })

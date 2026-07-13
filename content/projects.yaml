@@ -1,5 +1,7 @@
 # The Projects page. Add one block per project.
 # "image" (relative to public/, e.g. images/proj1.png) and "link" are optional.
+# Add "image_fit: contain" to show the whole image (with padding) instead of
+# cropping it to fill the box.
 #
 # Any project (or hobby) can get its own blog-style page: add a "page:" list
 # to the card and the whole card becomes clickable. Delete the "page:" block
@@ -12,44 +14,51 @@
 # it shows as a "Visit" button at the bottom of the page.
 
 projects:
+  # New project — fill in the fields below (image and link are optional).
+  - title: Parkinson's Pals at JHU
+    blurb: >-
+      Volunteer organization that pairs undergraduate students at JHU with Parkinson's patients to provide companionship and support. I founded and lead the organization at JHU, which has grown to 50+ members and 20+ patient pairs. 
+    image: 'images/parkinson.png'
+    image_fit: contain
+    link: 'https://jhuparkinsonspals.jonathantzhang.com/'
   - title: Aspire — the Pre-Med Planner
     blurb: >-
-      Cross-platform Flutter app for pre-med students with a Firebase
-      backend and an AI-powered advising chatbot. Co-founder & COO;
+      500+ user cross-platform planning app for pre-med students with an AI-powered advising chatbot. Co-founder & COO;
       finalist at the SPARK and HopStart venture competitions.
-    image: ''
+    image: images/aspire-bw.png
     link: https://aspiredoctor.com
   - title: Breast Cancer Identification Trainer
     blurb: >-
-      Training app for radiology residents to practice breast cancer
+      Training app for 50+ JHSOM radiology residents to practice breast cancer
       identification on IRB-approved de-identified mammograms, built with
       a JHSOM professor and practicing radiologist. Finalist in the JHU
       CBID Healthcare Design Competition.
-    image: ''
+    image: images/appScreenshot.png
     link: https://github.com/jonathanzhang58/MammologyApp
   - title: Kalman Filter Visualizer
     blurb: >-
-      MATLAB implementation and visualizer of the Kalman filter, built
-      through the JHU Directed Reading Program and presented at a
+      MATLAB implementation and visualization of the Kalman filter, built
+      through the JHU AMS Directed Reading Program and presented at a
       departmental conference.
-    image: ''
+    image: images/velocity.png
     link: https://github.com/jonathanzhang58/Kalman-filter-algorithm-and-visualizer-
   - title: Home Server
     blurb: >-
-      An old laptop reborn as an Ubuntu home server — Dockerized file
+      Repurposed old laptop as an Ubuntu home server used for file
       storage, video streaming, and VPN access to the home network.
-    image: ''
+    image: images/home-server.svg
     link: ''
-    # Example detail page — edit or delete this block.
-    page:
-      - >-
-        Placeholder opening paragraph — the story of the project. Why you
-        started it, what it does, what you learned along the way.
-      - heading: How it works
-      - >-
-        Placeholder detail paragraph. Plain strings like this one become
-        paragraphs; add as many as you like.
-      - image: ''
-        caption: Placeholder image — drop a file in public/images/ and put its path above.
-      - >-
-        Placeholder closing paragraph.
+    # # Example detail page — edit or delete this block.
+    # page:
+    #   - >-
+    #     Placeholder opening paragraph — the story of the project. Why you
+    #     started it, what it does, what you learned along the way.
+    #   - heading: How it works
+    #   - >-
+    #     Placeholder detail paragraph. Plain strings like this one become
+    #     paragraphs; add as many as you like.
+    #   - image: ''
+    #     caption: Placeholder image — drop a file in public/images/ and put its path above.
+    #   - >-
+    #     Placeholder closing paragraph.
+
