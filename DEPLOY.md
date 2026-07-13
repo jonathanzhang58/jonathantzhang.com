@@ -13,7 +13,8 @@ Cloudflare DNS, so you run them yourself.
 
 ## 1. Deploy to Vercel
 
-The Vercel CLI isn't installed yet. From the project directory:
+One-time setup (already done — the CLI is installed, logged in, and the
+project is linked as `new-website`). From the project directory:
 
 ```bash
 npm i -g vercel
@@ -66,6 +67,30 @@ up to ~an hour). In Vercel's Domains screen the domain flips to
 route.
 
 ---
+
+## Redeploying after changes
+
+There's no git remote wired to Vercel, so deploys upload whatever is on your
+local disk. After editing content or code:
+
+```bash
+npm test            # optional sanity check
+git add -A && git commit -m "update text"
+vercel --prod
+```
+
+- **Commit first.** `vercel --prod` deploys the files on disk, committed or
+  not — committing just keeps your git history in sync with what's live.
+- Want to preview before going live? Run `vercel` (no flag) to get an isolated
+  preview URL, click around, then `vercel --prod` when it looks right.
+- The deploy takes a few seconds (Vercel caches the build). The output ends
+  with the production URL once it's aliased.
+- If something looks wrong after a deploy, roll back from the Vercel dashboard
+  (project → Deployments → previous deployment → "Promote to Production"), or
+  `git revert` the commit and run `vercel --prod` again.
+
+> If you later push this repo to GitHub and import it in the Vercel dashboard,
+> every `git push` deploys automatically and this manual step goes away.
 
 ## Notes
 
