@@ -51,7 +51,9 @@ export function transition({ from, to, els, icon, onSpawn }) {
       y: -40,
       scale: 0.7,
       opacity: 0,
-      transformOrigin: '0 0',
+      // the star rests at rotate(15deg) around its center; moving its origin
+      // to 0 0 would visibly jump it the instant the tween starts
+      transformOrigin: (i, el) => (el.classList.contains('star5') ? '50% 50%' : '0 0'),
       duration: DUR.page,
       ease: EASE.out,
       stagger: 0.04,
