@@ -2,7 +2,7 @@
 
 # Optional: path to your portrait photo, relative to public/
 # (e.g. images/portrait.jpg). Leave empty for the placeholder block.
-portrait: 'images/portrait.png'
+portrait: 'images/portrait.webp'
 
 # Each list item is one paragraph.
 paragraphs:

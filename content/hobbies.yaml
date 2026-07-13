@@ -1,6 +1,6 @@
 # The Hobbies page. Add one block per hobby. "image" is optional; drop
 # hobby photos in public/images/hobbies/ and reference them as
-# images/hobbies/foo.jpg (any path under public/ works). Add
+# images/hobbies/foo.webp (any path under public/ works). Add
 # "image_fit: contain" to show the whole image (with padding) instead of
 # cropping it. "text" (or "blurb") is optional — leave it out and the card
 # shows just the image and title.
@@ -14,140 +14,140 @@ hobbies:
   - title: Camping
     # text: >-
     #   I love camping and hiking in the mountains. I have been to many national parks and forests, and I enjoy exploring new trails and landscapes.
-    image: 'images/hobbies/camping/ACA_IMG_1230.png'
+    image: 'images/hobbies/camping/ACA_IMG_1230.webp'
     page:
       - >-
         I was a boy scout as a kid, so I've always enjoyed the great outdoors. One day I hope to visit all the US national parks. Here are some of my favorite trips. 
       - heading: Acadia 2026 
       - >-
         Final Rating: 10/10
-      - image: images/hobbies/camping/ACA_IMG_1113.png
+      - image: images/hobbies/camping/ACA_IMG_1113.webp
         caption: Mountain in Acadia
       - >-
           Acadia is by far the best camping experience I've had. The nature is incredible and extremely diverse. There were beaches, mountains, forest trails all within 15 minutes drive within each other. It's also very close to a small town, so we were able to get groceries in the middle of the trip. Only advice would be to use the YMCAs for showering, instead of scammy coin operated showers. 
-      - image: images/hobbies/camping/ACA_IMG_1219.png
+      - image: images/hobbies/camping/ACA_IMG_1219.webp
         caption: Beach in Acadia
-      - image: images/hobbies/camping/ACA_IMG_1245.png
+      - image: images/hobbies/camping/ACA_IMG_1245.webp
         caption: Lake in Acadia
       - heading: Shenandoah 2025
       - >-
         Final Rating: 7/10
-      - image: images/hobbies/camping/SHA_IMG_1018.png
+      - image: images/hobbies/camping/SHA_IMG_1018.webp
         caption: Mountain Overlook in Shenandoah
       - >-
         Shenandoah was a fun trip. I think it really encompasses a great vanilla camping experience. There's some nice hikes with cool river crossings and some great views on nearby mountains. The best part has to be the drive up to the campsite, why you get to see some incredible mountain overlooks. If you're going camping for the first time, I think its a great intro to national parks. 
-      - image: images/hobbies/camping/SHA_20250520_193843877_Original.jpg
+      - image: images/hobbies/camping/SHA_20250520_193843877_Original.webp
         caption: Mountain in Shenandoah
-      - image: images/hobbies/camping/SHA_IMG_1134.png
+      - image: images/hobbies/camping/SHA_IMG_1134.webp
         caption: Forest in Shenandoah
-      - image: images/hobbies/camping/SHA_20250520_160320396_Original.jpg
+      - image: images/hobbies/camping/SHA_20250520_160320396_Original.webp
         caption: Waterfall in Shenandoah
   - title: Travelling
-    image: 'images/hobbies/travel/IMG_0299.png'
+    image: 'images/hobbies/travel/IMG_0299.webp'
     page:
       - >-
         Travelling is also fun. World's most basic hobby, I know, but basic things are basic because they're good. Technically, camping is travelling too, but the defining differentiator is whether or not a roof is above my head. Here's some of my favorite trips. 
       - heading: Taipei 2026
       - >-
         Final Rating: 10/10
-      - image: images/hobbies/travel/TAI_IMG_0445.png
+      - image: images/hobbies/travel/TAI_IMG_0445.webp
         caption: Taipei 101 from Elephant Mountain
       - >-
         This trip actually redefined my worldview. For anyone interested in any East Asian culture, Taiwan is the destination. It has tastes of Korea, Japan, and Mainland China, concentrated together. Basically the best of each destination, with none of the downsides. Taipei is just as impressive as other Asian megacities, but not nearly over-touristed. A bonus personally was that I could communicate to locals in Mandarin. People dream of Japan trips, but if I had to choose, I think I'd go back to Taiwan. 
-      - image: images/hobbies/travel/TAI_IMG_0571.png
+      - image: images/hobbies/travel/TAI_IMG_0571.webp
         caption: Raohe Night Market 
       - heading: Changchun 2025
       - >- 
         Final Rating: 9/10
-      - image: images/hobbies/travel/CHA_IMG_7947.png
+      - image: images/hobbies/travel/CHA_IMG_7947.webp
         caption: Literally a random park in Changchun at night
       - >- 
         Changchun is the capital of Jilin province in Northeast China. Not a normally tourist attraction, but I think it's my favorite city in China so far. The zoo is great with basically every animal you could imagine, and the atmosphere is very cheery and pleasant. It's also a nice break from the extreme hustle of some bigger cities, but still plenty to do. 
-      - image: images/hobbies/travel/CHA_IMG_8072.png
+      - image: images/hobbies/travel/CHA_IMG_8072.webp
         caption: Changchun Zoo
       - heading: Shenyang 2025
       - >-
         Final Rating: 8.5/10
-      - image: images/hobbies/travel/SHE_IMG_7647.png
+      - image: images/hobbies/travel/SHE_IMG_7647.webp
         caption: Night market in Shenyang
       - >-
         Shenyang is the capital of Liaoning province in Northeast China. Also a less travelled Chinese city, but still a great place to visit. I think it's almost Beijing-lite, a smaller city but still with great history, food, and attractions, without being too crowded. Not to mention there is a high speed rail connecting the two cities. 
-      - image: images/hobbies/travel/SHE_IMG_7752.png
+      - image: images/hobbies/travel/SHE_IMG_7752.webp
         caption: Mukden Palace in Shenyang
-      - image: images/hobbies/travel/SHE_IMG_7896.png
+      - image: images/hobbies/travel/SHE_IMG_7896.webp
         caption: Guaipo Park in Shenyang. The name means "strange slope", and the park is known for a slope that looks like it's going up, but is actually going down. The slope itself was a bit anticlimactic and more a photo trick, but the glass bridge, tiger exhibit, and other parts of the park were very fun.
       - heading: Beijing 2025
       - >-
         Final Rating: 6.5/10
-      - image: images/hobbies/travel/BEI_IMG_8155.png
+      - image: images/hobbies/travel/BEI_IMG_8155.webp
         caption: The Forbidden City in Beijing
       - >-
         Obviously, there is no shortage of things to do and see in Beijing. From the Great Wall to the Forbidden City, there really is no place on Earth like it. However, my experience was a bit marred by the tighter security, possibly due to a parade that was happening shortly after my visit. Regardless, if you only get to visit China once, Beijing is still the destination. 
-      - image: images/hobbies/travel/BEI_IMG_8190.png
+      - image: images/hobbies/travel/BEI_IMG_8190.webp
         caption: Somewhere in Beijing. 
       - heading: Boston 2025
       - >-
         Final Rating: 8/10
-      - image: images/hobbies/travel/BOS_IMG_9176.png
+      - image: images/hobbies/travel/BOS_IMG_9176.webp
         caption: River in Boston
       - >-
         Boston is a really unique American city. In fact, it's probably the only city in the US that feels a little European. The river is really beautiful and the nearby universities have some really breathtaking architecture. 
-      - image: images/hobbies/travel/BOS_IMG_9163.png
+      - image: images/hobbies/travel/BOS_IMG_9163.webp
         caption: Harvard University
-      - image: images/hobbies/travel/BOS_IMG_9214.png
+      - image: images/hobbies/travel/BOS_IMG_9214.webp
         caption: MIT
       - heading: New York 2025
       - >- 
         Final Rating: 9/10
-      - image: images/hobbies/travel/NYC_IMG_9501.png
+      - image: images/hobbies/travel/NYC_IMG_9501.webp
         caption: Times Square in New York
       - >- 
         I think NYC is my favorite American city. It's just so quintessentially American, and you feel like you're in a movie. The skyline is great, Central Park has some great juxtaposition, and the museums have some extremely famous exhibits. Definetely need to return. 
-      - image: images/hobbies/travel/NYC_IMG_9375.png
+      - image: images/hobbies/travel/NYC_IMG_9375.webp
         caption: A street near Central Park
       - heading: Washington D.C. 2025
       - >-
         Final Rating: 7/10
-      - image: images/hobbies/travel/WDC_IMG_1790.png
+      - image: images/hobbies/travel/WDC_IMG_1790.webp
         caption:  B-52 and B-1B bombers overhead in DC. 
       - >-
         NOT A POLITICAL STATEMENT. I go to college in Baltimore so I decided might as well see the planes in the state fair. The planes were really cool. 
-      - image: images/hobbies/travel/WDC_IMG_1749.png
+      - image: images/hobbies/travel/WDC_IMG_1749.webp
         caption: 250th Anniversary State fair
       - heading: Raleigh, NC 2026
       - >- 
         Final Rating: 5/10
-      - image: images/hobbies/travel/RAL_IMG_1610.png
+      - image: images/hobbies/travel/RAL_IMG_1610.webp
         caption: North Carolina Capitol Building
       - >-
         Raleigh is the capitol of North Carolina. The art museum is really cool. However, as you might expect, there's not a great deal to do in Raleigh. Sorry North Carolina. 
-      - image: images/hobbies/travel/RAL+IMG_1609.png
+      - image: images/hobbies/travel/RAL+IMG_1609.webp
         caption: Presidential Statues in Raleigh
       - heading: Richmond, VA 2026
       - >-
         Final Rating: 7/10
-      - image: images/hobbies/travel/RIC_IMG_8850.png
+      - image: images/hobbies/travel/RIC_IMG_8850.webp
         caption: Civil War History Museum
       - >-
         Richmond is the capital of Virginia, and the site of a great deal of American history. The museum was very well done and informative. Many historical figures are also buried here. For fellow history enjoyers, I think Richmond is one of the must sees in the US. 
-      - image: images/hobbies/travel/RIC_IMG_1602.png
+      - image: images/hobbies/travel/RIC_IMG_1602.webp
         caption: James Monroe's grave in Richmond
   - title: Model United Nations
-    image: 'images/hobbies/mun/UNC_IMG_8646.png'
+    image: 'images/hobbies/mun/UNC_IMG_8646.webp'
     page:
       - >-
         I did MUN in high school and I thought it was great, but my club was less a team and more "let's sit in a circle with the history teacher and talk about world politics." Surely collegiate MUN is the same thing right? NO. Competitive MUN is a unique and frightening experience that I can only describe as "competitive work politics". To award, it matters less so what laws are passed, and more so how well you "command" the room. As a result, you have a bunch of strong personalities in a room pretending to collaborate when really they're trying to make the other their pawn. It can be really frustrating sometimes, but also sometimes fun. Sometimes. Luckily for me it's just a hobby because I'm a STEM student. Here's some conferences I went to. 
       - heading: UNCMUNC 2025
       - >-
         UNC Chapel Hill's Conference. I did not win anything ;(
-      - image: 'images/hobbies/mun/UNC_IMG_8646.png'
+      - image: 'images/hobbies/mun/UNC_IMG_8646.webp'
         caption: A very tired me after the conference finished. 
-      - image: 'images/hobbies/mun/UNC_IMG_8637.png'
+      - image: 'images/hobbies/mun/UNC_IMG_8637.webp'
         caption: UNC Chapel Hill Old Well
       - heading: HOPMUNC 2026
       - >-
         JHU's conference. Obviously, I go here. I was a staffer, so I didn't compete. 
-      - image: 'images/hobbies/mun/JHU_IMG_0174.png'
+      - image: 'images/hobbies/mun/JHU_IMG_0174.webp'
         caption: JHU School of International Studies Building, where the conference was held.
       - heading: "&MUN 2026"
       - >-
@@ -156,7 +156,7 @@ hobbies:
       - >-
         University of Pennsylvania's conference. I did not win anything ;(  
   - title: Modded Minecraft
-    image: 'public\images\hobbies\MC.png'
+    image: 'images/hobbies/minecraft/MC.webp'
     page:   
       - >-
         Modded Minecraft is my go to video game. I think learning all the new mods and their mechanics really appeals to me somehow. Sometimes I find it so fun I have to take a proactive break from it. Here are some of my favorite modpacks.

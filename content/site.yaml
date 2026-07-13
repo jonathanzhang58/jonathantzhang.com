@@ -32,4 +32,4 @@ socials:
 
 # Optional: path to a small square face photo for the sidebar, relative to public/
 # (e.g. images/face.jpg). Leave empty to keep the smiley placeholder.
-face: 'images/icon.png'
+face: 'images/icon.webp'

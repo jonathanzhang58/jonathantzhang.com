@@ -6,6 +6,7 @@ import { gridSVG } from './components/motifs.js'
 import { heroIntro } from './animations/heroIntro.js'
 import { transition } from './animations/pageTransition.js'
 import { prefersReducedMotion } from './animations/motion.js'
+import { handleStarClick } from './animations/starEgg.js'
 import { initTheme, toggleTheme, getTheme } from './theme.js'
 import site from '../content/site.yaml'
 
@@ -68,6 +69,14 @@ els.page.addEventListener('click', (e) => {
   if (!a) return
   e.preventDefault()
   router.navigate(a.getAttribute('href'))
+})
+
+// Easter egg: the star by the name spins on click; four clicks unscrew it,
+// and clicking the empty spot pops it back in.
+els.page.addEventListener('click', (e) => {
+  const star = e.target.closest('.star5')
+  if (!star || prefersReducedMotion()) return
+  handleStarClick(star)
 })
 
 router.start()

@@ -6,7 +6,7 @@ import content from '../../content/hobbies.yaml'
 function hobbyCardHTML(item) {
   const fit = item.image_fit === 'contain' ? ' card-thumb-contain' : ''
   const thumb = item.image
-    ? `<img class="card-thumb${fit}" src="/${esc(item.image)}" alt="">`
+    ? `<img class="card-thumb${fit}" src="/${esc(item.image)}" alt="" loading="lazy" decoding="async">`
     : `<div class="card-thumb" aria-hidden="true"></div>`
   const text = item.blurb ?? item.text
   const blurb = text ? `<p class="card-blurb">${esc(text)}</p>` : ''

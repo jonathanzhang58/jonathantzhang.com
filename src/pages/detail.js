@@ -14,7 +14,7 @@ function blockHTML(block) {
     const cap = block.caption ? `<figcaption class="detail-cap">${esc(block.caption)}</figcaption>` : ''
     return `
       <figure class="detail-fig">
-        <img class="detail-img" src="/${esc(block.image)}" alt="${esc(block.caption ?? block.image)}">
+        <img class="detail-img" src="/${esc(block.image)}" alt="${esc(block.caption ?? block.image)}" loading="lazy" decoding="async">
         ${cap}
       </figure>`
   }

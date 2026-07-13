@@ -1,6 +1,15 @@
 import { gsap } from 'gsap'
 import { DUR, EASE } from './motion.js'
 
+// Shared with the star easter egg: reappearing uses the same pop as page load.
+export const STAR_POP = {
+  scale: 0,
+  rotation: 120,
+  transformOrigin: '50% 50%',
+  duration: DUR.pop,
+  ease: EASE.pop,
+}
+
 export function heroIntro() {
   const tl = gsap.timeline()
   const vw = window.innerWidth
@@ -30,13 +39,7 @@ export function heroIntro() {
     stagger: 0.07,
   }, '>-0.1')
 
-  tl.from('.star5', {
-    scale: 0,
-    rotation: 120,
-    transformOrigin: '50% 50%',
-    duration: DUR.pop,
-    ease: EASE.pop,
-  }, '<0.1')
+  tl.from('.star5', STAR_POP, '<0.1')
 
   tl.from('.section-icon', {
     opacity: 0,

@@ -24,7 +24,7 @@
   line-height: 1.02;
 }
 .emph { position: absolute; top: -34px; left: -40px; width: 64px; }
-.star5 { position: absolute; right: 55px; bottom: -22.5px; width: 50px; transform: rotate(15deg); }
+.star5 { position: absolute; right: 70px; bottom: -17.5px; width: 50px; transform: rotate(15deg); cursor: pointer; }
 .titles { color: var(--hl-2); margin-top: 34px; }
 .splash {
   font-size: 16.5px;
