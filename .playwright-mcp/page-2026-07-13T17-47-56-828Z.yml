@@ -1,0 +1,56 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - link "J·Z" [ref=e3] [cursor=pointer]:
+      - /url: /
+    - generic [ref=e4]:
+      - navigation [ref=e5]:
+        - link "Home" [ref=e6] [cursor=pointer]:
+          - /url: /
+        - link "Bio" [ref=e7] [cursor=pointer]:
+          - /url: /bio
+        - link "Research" [ref=e8] [cursor=pointer]:
+          - /url: /research
+        - link "Projects" [ref=e9] [cursor=pointer]:
+          - /url: /projects
+        - link "CV" [ref=e10] [cursor=pointer]:
+          - /url: /cv
+        - link "Hobbies" [ref=e11] [cursor=pointer]:
+          - /url: /hobbies
+        - link "Contact" [ref=e12] [cursor=pointer]:
+          - /url: /contact
+      - button "Toggle dark mode" [ref=e13] [cursor=pointer]
+  - generic [ref=e17]:
+    - complementary [ref=e18]:
+      - paragraph [ref=e20]: Jonathan Zhang
+      - paragraph [ref=e21]: Undergraduate — Johns Hopkins University
+      - navigation "Social links" [ref=e22]:
+        - link "LinkedIn" [ref=e23] [cursor=pointer]:
+          - /url: /https://www.linkedin.com/in/jonathan-zhang-25702025b/
+        - link "GitHub" [ref=e24] [cursor=pointer]:
+          - /url: /https://github.com/jonathanzhang58
+        - link "Download CV" [ref=e25] [cursor=pointer]:
+          - /url: /files/cv.pdf
+    - main [ref=e26]:
+      - generic [ref=e27]:
+        - heading "Hobbies" [level=2] [ref=e28]
+        - list [ref=e29]:
+          - listitem [ref=e30]:
+            - link [ref=e31] [cursor=pointer]:
+              - /url: /hobbies/camping
+              - paragraph [ref=e32]: Camping
+          - listitem [ref=e33]:
+            - link [ref=e34] [cursor=pointer]:
+              - /url: /hobbies/travelling
+              - paragraph [ref=e35]: Travelling
+          - listitem [ref=e36]:
+            - link [ref=e37] [cursor=pointer]:
+              - /url: /hobbies/model-united-nations
+              - paragraph [ref=e38]: Model United Nations
+          - listitem [ref=e39]:
+            - link [ref=e40] [cursor=pointer]:
+              - /url: /hobbies/modded-minecraft
+              - paragraph [ref=e41]: Modded Minecraft
+          - listitem [ref=e42]:
+            - link [ref=e43] [cursor=pointer]:
+              - /url: /hobbies/table-tennis
+              - paragraph [ref=e44]: Table Tennis

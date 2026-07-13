@@ -12,6 +12,10 @@ import site from '../content/site.yaml'
 
 const siteName = site.name_lines.join(' ')
 
+// every page swap lands at the top; without this the browser re-applies the
+// old offset on back/forward and fights the reset in renderInstant/setPage
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual'
+
 initTheme()
 document.getElementById('grid-mount').innerHTML = gridSVG()
 renderSidebar(document.getElementById('sidebar'))
@@ -28,6 +32,7 @@ nav.setThemeIcon(getTheme())
 let activeTl = null
 
 function renderInstant(to) {
+  window.scrollTo(0, 0)
   document.body.dataset.page = to.path === '/' ? 'home' : to.path.slice(1)
   els.page.innerHTML = to.render()
   icon.set(to.icon)

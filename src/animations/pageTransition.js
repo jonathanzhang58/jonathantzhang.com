@@ -14,7 +14,8 @@ export function flipDirection(from, to) {
   return to.parent ? 1 : -1
 }
 
-function setPage(to, els, icon) {
+export function setPage(to, els, icon) {
+  window.scrollTo(0, 0)
   document.body.dataset.page = to.path === '/' ? 'home' : to.path.slice(1)
   els.page.innerHTML = to.render()
   icon.set(to.icon)
