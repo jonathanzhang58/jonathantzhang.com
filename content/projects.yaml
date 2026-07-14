@@ -15,12 +15,6 @@
 
 projects:
   # New project — fill in the fields below (image and link are optional).
-  - title: Parkinson's Pals at JHU
-    blurb: >-
-      Volunteer organization that pairs undergraduate students at JHU with Parkinson's patients to provide companionship and support. I founded and lead the organization at JHU, which has grown to 50+ members and 20+ patient pairs. 
-    image: 'images/parkinson.png'
-    image_fit: contain
-    link: 'https://jhuparkinsonspals.jonathantzhang.com/'
   - title: Breast Cancer Identification Trainer
     blurb: >-
       Training app for 50+ JHSOM radiology residents to practice breast cancer
@@ -42,6 +36,12 @@ projects:
       finalist at the SPARK ($500) and HopStart venture competitions.
     image: images/aspire-bw.png
     link: https://aspiredoctor.com
+  - title: Parkinson's Pals at JHU
+    blurb: >-
+      Volunteer organization that pairs undergraduate students at JHU with Parkinson's patients to provide companionship and support. I founded and lead the organization at JHU, which has grown to 50+ members and 20+ patient pairs. 
+    image: 'images/parkinson.png'
+    image_fit: contain
+    link: 'https://jhuparkinsonspals.jonathantzhang.com/'
   - title: Multiple Sequence Alignment Using Monte Carlo Tree Search
     blurb: >-
       Reframed multiple sequence alignment, a key input to protein structure prediction, as a
