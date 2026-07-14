@@ -42,13 +42,31 @@ projects:
     image: images/DeltaP.png
     image_fit: contain
     link: /files/deltap-spark-pitch-deck.pdf
-  - title: Kalman Filter Visualizer
+  - title: Multiple Sequence Alignment Using Monte Carlo Tree Search
     blurb: >-
-      MATLAB implementation and visualization of the Kalman filter, built
-      through the JHU AMS Directed Reading Program and presented at a
-      departmental conference.
+      Reframed multiple sequence alignment, a key input to protein structure prediction, as a
+      search problem solved with Monte Carlo tree search methods (MCTS, NRPA, and a Beam NRPA
+      variant). Benchmarked against classical star alignment and fed the results into AlphaFold2
+      to measure downstream protein-folding accuracy.
+    image: images/pTM.png
+    link: https://github.com/jonathanzhang58/MCTS_for_MSA
+  - title: Kalman Filter Visualizer 
+    blurb: >-
+      MATLAB implementation and visualization of the Kalman filter, tracking a
+      two-state system from a sensor that measures only one state. Recovers the
+      hidden variable and denoising the observed one. Built through the JHU AMS
+      Directed Reading Program and presented at a departmental conference.
     image: images/velocity.png
     link: https://github.com/jonathanzhang58/Kalman-filter-algorithm-and-visualizer-
+  - title: NASA C-MAPSS Predictive Engine Maintenance
+    blurb: >-
+      Engine failure pre-warning system that predicts the remaining useful life of
+      turbofan jet engines from 21-sensor time-series data in NASA's C-MAPSS dataset.
+      XGBoost models with engineered rolling-window features proved over 4x more
+      cost-effective than threshold-based baselines.
+    image: images/cmapss.png
+    image_fit: contain
+    link: 'https://github.com/jonathanzhang58/NASA-C-MAPPS-Predictive-Maintenance'
   - title: Home Server
     blurb: >-
       Repurposed old laptop as an Ubuntu home server used for file
