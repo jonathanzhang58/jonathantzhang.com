@@ -35,6 +35,11 @@
   color: var(--ink-2);
   margin-top: var(--space-2);
 }
+.splash a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
 .extra {
   display: inline-block;
   align-self: flex-start;
