@@ -17,9 +17,9 @@ export function mdLinks(s = '') {
   )
 }
 
-// Escape text, then turn __text__ into underlined text.
-export function mdUnderline(s = '') {
-  return esc(s).replace(/__([^_]+)__/g, '<u>$1</u>')
+// Escape text, then turn __text__ into bold text.
+export function mdBold(s = '') {
+  return esc(s).replace(/__([^_]+)__/g, '<strong>$1</strong>')
 }
 
 // "Home Server!" -> "home-server", for card detail-page URLs.
