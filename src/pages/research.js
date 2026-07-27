@@ -16,7 +16,15 @@ export default {
           <p class="pub-title${p.link ? ' pub-title-linked' : ''}">${title}</p>
           <p class="pub-meta u-label">${esc(p.authors)}</p>
           <p class="pub-meta u-label">Venue: ${esc(p.venue)}</p>
-          ${p.note ? `<p class="pub-meta u-label">${esc(p.note)}</p>` : ''}
+          ${
+            p.note
+              ? `<p class="pub-meta pub-note u-label">${
+                  p.note_link
+                    ? `<a href="${esc(p.note_link)}" target="_blank" rel="noopener">${esc(p.note)}</a>`
+                    : esc(p.note)
+                }</p>`
+              : ''
+          }
         </li>`
       })
       .join('')

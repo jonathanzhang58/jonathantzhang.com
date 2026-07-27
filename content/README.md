@@ -42,7 +42,18 @@ touch the code. Each page has its own file:
       authors: Me, A Colleague
       venue: NeurIPS 2026
       link: https://arxiv.org/abs/xxxx.xxxxx
+      note: archive link
+      note_link: https://arxiv.org/abs/xxxx.xxxxx
   ```
+
+  For a publication, `link` is optional and underlines the title, making it
+  clickable. `note` is an optional extra line below the venue. Pair it with
+  `note_link` to turn the note into a link — it is underlined only when
+  `note_link` is set; a `note` on its own stays plain text. Note that `note`
+  is shown as plain text, so markdown like `[label](url)` will not render —
+  use `note` plus `note_link` instead. Quote any value containing a colon
+  followed by a space (`note: 'Preprint: see arXiv'`), or the yaml will not
+  parse.
 
 ## Adding photos and files
 

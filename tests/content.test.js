@@ -17,6 +17,33 @@ describe('content propagates from yaml to pages', () => {
     for (const p of research.publications) expect(html).toContain(p.venue)
   })
 
+  it('underlines a publication title only when it has a link', () => {
+    const html = getPage('/research').render()
+    for (const p of research.publications) {
+      const linked = html.includes(
+        `<p class="pub-title pub-title-linked"><a href="${esc(p.link)}" target="_blank" rel="noopener">${esc(p.title)}</a></p>`,
+      )
+      const plain = html.includes(`<p class="pub-title">${esc(p.title)}</p>`)
+      expect(p.link ? linked : plain).toBe(true)
+    }
+  })
+
+  it('links a publication note only when note_link is set', () => {
+    const html = getPage('/research').render()
+    for (const p of research.publications) {
+      if (!p.note) continue
+      // the note is underlined via `.pub-note a`, so it must be an anchor
+      // when note_link is set and bare text when it is not
+      if (p.note_link) {
+        expect(html).toContain(
+          `<a href="${esc(p.note_link)}" target="_blank" rel="noopener">${esc(p.note)}</a>`,
+        )
+      } else {
+        expect(html).toContain(`<p class="pub-meta pub-note u-label">${esc(p.note)}</p>`)
+      }
+    }
+  })
+
   it('research renders both labs with their projects', () => {
     const html = getPage('/research').render()
     expect(research.labs).toHaveLength(2)

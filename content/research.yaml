@@ -7,6 +7,8 @@ publications:
     authors: Jonathan Zhang, Erik Skalnes, Jacob Chen, Michael Oberst
     venue: UAI 2026 (accepted)
     link: 'https://arxiv.org/abs/2607.21806'
+    note: ARXIV LINK
+    note_link: 'https://arxiv.org/abs/2607.21806'
 
 # The two labs you work in, shown side by side under the publications.
 # "focus" is the small eyebrow line above the lab name. "link" is optional
