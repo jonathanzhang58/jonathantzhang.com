@@ -1,7 +1,7 @@
 # The Research page.
 
 intro: >-
-  I'm involved in two labs at Johns Hopkins University. In the Oberst Lab, I do research on machine learning, causal inference, and statstical methodology. In the Feinberg Lab, I apply my statistical knowledge to bioinformatics and epigenetics.
+  I'm involved in two labs at Johns Hopkins University. In the Oberst Lab, I do research on machine learning, causal inference, and statistical methodology. In the Feinberg Lab, I apply my statistical knowledge to bioinformatics and epigenetics.
 publications:
   - title: Bounding the Causal Impact of ML-assisted Decision-Making via Counterfactual Correctness
     authors: Jonathan Zhang, Erik Skalnes, Jacob Chen, Michael Oberst
@@ -45,7 +45,7 @@ labs:
         - title: Mediation analysis for fat gain study in mice. 
           link: ''
           description: >-
-            We are studying the effects of a reduced methyline diet on fat gain in mice. However, the fat changes may be confounded by reduced apetite due to diet change. I developed a mediation analysis framework to quantify the direct and indirect effects of diet on fat gain, and applied it to find the mediating effect of appetite on fat gain was insignificant.
+            We are studying the effects of a reduced methyline diet on fat gain in mice. However, the fat changes may be confounded by reduced appetite due to diet change. I developed a mediation analysis framework to quantify the direct and indirect effects of diet on fat gain, and applied it to find the mediating effect of appetite on fat gain was insignificant.
         - title: Unified analysis pipelines
           link: ''
           description: >-

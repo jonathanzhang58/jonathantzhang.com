@@ -54,7 +54,7 @@ projects:
     blurb: >-
       MATLAB implementation and visualization of the Kalman filter, tracking a
       two-state system from a sensor that measures only one state. Recovers the
-      hidden variable and denoising the observed one. Built through the JHU AMS
+      hidden variable and denoises the observed one. Built through the JHU AMS
       Directed Reading Program and presented at a departmental conference.
     image: images/velocity.png
     link: https://github.com/jonathanzhang58/Kalman-filter-algorithm-and-visualizer-
