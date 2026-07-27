@@ -13,10 +13,15 @@ export function renderSidebar(el) {
   const socials = (site.socials ?? [])
     .filter(s => s.url)
     .map(s => {
+      // absolute urls (https:, mailto:, //host) are used verbatim; only
+      // site-relative ones get anchored to the root, so they still resolve
+      // from nested routes like /hobbies/camping
+      const absolute = /^([a-z][a-z0-9+.-]*:|\/\/)/i.test(s.url)
+      const href = absolute ? esc(s.url) : `/${esc(s.url.replace(/^\//, ''))}`
       const isDownload = /\.pdf($|\?)/i.test(s.url) || /\/files\//.test(s.url)
-      const rel = s.url.startsWith('http') ? ' target="_blank" rel="noopener"' : ''
+      const rel = /^https?:\/\//i.test(s.url) ? ' target="_blank" rel="noopener"' : ''
       const dl = isDownload ? ' download' : ''
-      return `<a class="sidebar-social" href="/${esc(s.url.replace(/^\//, ''))}"${rel}${dl}>${esc(s.label)}</a>`
+      return `<a class="sidebar-social" href="${href}"${rel}${dl}>${esc(s.label)}</a>`
     })
     .join('')
   el.innerHTML = `
