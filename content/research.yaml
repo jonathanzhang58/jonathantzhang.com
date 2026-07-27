@@ -6,7 +6,6 @@ publications:
   - title: Bounding the Causal Impact of ML-assisted Decision-Making via Counterfactual Correctness
     authors: Jonathan Zhang, Erik Skalnes, Jacob Chen, Michael Oberst
     venue: UAI 2026 (accepted)
-    # note: 
     link: 'https://arxiv.org/abs/2607.21806'
 
 # The two labs you work in, shown side by side under the publications.

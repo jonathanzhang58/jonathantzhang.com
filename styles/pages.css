@@ -99,6 +99,7 @@ img.card-thumb-contain { object-fit: contain; padding: var(--space-2); backgroun
 .pub:nth-child(3n + 2) { border-left-color: var(--hl-2); }
 .pub:nth-child(3n) { border-left-color: var(--hl-3); }
 .pub-title { font-weight: 700; line-height: 1.4; }
+.pub-title-linked { text-decoration: underline; text-underline-offset: 3px; }
 .pub-meta { color: var(--ink-2); margin-top: var(--space-1); }
 
 .lab-grid {

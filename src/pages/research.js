@@ -13,7 +13,7 @@ export default {
           : esc(p.title)
         return `
         <li class="pub">
-          <p class="pub-title">${title}</p>
+          <p class="pub-title${p.link ? ' pub-title-linked' : ''}">${title}</p>
           <p class="pub-meta u-label">${esc(p.authors)}</p>
           <p class="pub-meta u-label">Venue: ${esc(p.venue)}</p>
           ${p.note ? `<p class="pub-meta u-label">${esc(p.note)}</p>` : ''}
