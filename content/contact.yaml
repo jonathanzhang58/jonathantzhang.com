@@ -13,5 +13,5 @@ links:
   - label: LinkedIn
     url: https://www.linkedin.com/in/jonathan-zhang-25702025b/
   # Uncomment once you have a Google Scholar profile:
-  # - label: Google Scholar
-  #   url: ''
+  - label: Google Scholar
+    url: 'https://scholar.google.com/citations?user=xNoDDFwAAAAJ&hl=en'
