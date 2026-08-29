@@ -11,20 +11,22 @@ export default {
         const title = p.link
           ? `<a href="${esc(p.link)}" target="_blank" rel="noopener">${esc(p.title)}</a>`
           : esc(p.title)
+        // a publication can carry several notes (arXiv, PMLR, ...); the older
+        // single note/note_link pair still works and is treated as one note
+        const notes = p.notes ?? (p.note ? [{ note: p.note, note_link: p.note_link }] : [])
+        const noteHtml = notes
+          .map((n) =>
+            n.note_link
+              ? `<a href="${esc(n.note_link)}" target="_blank" rel="noopener">${esc(n.note)}</a>`
+              : esc(n.note)
+          )
+          .join('<span class="pub-note-sep">/</span>')
         return `
         <li class="pub">
           <p class="pub-title${p.link ? ' pub-title-linked' : ''}">${title}</p>
           <p class="pub-meta u-label">${esc(p.authors)}</p>
           <p class="pub-meta u-label">Venue: ${esc(p.venue)}</p>
-          ${
-            p.note
-              ? `<p class="pub-meta pub-note u-label">${
-                  p.note_link
-                    ? `<a href="${esc(p.note_link)}" target="_blank" rel="noopener">${esc(p.note)}</a>`
-                    : esc(p.note)
-                }</p>`
-              : ''
-          }
+          ${notes.length ? `<p class="pub-meta pub-note u-label">${noteHtml}</p>` : ''}
         </li>`
       })
       .join('')

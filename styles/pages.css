@@ -104,6 +104,7 @@ img.card-thumb-contain { object-fit: contain; padding: var(--space-2); backgroun
 /* a note is underlined only when it is actually a link; plain notes stay normal */
 .pub-note a { text-decoration: underline; text-underline-offset: 3px; }
 .pub-note a:hover { color: var(--hl-1); }
+.pub-note-sep { color: var(--ink-2); opacity: 0.5; margin: 0 0.6em; }
 
 .lab-grid {
   display: grid;
