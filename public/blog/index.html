@@ -81,15 +81,15 @@ $$
 
 <p>This was the approach Medtronic used for GI Genius, the first device of this kind to reach the market. Because the FDA accepted it as sufficient and approved the device, most competitors perform the same study to gain FDA approval.</p>
 
-<p>However, companies are not required to show that any of these statistics improve. The FDA's job is not to ensure that every device is a breakthrough; it is to ensure that devices on the market are not actively harmful. So companies only need to demonstrate <em>non-inferiority</em>. Under the FDA's statistical guidance, non-inferiority is shown by testing that a statistic does not fall from the control arm to the AI arm by more than some "clinically relevant" margin. The GI Genius trial set the precedent: margins of 10 percentage points for ADR, 0 for APC, and 15 percentage points for THR.</p>
+<p>However, companies are not required to show that any of these statistics improve. The FDA's job is not to ensure that every device is a breakthrough; it is to ensure that devices on the market are not actively harmful. So companies only need to demonstrate non-inferiority. Under the FDA's statistical guidance, non-inferiority is shown by testing that a statistic does not fall from the control arm to the AI arm by more than some "clinically relevant" margin. The GI Genius trial set the precedent: margins of 10 percentage points for ADR, 0 for APC, and 15 percentage points for THR.</p>
 
 <p>At first glance this is reasonable. We want the AI to help physicians remove more dangerous polyps, so counting polyps removed makes sense.</p>
 
-<p>An obvious objection to exclusively testing for that metric would be that maybe the AI does not help physicians <em>find</em> anything additional, only makes them more likely to excise. It could be true that every AI-highlighted polyp would have already been noticed, but the highlighting encourages physicians to excise when they would not have before. Making physicians more liberal excisors will raise ADR and APC without actually improving any diagnostic capability, which is the real goal of the software. In that case the device is at best useless and at worst dangerous, we could get the same result by telling physicians to be more trigger-happy.</p>
+<p>An obvious objection to exclusively testing for that metric would be that maybe the AI does not help physicians find anything additional, only makes them more likely to excise. It could be true that every AI-highlighted polyp would have already been noticed, but the highlighting encourages physicians to excise when they would not have before. Making physicians more liberal excisors will raise ADR and APC without actually improving any diagnostic capability, which is the real goal of the software. In that case the device is at best useless and at worst dangerous, we could get the same result by telling physicians to be more trigger-happy.</p>
 
 <p>Thus, THR is also measured. If the AI does not make the mix of excised polyps any worse, then physicians are not just removing more benign tissue; they must be finding more malignant polyps. The device is genuinely improving physician skill, rather than changing their excision policy.</p>
 
-<p>However, as we will show, because THR is a <em>proportion</em>, it interacts very badly with a non-inferiority margin, often causing this initially reasonable test to be vacuous.</p>
+<p>However, as we will show, because THR is a proportion, it interacts very badly with a non-inferiority margin, often causing this initially reasonable test to be vacuous.</p>
 
 <h2>Skill versus threshold from first principles</h2>
 
@@ -132,7 +132,7 @@ $$
 
 <p>where subscript 0 is the control arm and 1 is the AI arm. (Note: although we only observe counts, not rates, but both rates share the same denominator so they cancel.)</p>
 
-<p>When this test rejects in expectation, we can be sure that the skill between the two arms is different. However, as we discussed prior, its power is very weak. Two points can come from different ROC curves but still have non-negative values of \(\Delta_{AI}\). In fact, for <em>any</em> non-negative value of \(\Delta_{AI}\), one can construct a classifier that produces exactly those counts through a threshold change alone. Consider the following</p>
+<p>When this test rejects in expectation, we can be sure that the skill between the two arms is different. However, as we discussed prior, its power is very weak. Two points can come from different ROC curves but still have non-negative values of \(\Delta_{AI}\). In fact, for any non-negative value of \(\Delta_{AI}\), one can construct a classifier that produces exactly those counts through a threshold change alone. Consider the following</p>
 
 <figure class="static">
   <table class="data compact">
@@ -180,9 +180,9 @@ $$
   <figcaption>Figure 2. An adversarial physician. Each point on the curve is a polyp type: its true malignancy probability on the horizontal axis, the physician's estimate on the vertical axis. Polyps are spread evenly along the horizontal axis; those with true probability above ½ count as malignant. Everything above the threshold line (highlighted) is excised. Drag the line or use the slider. The four quadrants are the four cells of the confusion matrix.</figcaption>
 </figure>
 
-<p>Polyps to the right of the vertical line are malignant in expectation; polyps to the left are benign. The horizontal line is the excision threshold \(\zeta\); everything above it is excised. The curve therefore splits into four regions matching the four cells of the confusion matrix. This physician is almost antagonistic. the polyps most likely to be malignant are assigned a <em>lower</em> estimate than the polyps least likely to be malignant. Starting at \(\zeta = 1/2\), lowering the threshold to just under \(9/20\) excises a block of polyps that are all malignant in expectation, raising true positives with no new false positives. Thus a threshold change reproduces the table above.</p>
+<p>Polyps to the right of the vertical line are malignant in expectation; polyps to the left are benign. The horizontal line is the excision threshold \(\zeta\); everything above it is excised. The curve therefore splits into four regions matching the four cells of the confusion matrix. This physician is almost antagonistic. the polyps most likely to be malignant are assigned a lower estimate than the polyps least likely to be malignant. Starting at \(\zeta = 1/2\), lowering the threshold to just under \(9/20\) excises a block of polyps that are all malignant in expectation, raising true positives with no new false positives. Thus a threshold change reproduces the table above.</p>
 
-<p>Clearly, this example is contrived. Real physicians are not adversarial. So let's add the following  assumption: the physician's estimate is monotonically non-decreasing in the true probability. If one polyp is genuinely more likely to be malignant than another, the physician does not think it is <em>less</em> likely. This is a low bar. A physician who systematically ranked dangerous polyps as safer than safe ones would not be a physician for long.</p>
+<p>Clearly, this example is contrived. Real physicians are not adversarial. So let's add the following  assumption: the physician's estimate is monotonically non-decreasing in the true probability. If one polyp is genuinely more likely to be malignant than another, the physician does not think it is less likely. This is a low bar. A physician who systematically ranked dangerous polyps as safer than safe ones would not be a physician for long.</p>
 
 <p>Under this assumption, if there is no change in skill between arms (\(H_0\)), it can be shown that \(\Delta_{AI}\) must fall in the interval:</p>
 
@@ -192,7 +192,7 @@ $$
 
 <p>The true negative and false negative counts on the right are unidentifiable, so we cannot use the upper bound. But the lower bound is made of observable counts, and since counts are non-negative it is at least zero. So we test whether \(\Delta_{AI} < FP_0 / TP_0\). This is strictly stronger than testing \(\Delta_{AI} < 0\). In the example above, \(FP_0 / TP_0 = 90/60 = 1.5 > 0 = \Delta_{AI}\), and we conclude that the AI improved skill, which matches our intuition.</p>
 
-<p>A little algebra shows that this test is exactly equivalent to testing whether THR <em>increases</em> from the control arm to the AI arm. Thus, a superiority test on THR is, under monotonicity, a test of skill.</p>
+<p>A little algebra shows that this test is exactly equivalent to testing whether THR increases from the control arm to the AI arm. Thus, a superiority test on THR is, under monotonicity, a test of skill.</p>
 
 <h2>Non-inferiority Margins</h2>
 
@@ -268,10 +268,10 @@ $$
       <ul class="calc-steps"></ul>
     </div>
   </div>
-  <figcaption>Figure 3. Non-inferiority calculator. Enter the excision counts in each arm, the control THR, and the margin. The output is the malignancy rate the <em>additional</em> excisions must exceed for the trial to declare non-inferiority, \(\text{THR}_0 - N\,S_1/\Delta S\). When this is at or below zero the box turns red: the test is vacuous and passes no matter what the extra polyps were.</figcaption>
+  <figcaption>Figure 3. Non-inferiority calculator. Enter the excision counts in each arm, the control THR, and the margin. The output is the malignancy rate the additional excisions must exceed for the trial to declare non-inferiority, \(\text{THR}_0 - N\,S_1/\Delta S\). When this is at or below zero the box turns red: the test is vacuous and passes no matter what the extra polyps were.</figcaption>
 </figure>
 
-<p>This is not a theoretical curiosity. In the SKOUT trial, 1,136 polyps were excised in the AI arm and 963 in the control arm, so \(S_1 / \Delta S = 1136 / 173 \approx 6.57\). The trial used a margin of \(N = 0.14\) on THR, which permits the additional excisions to have a malignancy rate up to \(0.14 \times 6.57 \approx 0.92\) <em>below</em> the control THR of 0.717. Since \(\pi_\Delta\) is a proportion bounded between 0 and 1, the null hypothesis was guaranteed to be rejected regardless of how many of the additional excisions were malignant. The test was meaningless.</p>
+<p>This is not a theoretical curiosity. In the SKOUT trial, 1,136 polyps were excised in the AI arm and 963 in the control arm, so \(S_1 / \Delta S = 1136 / 173 \approx 6.57\). The trial used a margin of \(N = 0.14\) on THR, which permits the additional excisions to have a malignancy rate up to \(0.14 \times 6.57 \approx 0.92\) below the control THR of 0.717. Since \(\pi_\Delta\) is a proportion bounded between 0 and 1, the null hypothesis was guaranteed to be rejected regardless of how many of the additional excisions were malignant. The test was meaningless.</p>
 
 <p>One might object that the 14% margin was meant as a relative decrease rather than an absolute 14 percentage points, which would correspond to \(N = 0.14 \times 0.717 \approx 0.10\). Under that reading the threshold becomes \(0.717 - 0.10 \times 6.57 \approx 0.06\): the trial would still have passed as long as about 6% of the additional excisions, roughly 10 of the 173 extra polyps, were malignant. Although the test is not guaranteed to reject, it is very difficult to fail.</p>
 
@@ -279,7 +279,7 @@ $$
 
 <h2>What to do instead</h2>
 
-<p>If regulators insist on non-inferiority, the fix is to stop putting the margin on a proportion. The utility-based approach from earlier works. Assign weights to the change in each cell of the confusion matrix and test whether the weighted sum is non-inferior. Although the false negatives and true negatives are not observed, it can be shown that the <em>change</em> in false negatives between arms is point-identified. The change in utility is therefore a weighted combination of these identified quantities. A weighted sum, unlike a ratio, does not blow up when the denominator is small, so a margin on it behaves sensibly, preventing the issue just discussed.</p>
+<p>If regulators insist on non-inferiority, the fix is to stop putting the margin on a proportion. The utility-based approach from earlier works. Assign weights to the change in each cell of the confusion matrix and test whether the weighted sum is non-inferior. Although the false negatives and true negatives are not observed, it can be shown that the change in false negatives between arms is point-identified. The change in utility is therefore a weighted combination of these identified quantities. A weighted sum, unlike a ratio, does not blow up when the denominator is small, so a margin on it behaves sensibly, preventing the issue just discussed.</p>
 
 <p>A smaller change would be to keep the THR framing but test the malignancy rate of the additional excisions, \(\pi_\Delta\), compared against the control THR. We can take the monotonicity assumption to be true and determine if \(\pi_\Delta > \text{THR}_0\), which, as discussed, is just a THR superiority test.</p>
 

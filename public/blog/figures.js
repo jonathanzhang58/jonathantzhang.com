@@ -175,11 +175,11 @@
         fit.setAttribute("d", "");
       } else if (bUpLeft) {
         verdict.classList.add("good");
-        verdict.innerHTML = `<span class="title">Cannot lie on the same ROC curve</span>The AI point has a higher true-positive rate <em>and</em> a lower false-positive rate. An ROC curve can only move up and to the right as the threshold loosens, so no single curve passes through both. The shift must be a change in skill.`;
+        verdict.innerHTML = `<span class="title">Cannot lie on the same ROC curve</span>The AI point has a higher true-positive rate and a lower false-positive rate. An ROC curve can only move up and to the right as the threshold loosens, so no single curve passes through both. The shift must be a change in skill.`;
         fit.setAttribute("d", "");
       } else if (bDownRight) {
         verdict.classList.add("bad");
-        verdict.innerHTML = `<span class="title">Cannot lie on the same ROC curve</span>Here it is the <em>control</em> point that sits up-and-left. No monotone curve passes through both, so the AI arm is strictly worse: skill went down, not just the threshold.`;
+        verdict.innerHTML = `<span class="title">Cannot lie on the same ROC curve</span>Here it is the control point that sits up-and-left. No monotone curve passes through both, so the AI arm is strictly worse: skill went down, not just the threshold.`;
         fit.setAttribute("d", "");
       } else {
         verdict.classList.add("warn");
@@ -391,7 +391,7 @@
       if (t <= 0) {
         box.classList.add("bad");
         big.textContent = "≤ 0";
-        box.innerHTML = `<span class="title">Vacuous: the test cannot fail</span>Non-inferiority is declared whenever the additional excisions have a malignancy rate above ${fmt(t, 3)}. A proportion is always ≥ 0, so the null is rejected even if <em>every one</em> of the ${dS} additional polyps is benign.`;
+        box.innerHTML = `<span class="title">Vacuous: the test cannot fail</span>Non-inferiority is declared whenever the additional excisions have a malignancy rate above ${fmt(t, 3)}. A proportion is always ≥ 0, so the null is rejected even if every one of the ${dS} additional polyps is benign.`;
       } else {
         const need = Math.ceil(t * dS);
         const nearly = t < 0.5 * THR0;
