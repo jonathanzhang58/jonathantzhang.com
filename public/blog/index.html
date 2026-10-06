@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Safety Test for AI Colonoscopy Tools Is Guaranteed to Pass</title>
+<meta name="description" content="Why the non-inferiority test used to certify AI colonoscopy tools against false positives can be impossible to fail, and what to do instead.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/katex.min.css">
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/katex.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/contrib/auto-render.min.js"
+  onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\(',right:'\\)',display:false}],throwOnError:false});"></script>
+<link rel="stylesheet" href="/blog/style.css">
+<script defer src="/blog/figures.js"></script>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="eyebrow">Statistics · Medical devices</div>
+  <h1>Concerns Regarding the Evaluation of AI Colonoscopy Tools</h1>
+  <!-- <p class="dek">The FDA asks companies to show that AI polyp detectors don't cause excess unnecessary excisions. The test they use to show it can be impossible to fail.</p> -->
+  <div class="byline">Jonathan Zhang · October 2026</div>
+</header>
+
+<main>
+
+<h2>Colonoscopies and polyps</h2>
+
+<p>According to the Mayo Clinic, "a colonoscopy is a procedure used to examine the inside of the colon, rectum, and the end of the small intestine." It is performed with a colonoscope: a thin, flexible tube with a camera at the end that is threaded through the colon and gives the physician a live video feed from inside the organ. Colonoscopies are used to investigate symptoms like rectal bleeding or bowel problems, but the use we care about here is screening for colorectal cancer. The video feed lets the physician spot colon polyps, mounds of tissue that can be precancerous. Because the procedure is minimally invasive, it is the preferred way to screen for this cancer.</p>
+
+<p>When a physician notices a polyp, they have to decide whether to remove it. If they choose to excise, they use a specialized tool (an inline suction polyp trap) to cut the polyp out of the colon wall. The colon has no nerve endings, so this is painless, but it is not risk-free. Each excision raises the chance of immediate or delayed bleeding, bowel perforation, and the general complications that come with more time under sedation. So if a physician sees a polyp they believe is benign, they will leave it in place. The problem is that it is genuinely hard to judge a polyp's danger by sight alone. The only way to confirm whether a polyp is precancerous is to remove it and send it to pathology.</p>
+
+<p>Finding polyps in the first place is also hard. Even with a live camera, the colon is dark and full of twists, turns, and folds that hide polyps. A polyp sitting on the back side of a fold can be invisible to the scope as it advances. This is the problem that a wave of AI colonoscopy products aims to solve. Medtronic's GI Genius Intelligent Endoscopy Module, for example, draws highlighted boxes around suspected polyps in the video feed so the physician is less likely to miss them, with the end goal of lowering colon cancer rates. Competing products have been released by Iterative Health, Odin Medical, MAGENTIQ, Wision AI, and others.</p>
+
+<h2>FDA Requirements and Challenges</h2>
+
+<p>Like any medical device, these systems must be cleared by the FDA before they can be sold. During that review, the FDA identified several risks that this kind of software poses to patients, including "algorithm failure leading to false positives, resulting in unnecessary patient treatment" and "false negatives, resulting in delayed patient treatments." To be cleared, a company must show that these risks are mitigated.</p>
+
+<p>However, several challenges prevent a straightforward analysis.</p>
+
+<p>First, as in any binary classification problem, there is a tradeoff between the two error types. If we wanted to make absolutely sure no cancerous polyp was left behind, we could remove everything we see. This gives us perfect recall. Everything was excised, so there were no false negatives. However, we would have a huge number of false positives. Instead, if we were terrified of unnecessary excision, we could excise literally nothing, resulting in zero false positives but a massive number of false negatives. Obviously, we want to lie somewhere between these two extremes.</p>
+
+<p>Further, the false negatives are unidentifiable. By definition, a false negative is a cancerous polyp left in the body. Obviously, if the physician noticed the cancerous polyp, they would have tried to excise it, so we cannot ask a physician how many cancerous polyps they left behind in the body.</p>
+
+<p>Finally, only the malignancy of excised polyps can be determined. If a physician leaves a polyp in the body because they think it's benign, we cannot know whether or not it was a true negative or a false negative. Only by excising it can we perform a biopsy that tells us its identity. These issues are known as a selective labels problem.</p>
+
+<figure class="static">
+  <table class="data compact">
+    <thead>
+      <tr><th></th><th>Malignant</th><th>Benign</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Excised</td><td class="num cell-tp">true positive ✓ observed</td><td class="num cell-fp">false positive ✓ observed</td></tr>
+      <tr><td>Left in place</td><td class="num cell-fn">false negative ✗ hidden</td><td class="num cell-tn">true negative ✗ hidden</td></tr>
+    </tbody>
+  </table>
+  <figcaption>Table 1. The selective labels problem. Pathology is only available for polyps that were excised, so the entire bottom row of the confusion matrix is unobserved.</figcaption>
+</figure>
+
+<h2>Some Solutions</h2>
+
+<p>In a perfect world we could solve this using a longitudinal study: one group of patients receives standard colonoscopies, another receives AI-assisted ones, and we follow both groups for decades and compare colon cancer rates. That is obviously infeasible in time and money.</p>
+
+<p>A more practical alternative is a utility-based approach, which is already standard for evaluating algorithmic decision systems in other domains such as criminal justice. In this approach, we assign some kind of quantitative weighting to each malignant polyp caught and a quantitative cost to each benign polyp unnecessarily removed. These numbers can be determined by asking physicians. We then record the number and pathology of the excised polyps in each arm and run a hypothesis test to determine whether or not this utility has changed. Unfortunately, this is not done in practice.</p>
+
+<h2>Industry Precedent</h2>
+
+<p>To satisfy the FDA, most companies run an RCT in which they record the number of colonoscopies performed, the number of polyps excised, and the number of excised polyps with clinically significant histology (i.e. confirmed precancerous on biopsy). From these they compute three statistics and compare them between arms:</p>
+
+$$
+\begin{aligned}
+\text{APC} &= \frac{\text{total adenomas detected}}{\text{total colonoscopies}} \\[6pt]
+\text{ADR} &= \frac{\text{colonoscopies with at least one adenoma detected}}{\text{total colonoscopies}} \\[6pt]
+\text{THR} &= \frac{\text{excisions with confirmed significant histology}}{\text{total excisions}}
+\end{aligned}
+$$
+
+<p>APC is adenomas per colonoscopy, ADR is the adenoma detection rate, and THR is the true histology rate, sometimes reported as the positive percent agreement (PPA). THR is simply the precision, or positive predictive value, of the physicians' excision decisions.</p>
+
+<p>This was the approach Medtronic used for GI Genius, the first device of this kind to reach the market. Because the FDA accepted it as sufficient and approved the device, most competitors perform the same study to gain FDA approval.</p>
+
+<p>However, companies are not required to show that any of these statistics improve. The FDA's job is not to ensure that every device is a breakthrough; it is to ensure that devices on the market are not actively harmful. So companies only need to demonstrate <em>non-inferiority</em>. Under the FDA's statistical guidance, non-inferiority is shown by testing that a statistic does not fall from the control arm to the AI arm by more than some "clinically relevant" margin. The GI Genius trial set the precedent: margins of 10 percentage points for ADR, 0 for APC, and 15 percentage points for THR.</p>
+
+<p>At first glance this is reasonable. We want the AI to help physicians remove more dangerous polyps, so counting polyps removed makes sense.</p>
+
+<p>An obvious objection to exclusively testing for that metric would be that maybe the AI does not help physicians <em>find</em> anything additional, only makes them more likely to excise. It could be true that every AI-highlighted polyp would have already been noticed, but the highlighting encourages physicians to excise when they would not have before. Making physicians more liberal excisors will raise ADR and APC without actually improving any diagnostic capability, which is the real goal of the software. In that case the device is at best useless and at worst dangerous, we could get the same result by telling physicians to be more trigger-happy.</p>
+
+<p>Thus, THR is also measured. If the AI does not make the mix of excised polyps any worse, then physicians are not just removing more benign tissue; they must be finding more malignant polyps. The device is genuinely improving physician skill, rather than changing their excision policy.</p>
+
+<p>However, as we will show, because THR is a <em>proportion</em>, it interacts very badly with a non-inferiority margin, often causing this initially reasonable test to be vacuous.</p>
+
+<h2>Skill versus threshold from first principles</h2>
+
+<p>Let's ignore current methods for now and refer to first principles. We are interested in arguing against the suggestion that our device doesn't make physicians any more skilled. It only makes them more liberal. Is it possible in any way to design a test that determines whether or not this is true?</p>
+
+<p>The colonoscopy problem can almost be framed as a binary classification problem in machine learning. We have two classifiers: the unassisted physician and the physician with AI assistance. Can we determine which classifier is better? One tool we have is the receiver operating characteristic (ROC) curve. This curve plots the true positive rate (TPR) against the false positive rate (FPR), parameterized by the classification threshold. As that threshold increases, the classifier requires a greater burden of proof to classify something as positive. When this threshold reaches 1, everything is classified as negative, giving us a true positive rate and false positive rate of 0. Conversely, as the threshold approaches 0, we become more and more liberal until everything is classified as positive, and the true positive rate and false positive rate are both maximized.</p>
+
+<p>As we marginally decrease the threshold, because our underlying classification function has not changed at all, the number of true positives and false positives must increase. Thus, this curve is monotonically increasing.</p>
+
+<p>Typically, the area under this curve is used as a metric for the effectiveness of your classifier. A perfect classifier has an area of 1, and a perfectly bad classifier has an area of 0. However, in our example, we can never identify the entire curve since we can only observe two points: the false positive and true positive rate of our unaided physician and the false positive and true positive rate of our assisted physician.</p>
+
+<p>How can we be sure that these two points come from different curves, where one has a greater area under the curve than the other? If one curve lies weakly above the other at all points, then it must be true that its area is greater. Suppose we arbitrarily choose one point from each of these curves. How can we be sure that these two points come from different curves rather than the same curve?</p>
+
+<figure class="interactive" id="fig-roc">
+  <div class="fig-layout two-col">
+    <div class="fig-chart">
+      <svg role="img" aria-label="ROC axes with two draggable operating points"></svg>
+    </div>
+    <div class="fig-side">
+      <div class="hint">Drag the <span style="color:var(--accent)">control</span> and <span style="color:var(--accent-2)">AI</span> points (or focus one and use the arrow keys). The faint curves are two reference classifiers of different skill.</div>
+      <div class="verdict neutral"></div>
+      <div class="readout"></div>
+      <div class="controls">
+        <button class="chip" data-preset="0.30,0.548,0.15,0.659">A → B (skill)</button>
+        <button class="chip" data-preset="0.30,0.548,0.55,0.877">A → C (ambiguous)</button>
+        <button class="chip" data-preset="0.30,0.548,0.75,0.866">A → D (ambiguous)</button>
+      </div>
+    </div>
+  </div>
+  <figcaption>Figure 1. Two operating points on ROC axes. Without the full curves, a move from A to C or A to D could be either a skill change or a threshold change, because a valid non-decreasing curve passes through both points. A move from A to B is necessarily a skill change: no non-decreasing curve can pass through both.</figcaption>
+</figure>
+
+<p>In general, this problem is impossible. In the figure above, for many selections of two points, some ROC curve can be created that goes through both, however, if the point from the superior curve lies up and to the left of the other point. By the monotonicity of the ROC curve, it is impossible to draw a curve that goes through both, and thus they must be from different curves.</p>
+
+<p>Thus, one way that we can test for whether or not a treatment improves physician skill is to examine the slope between the false positive rate and true positive rates of our two arms. If that slope is negative, which can be determined by a hypothesis test, it must be true that there's a skill difference between the two arms.</p>
+
+$$
+\Delta_{AI} = \frac{\Delta FP}{\Delta TP} = \frac{FP_1 - FP_0}{TP_1 - TP_0},
+$$
+
+<p>where subscript 0 is the control arm and 1 is the AI arm. (Note: although we only observe counts, not rates, but both rates share the same denominator so they cancel.)</p>
+
+<p>When this test rejects in expectation, we can be sure that the skill between the two arms is different. However, as we discussed prior, its power is very weak. Two points can come from different ROC curves but still have non-negative values of \(\Delta_{AI}\). In fact, for <em>any</em> non-negative value of \(\Delta_{AI}\), one can construct a classifier that produces exactly those counts through a threshold change alone. Consider the following</p>
+
+<figure class="static">
+  <table class="data compact">
+    <thead><tr><th></th><th>Control</th><th>AI-assisted</th><th>Change</th></tr></thead>
+    <tbody>
+      <tr><td class="cell-tp">True positives</td><td class="num">60</td><td class="num">75</td><td class="num">+15</td></tr>
+      <tr><td class="cell-fp">False positives</td><td class="num">90</td><td class="num">90</td><td class="num">0</td></tr>
+      <tr><td class="cell-fn">False negatives</td><td class="num">40</td><td class="num">25</td><td class="num">−15</td></tr>
+    </tbody>
+  </table>
+  <figcaption>Table 2. Polyp counts by arm in a hypothetical trial. The AI arm catches 15 more malignant polyps with no additional benign excisions, yet \(\Delta_{AI} = 0/15 = 0\).</figcaption>
+</figure>
+
+<p>The AI helped physicians excise 15 additional malignant polyps with no change in benign excisions. That looks like strong evidence of improved skill. Yet \(\Delta_{AI} = 0 / 15 = 0\), so the test does not reject.</p>
+
+<p>How can fifteen extra cancers caught with zero extra benign excisions be explained by a threshold shift? Consider the plot of the physician's estimated malignancy probability \(\hat\pi(X)\) against the true probability \(P(M = 1 \mid X)\). We have placed no restrictions on the physician's estimate, so we are free to draw a curve such as:</p>
+
+<figure class="interactive" id="fig-step">
+  <div class="fig-layout two-col">
+    <div class="fig-chart">
+      <svg role="img" aria-label="Physician estimate versus true malignancy probability with a movable excision threshold"></svg>
+    </div>
+    <div class="fig-side">
+      <label class="field"><span>Excision threshold ζ = <span data-zeta>0.50</span></span>
+        <input type="range" min="0" max="1" step="0.005" value="0.5" aria-label="Excision threshold">
+      </label>
+      <div class="controls">
+        <button class="chip" data-zeta-preset="0.5">Control: ζ = ½</button>
+        <button class="chip" data-zeta-preset="0.40">Lower to 0.40</button>
+        <button class="chip" data-zeta-preset="0.30">Lower to 0.30</button>
+      </div>
+      <table class="data">
+        <thead><tr><th>Cell</th><th>Share</th><th>Δ vs ½</th></tr></thead>
+        <tbody>
+          <tr><td><span class="swatch" style="background:var(--good)"></span>True positives</td><td class="num" data-cell="tp"></td><td class="num" data-delta="tp"></td></tr>
+          <tr><td><span class="swatch" style="background:var(--bad)"></span>False positives</td><td class="num" data-cell="fp"></td><td class="num" data-delta="fp"></td></tr>
+          <tr><td><span class="swatch" style="background:var(--warn)"></span>False negatives</td><td class="num" data-cell="fn"></td><td class="num" data-delta="fn"></td></tr>
+          <tr><td><span class="swatch" style="background:var(--muted)"></span>True negatives</td><td class="num" data-cell="tn"></td><td class="num" data-delta="tn"></td></tr>
+          <tr><td>THR of excised</td><td class="num" data-thr></td><td></td></tr>
+        </tbody>
+      </table>
+      <div class="verdict neutral"></div>
+    </div>
+  </div>
+  <figcaption>Figure 2. An adversarial physician. Each point on the curve is a polyp type: its true malignancy probability on the horizontal axis, the physician's estimate on the vertical axis. Polyps are spread evenly along the horizontal axis; those with true probability above ½ count as malignant. Everything above the threshold line (highlighted) is excised. Drag the line or use the slider. The four quadrants are the four cells of the confusion matrix.</figcaption>
+</figure>
+
+<p>Polyps to the right of the vertical line are malignant in expectation; polyps to the left are benign. The horizontal line is the excision threshold \(\zeta\); everything above it is excised. The curve therefore splits into four regions matching the four cells of the confusion matrix. This physician is almost antagonistic. the polyps most likely to be malignant are assigned a <em>lower</em> estimate than the polyps least likely to be malignant. Starting at \(\zeta = 1/2\), lowering the threshold to just under \(9/20\) excises a block of polyps that are all malignant in expectation, raising true positives with no new false positives. Thus a threshold change reproduces the table above.</p>
+
+<p>Clearly, this example is contrived. Real physicians are not adversarial. So let's add the following  assumption: the physician's estimate is monotonically non-decreasing in the true probability. If one polyp is genuinely more likely to be malignant than another, the physician does not think it is <em>less</em> likely. This is a low bar. A physician who systematically ranked dangerous polyps as safer than safe ones would not be a physician for long.</p>
+
+<p>Under this assumption, if there is no change in skill between arms (\(H_0\)), it can be shown that \(\Delta_{AI}\) must fall in the interval:</p>
+
+$$
+\frac{FP_0}{TP_0} \;\le\; \Delta_{AI} \;\le\; \frac{TN_1}{FN_1}.
+$$
+
+<p>The true negative and false negative counts on the right are unidentifiable, so we cannot use the upper bound. But the lower bound is made of observable counts, and since counts are non-negative it is at least zero. So we test whether \(\Delta_{AI} < FP_0 / TP_0\). This is strictly stronger than testing \(\Delta_{AI} < 0\). In the example above, \(FP_0 / TP_0 = 90/60 = 1.5 > 0 = \Delta_{AI}\), and we conclude that the AI improved skill, which matches our intuition.</p>
+
+<p>A little algebra shows that this test is exactly equivalent to testing whether THR <em>increases</em> from the control arm to the AI arm. Thus, a superiority test on THR is, under monotonicity, a test of skill.</p>
+
+<h2>Non-inferiority Margins</h2>
+
+<p>However, trials in practice run a non-inferiority test with a margin \(N\). Thus the null hypothesis is</p>
+
+$$
+\text{THR}_0 \;\ge\; \text{THR}_1 + N.
+$$
+
+<p>Let \(S_0\) and \(S_1\) be the total excisions in each arm, let \(\Delta S = S_1 - S_0\) be the additional excisions attributable to AI assistance, and let</p>
+
+$$
+\pi_\Delta = \frac{\Delta TP}{\Delta S}
+$$
+
+<p>be the malignancy rate among those additional excisions.</p>
+
+<p>Let's assume \(\Delta S > 0\) and \(\Delta TP > 0\). Clearly, if our intervention reduces the number of true positives, it is harmful to patients and should be discarded. Furthermore, if the true positives increase and the number of total exclusions decreases, then the system is clearly beneficial, and further analysis is not required. Furthermore, both in practice and in theory, AI highlighting software should increase excisions and true positives. Thus, this is the only case in which we are concerned.</p>
+
+<p>It can be shown that the test above is equivalent to the following:</p>
+
+$$
+\pi_\Delta \;\le\; \text{THR}_0 - N\,\frac{S_1}{\Delta S}.
+$$
+
+<p>The left-hand side is a proportion, so it is at least 0. Thus, whenever</p>
+
+$$
+N\,\frac{S_1}{\Delta S} \;\ge\; \text{THR}_0,
+$$
+
+<p>the right-hand side is non-positive, and the null is rejected for every possible \(\pi_\Delta\). The test cannot fail, no matter how many of the additional excisions are benign. Rearranging, this happens whenever</p>
+
+$$
+\frac{\Delta S}{S_0} \;\le\; \frac{N}{\text{THR}_0 - N}.
+$$
+
+<p>Consider the following example. The control arm excises 100 polyps and all of them turn out malignant, so \(\text{THR}_0 = 100\%\). The AI arm excises 110. Even if all ten additional polyps are benign, THR only falls to \(100/110 \approx 91\%\), meaning it can never go below \(15\%\). The device passes regardless all of the time, and the test is vacuous.</p>
+
+<figure class="interactive" id="fig-calc">
+  <div class="fig-layout two-col">
+    <div class="fig-side">
+      <div class="field-grid">
+        <label class="field"><span>Control excisions \(S_0\)</span>
+          <input type="number" name="s0" min="1" step="1" value="963">
+        </label>
+        <label class="field"><span>AI-arm excisions \(S_1\)</span>
+          <input type="number" name="s1" min="1" step="1" value="1136">
+        </label>
+        <label class="field"><span>Control THR (%)</span>
+          <input type="number" name="thr0" min="0" max="100" step="0.1" value="71.7">
+        </label>
+        <label class="field"><span>Margin \(N\) (%)</span>
+          <input type="number" name="margin" min="0" max="100" step="0.5" value="14">
+        </label>
+      </div>
+      <div class="radio-row" role="radiogroup" aria-label="Margin type">
+        <label><input type="radio" name="margin-type" value="absolute" checked> absolute (percentage points)</label>
+        <label><input type="radio" name="margin-type" value="relative"> relative to control THR</label>
+      </div>
+      <div class="controls">
+        <button class="chip" data-calc-preset="963,1136,14,71.7,absolute">SKOUT (absolute)</button>
+        <button class="chip" data-calc-preset="963,1136,14,71.7,relative">SKOUT (relative)</button>
+        <button class="chip" data-calc-preset="100,110,15,100,absolute">100 → 110 example</button>
+        <button class="chip" data-calc-preset="150,165,15,40,absolute">Table 2, N = 15</button>
+      </div>
+    </div>
+    <div class="fig-side">
+      <div class="verdict neutral">
+        <span class="title">Required malignancy rate of the additional excisions</span>
+      </div>
+      <div class="big-number">—</div>
+      <ul class="calc-steps"></ul>
+    </div>
+  </div>
+  <figcaption>Figure 3. Non-inferiority calculator. Enter the excision counts in each arm, the control THR, and the margin. The output is the malignancy rate the <em>additional</em> excisions must exceed for the trial to declare non-inferiority, \(\text{THR}_0 - N\,S_1/\Delta S\). When this is at or below zero the box turns red: the test is vacuous and passes no matter what the extra polyps were.</figcaption>
+</figure>
+
+<p>This is not a theoretical curiosity. In the SKOUT trial, 1,136 polyps were excised in the AI arm and 963 in the control arm, so \(S_1 / \Delta S = 1136 / 173 \approx 6.57\). The trial used a margin of \(N = 0.14\) on THR, which permits the additional excisions to have a malignancy rate up to \(0.14 \times 6.57 \approx 0.92\) <em>below</em> the control THR of 0.717. Since \(\pi_\Delta\) is a proportion bounded between 0 and 1, the null hypothesis was guaranteed to be rejected regardless of how many of the additional excisions were malignant. The test was meaningless.</p>
+
+<p>One might object that the 14% margin was meant as a relative decrease rather than an absolute 14 percentage points, which would correspond to \(N = 0.14 \times 0.717 \approx 0.10\). Under that reading the threshold becomes \(0.717 - 0.10 \times 6.57 \approx 0.06\): the trial would still have passed as long as about 6% of the additional excisions, roughly 10 of the 173 extra polyps, were malignant. Although the test is not guaranteed to reject, it is very difficult to fail.</p>
+
+<p>Taken together, the accepted method for demonstrating to the FDA that these products do not harm patients through excess false positives is, in expectation, guaranteed to pass. There is effectively no mitigation of false-positive risk at all.</p>
+
+<h2>What to do instead</h2>
+
+<p>If regulators insist on non-inferiority, the fix is to stop putting the margin on a proportion. The utility-based approach from earlier works. Assign weights to the change in each cell of the confusion matrix and test whether the weighted sum is non-inferior. Although the false negatives and true negatives are not observed, it can be shown that the <em>change</em> in false negatives between arms is point-identified. The change in utility is therefore a weighted combination of these identified quantities. A weighted sum, unlike a ratio, does not blow up when the denominator is small, so a margin on it behaves sensibly, preventing the issue just discussed.</p>
+
+<p>A smaller change would be to keep the THR framing but test the malignancy rate of the additional excisions, \(\pi_\Delta\), compared against the control THR. We can take the monotonicity assumption to be true and determine if \(\pi_\Delta > \text{THR}_0\), which, as discussed, is just a THR superiority test.</p>
+
+<p>Regardless, the current method for certifying that AI colonoscopy tools mitigate false-positive risk is broken, and it should change.</p>
+
+</main>
+
+<footer>
+  Interactive figures are built in plain SVG and JavaScript; the math is typeset with KaTeX. The underlying derivations are available on request.
+</footer>
+
+</body>
+</html>
