@@ -1,7 +1,7 @@
 {
   "rewrites": [
     { "source": "/recording", "destination": "/recording.html" },
-    { "source": "/blog", "destination": "/blog/index.html" },
+    { "source": "/blog12345", "destination": "/blog12345/index.html" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
