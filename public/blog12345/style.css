@@ -222,6 +222,26 @@ figcaption {
 .quad-label { font-family: var(--font); font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; fill: var(--ink-2); }
 .region-excised { fill: var(--hl-1); opacity: .08; }
 
+/* SKOUT population figure */
+.cell-mal { fill: var(--good); }
+.cell-ben { fill: var(--bad); opacity: .38; }
+.cell-extra { fill: var(--bad); }
+.cell-left { fill: none; stroke: var(--ink-2); stroke-width: .8; opacity: .35; }
+.bracket { stroke: var(--ink-2); stroke-width: 1; fill: none; }
+.bracket-label { font-family: var(--font); font-size: 11px; fill: var(--ink-2); font-variant-numeric: tabular-nums; }
+.arm-thr { font-family: var(--font); font-size: 12px; fill: var(--ink); font-variant-numeric: tabular-nums; }
+.limit-line { stroke: var(--ink); stroke-width: 1.6; stroke-dasharray: 3 2; fill: none; }
+.limit-label { fill: var(--ink); font-weight: 700; }
+.ni-zone { fill: var(--accent-soft); }
+.ni-bound { stroke: var(--ink-2); stroke-width: 1.2; stroke-dasharray: 4 3; }
+.thr-drop { stroke: var(--bad); stroke-width: 4; opacity: .55; }
+.thr-dot { stroke: var(--bg); stroke-width: 2; }
+.thr-ctl { fill: var(--bg); stroke: var(--ink); stroke-width: 2; }
+.thr-ai { fill: var(--ink); }
+.thr-ctl-label, .thr-ai-label { fill: var(--ink); }
+.slider-row { display: grid; grid-template-columns: auto 1fr; gap: 6px 14px; align-items: center; }
+@media (max-width: 560px) { .slider-row { grid-template-columns: 1fr; } }
+
 /* verdict boxes: the site's colored left-border treatment */
 .verdict {
   padding: 4px 0 4px 16px;
@@ -349,4 +369,33 @@ footer {
   header.masthead, main, footer { padding-left: 16px; padding-right: 16px; }
   header.masthead { padding-top: calc(var(--nav-h) + 40px); }
   figure.interactive { padding: 16px; margin-left: -8px; margin-right: -8px; }
+}
+
+/* ---------- citations, references, BibTeX ---------- */
+.cite { font-size: 0.75em; white-space: nowrap; color: var(--ink-2); }
+.cite a { text-decoration: none; color: var(--hl-1); }
+.cite a:hover { text-decoration: underline; }
+ol.references {
+  margin: 0 0 16px;
+  padding-left: 2.2em;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--ink-2);
+}
+ol.references li { margin-bottom: 8px; padding-left: 4px; overflow-wrap: anywhere; }
+ol.references li::marker { color: var(--hl-1); }
+ol.references li:target { background: var(--accent-soft); }
+ol.references a { color: inherit; }
+ol.references a:hover { color: var(--hl-1); }
+pre.code {
+  margin: 0 0 16px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-left: 2px solid var(--hl-1);
+  background: var(--bg);
+  color: var(--ink);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 12.5px;
+  line-height: 1.55;
+  overflow-x: auto;
 }
