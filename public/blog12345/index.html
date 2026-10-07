@@ -284,7 +284,6 @@ $$
       </div>
       <div class="controls">
         <button class="chip" data-calc-preset="963,1136,14,71.7,absolute">SKOUT (absolute)</button>
-        <button class="chip" data-calc-preset="963,1136,14,71.7,relative">SKOUT (relative)</button>
         <button class="chip" data-calc-preset="100,110,15,100,absolute">100 → 110 example</button>
         <button class="chip" data-calc-preset="150,165,15,40,absolute">Table 2, N = 15</button>
       </div>
@@ -309,10 +308,6 @@ $$
       <label class="field" for="skout-extra"><span>Extra benign excisions K = <span class="extra-value">173</span></span></label>
       <input id="skout-extra" type="range" name="extra" min="0" max="437" step="1" value="173">
     </div>
-    <div class="radio-row" role="radiogroup" aria-label="Margin type">
-      <label><input type="radio" name="skout-margin" value="absolute" checked> 14-point margin (absolute)</label>
-      <label><input type="radio" name="skout-margin" value="relative"> 14% of control THR (relative)</label>
-    </div>
     <div class="controls">
       <button class="chip" data-skout-k="173">SKOUT: K = 173</button>
       <button class="chip" data-skout-k="limit">Largest K that passes</button>
@@ -323,8 +318,6 @@ $$
   </div>
   <figcaption>Figure 4. A hypothetical trial built from SKOUT's numbers. Each square is one polyp the physician saw, and both arms see the same 1,400 polyps. Both arms excise the same 690 malignant polyps, so the AI found nothing new. The AI arm also excises \(K\) polyps that control left in place, and all of them are benign. THR only falls from \(X/S_0\) to \(X/(S_0+K)\), so under a 14-point margin the AI arm can add up to 233 benign excisions, 24% more than control, and still be declared non-inferior. The figure uses point estimates and ignores sampling noise.</figcaption>
 </figure>
-
-<p>One might object that the 14% margin was meant as a relative decrease rather than an absolute 14 percentage points, which would correspond to \(N = 0.14 \times 0.717 \approx 0.10\). Under that reading the threshold becomes \(0.717 - 0.10 \times 6.57 \approx 0.06\): the trial would still have passed as long as about 6% of the additional excisions, roughly 10 of the 173 extra polyps, were malignant. Although the test is not guaranteed to reject, it is very difficult to fail.</p>
 
 <p>Taken together, the accepted method for demonstrating to the FDA that these products do not harm patients through excess false positives is, in expectation, guaranteed to pass. There is effectively no mitigation of false-positive risk at all.</p>
 
