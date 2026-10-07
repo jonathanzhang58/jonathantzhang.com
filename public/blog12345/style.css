@@ -399,3 +399,13 @@ pre.code {
   line-height: 1.55;
   overflow-x: auto;
 }
+
+/* ---------- photo figures ---------- */
+figure.photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  /* diagrams with transparent backgrounds stay legible in dark mode */
+  background: #fff;
+}
