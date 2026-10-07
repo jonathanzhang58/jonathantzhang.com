@@ -50,7 +50,7 @@ document.querySelector('.theme-toggle').addEventListener('click', function () {
   <div class="eyebrow">Statistics · Medical devices</div>
   <h1>Concerns Regarding the Evaluation of AI Colonoscopy Tools</h1>
   <!-- <p class="dek">The FDA asks companies to show that AI polyp detectors don't cause excess unnecessary excisions. The test they use to show it can be impossible to fail.</p> -->
-  <div class="byline">Jonathan Zhang · October 2026</div>
+  <div class="byline">Jonathan Zhang and Michael Oberst · October 2026</div>
 </header>
 
 <main>
@@ -299,7 +299,7 @@ $$
   <figcaption>Figure 3. Non-inferiority calculator. Enter the excision counts in each arm, the control THR, and the margin. The output is the malignancy rate the additional excisions must exceed for the trial to declare non-inferiority, \(\text{THR}_0 - N\,S_1/\Delta S\). When this is at or below zero the box turns red: the test is vacuous and passes no matter what the extra polyps were.</figcaption>
 </figure>
 
-<p>This is not a theoretical curiosity. In the SKOUT trial, 1,136 polyps were excised in the AI arm and 963 in the control arm <span class="cite">[<a href="#ref-3">3</a>]</span>, so \(S_1 / \Delta S = 1136 / 173 \approx 6.57\). The trial used a margin of \(N = 0.14\) on THR, which permits the additional excisions to have a malignancy rate up to \(0.14 \times 6.57 \approx 0.92\) below the control THR of 0.717. Since \(\pi_\Delta\) is a proportion bounded between 0 and 1, the null hypothesis was guaranteed to be rejected regardless of how many of the additional excisions were malignant. The test was meaningless.</p>
+<p>This is not merely a theoretical observation. These issues come up in practice. In the SKOUT trial, 1,136 polyps were excised in the AI arm and 963 in the control arm <span class="cite">[<a href="#ref-3">3</a>]</span>, so \(S_1 / \Delta S = 1136 / 173 \approx 6.57\). The trial used an absolute margin of \(N = 0.14\) on THR, which permits the additional excisions to have a malignancy rate up to \(0.14 \times 6.57 \approx 0.92\) below the control THR of 0.717. Since \(\pi_\Delta\) is a proportion bounded between 0 and 1, the null hypothesis was guaranteed to be rejected regardless of how many of the additional excisions were malignant. The test was meaningless.</p>
 
 <figure class="interactive" id="fig-skout">
   <div class="fig-chart"><svg role="img" aria-label="Two grids of polyps, one per trial arm. Both arms excise the same 690 malignant polyps; the AI arm excises additional polyps that are all benign. A number line below compares the two arms' THR with the non-inferiority margin."></svg></div>
@@ -347,7 +347,7 @@ $$
 <h2 id="cite-this-post">Cite this post</h2>
 
 <pre class="code bibtex"><code>@misc{zhang2026concerns,
-  author       = {Zhang, Jonathan},
+  author       = {Zhang, Jonathan and Oberst, Michael},
   title        = {Concerns Regarding the Evaluation of {AI} Colonoscopy Tools},
   year         = {2026},
   month        = oct,
