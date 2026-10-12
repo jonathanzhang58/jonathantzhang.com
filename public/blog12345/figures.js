@@ -1,6 +1,6 @@
 /* Interactive figures for the CADe non-inferiority blog post.
    Four widgets, each self-contained:
-     1. rocFigure()         — two draggable operating points on ROC axes
+     1. rocFigure()         — two operating points that slide along reference ROC curves
      2. stepFigure()        — physician estimate vs. true probability, movable threshold
      3. calculator()        — THR non-inferiority vacuity calculator
      4. skoutFigure()       — SKOUT-style population: extra excisions that are all benign
@@ -97,14 +97,26 @@
     return p;
   }
 
-  /* Generic drag helper for an SVG group. */
+  /* Generic drag helper for an SVG group. Moves are tracked on the window, so the
+     drag survives the pointer leaving the target (e.g. when a point snaps to a curve). */
   function makeDraggable(target, svg, onMove) {
-    let active = false;
-    target.addEventListener("pointerdown", (e) => { active = true; target.setPointerCapture(e.pointerId); e.preventDefault(); });
-    target.addEventListener("pointermove", (e) => { if (active) onMove(e); });
-    const stop = (e) => { active = false; try { target.releasePointerCapture(e.pointerId); } catch (_) {} };
-    target.addEventListener("pointerup", stop);
-    target.addEventListener("pointercancel", stop);
+    let id = null;
+    const move = (e) => { if (e.pointerId === id) onMove(e); };
+    const stop = (e) => {
+      if (e.pointerId !== id) return;
+      id = null;
+      window.removeEventListener("pointermove", move);
+      window.removeEventListener("pointerup", stop);
+      window.removeEventListener("pointercancel", stop);
+    };
+    target.addEventListener("pointerdown", (e) => {
+      if (id !== null) return;
+      id = e.pointerId;
+      e.preventDefault();
+      window.addEventListener("pointermove", move);
+      window.addEventListener("pointerup", stop);
+      window.addEventListener("pointercancel", stop);
+    });
   }
 
   /* =========================================================================
@@ -113,20 +125,35 @@
   function rocFigure(root) {
     const svg = root.querySelector("svg");
     const verdict = root.querySelector(".verdict");
-    const readout = root.querySelector(".readout");
     const f = makeFrame(svg, { w: 460, h: 440 });
     const ticks = [{ v: 0, l: "0" }, { v: 0.5, l: "0.5" }, { v: 1, l: "1" }];
 
-    // background: chance line + the two reference curves from the paper
+    // background: chance line + the two reference curves from the paper, TPR = FPR^k.
+    // Each operating point slides along its own curve: control on the lower one, AI on
+    // the higher one (or on the lower one too when an example sets up a true null).
+    const LOW = 0.5, HIGH = 0.22;
+    const CURVES = [LOW, HIGH];
+    const tpr = (p) => Math.pow(p.u, p.k);
     el("line", { class: "chance", x1: f.x(0), y1: f.y(0), x2: f.x(1), y2: f.y(1) }, svg);
-    el("path", { class: "ref-curve", d: samplePath((u) => Math.pow(u, 0.5), f) }, svg);
-    el("path", { class: "ref-curve", d: samplePath((u) => Math.pow(u, 0.22), f) }, svg);
+    for (const k of CURVES) el("path", { class: "ref-curve", d: samplePath((u) => Math.pow(u, k), f) }, svg);
     drawAxes(svg, f, "false positive rate", "true positive rate", ticks, ticks);
 
     const fit = el("path", { class: "fit-curve", d: "" }, svg);
     const link = el("line", { class: "link-line" }, svg);
 
-    const state = { A: { u: 0.30, v: 0.548 }, B: { u: 0.15, v: 0.659 } };
+    // FPR of the point on curve k nearest (in screen space) to the pointer
+    function snapU(u, v, k) {
+      let best = null;
+      for (let i = 0; i <= 800; i++) {
+        const s = i / 800, uu = s * s; // denser near 0, where the curves are steep
+        const dx = f.x(uu) - f.x(u), dy = f.y(Math.pow(uu, k)) - f.y(v);
+        const d = dx * dx + dy * dy;
+        if (!best || d < best.d) best = { d, u: uu };
+      }
+      return best.u;
+    }
+
+    const state = { A: { k: LOW, u: 0.30 }, B: { k: HIGH, u: 0.15 } };
 
     function makePoint(key, label) {
       const g = el("g", { class: `pt pt-${key}`, tabindex: 0, role: "slider", "aria-label": `${label} operating point` }, svg);
@@ -136,17 +163,15 @@
       t.textContent = label;
       makeDraggable(g, svg, (e) => {
         const { u, v } = f.toUnit(e);
-        state[key] = { u: clamp(u, 0, 1), v: clamp(v, 0, 1) };
+        state[key].u = snapU(u, v, state[key].k);
         render();
       });
-      // keyboard nudging for accessibility
+      // keyboard: arrows slide the point along its curve
       g.addEventListener("keydown", (e) => {
         const step = e.shiftKey ? 0.05 : 0.01;
         const p = state[key];
-        if (e.key === "ArrowLeft") p.u = clamp(p.u - step, 0, 1);
-        else if (e.key === "ArrowRight") p.u = clamp(p.u + step, 0, 1);
-        else if (e.key === "ArrowUp") p.v = clamp(p.v + step, 0, 1);
-        else if (e.key === "ArrowDown") p.v = clamp(p.v - step, 0, 1);
+        if (e.key === "ArrowLeft" || e.key === "ArrowDown") p.u = clamp(p.u - step, 0, 1);
+        else if (e.key === "ArrowRight" || e.key === "ArrowUp") p.u = clamp(p.u + step, 0, 1);
         else return;
         e.preventDefault();
         render();
@@ -157,7 +182,7 @@
     const gB = makePoint("B", "AI");
 
     function render() {
-      const { A, B } = state;
+      const A = { u: state.A.u, v: tpr(state.A) }, B = { u: state.B.u, v: tpr(state.B) };
       gA.setAttribute("transform", `translate(${f.x(A.u)} ${f.y(A.v)})`);
       gB.setAttribute("transform", `translate(${f.x(B.u)} ${f.y(B.v)})`);
       link.setAttribute("x1", f.x(A.u)); link.setAttribute("y1", f.y(A.v));
@@ -176,31 +201,26 @@
         fit.setAttribute("d", "");
       } else if (bUpLeft) {
         verdict.classList.add("good");
-        verdict.innerHTML = `<span class="title">Cannot lie on the same ROC curve</span>The AI point has a higher true-positive rate and a lower false-positive rate. An ROC curve can only move up and to the right as the threshold loosens, so no single curve passes through both. The shift must be a change in skill.`;
+        verdict.innerHTML = `<span class="title">Reject false null hypothesis.</span>Due to the positioning of the two points, a single ROC curve cannot parameterize both. Thus it must be true that the two trial arms had different skill levels.`;
         fit.setAttribute("d", "");
       } else if (bDownRight) {
         verdict.classList.add("bad");
-        verdict.innerHTML = `<span class="title">Cannot lie on the same ROC curve</span>Here it is the control point that sits up-and-left. No monotone curve passes through both, so the AI arm is strictly worse: skill went down, not just the threshold.`;
+        verdict.innerHTML = `<span class="title">Reject false null hypothesis.</span>Due to the positioning of the two points, a single ROC curve cannot parameterize both. Thus it must be true that the two trial arms had different skill levels.`;
         fit.setAttribute("d", "");
       } else {
         verdict.classList.add("warn");
-        verdict.innerHTML = `<span class="title">A single ROC curve fits both points</span>One point is up-and-right of the other, so a valid monotone curve passes through both (drawn in black). The shift could be a pure threshold change, or a change in skill. Two points cannot tell them apart.`;
+        verdict.innerHTML = `<span class="title">Fail to reject the null</span>Although it could be true that these points were from different ROC curves, we cannot determine this from the data alone, because a valid monotone curve passes through both (drawn in black).`;
         const lo = A.u <= B.u ? A : B, hi = lo === A ? B : A;
         fit.setAttribute("d", monotonePath([[0, 0], [lo.u, lo.v], [hi.u, hi.v], [1, 1]], f));
       }
-
-      const slope = Math.abs(dTP) < eps ? (Math.abs(dFP) < eps ? NaN : Infinity * Math.sign(dFP)) : dFP / dTP;
-      readout.innerHTML =
-        `control (FPR, TPR) = (${A.u.toFixed(2)}, ${A.v.toFixed(2)}) &nbsp;·&nbsp; ` +
-        `AI = (${B.u.toFixed(2)}, ${B.v.toFixed(2)})<br>` +
-        `ΔFPR = ${(dFP >= 0 ? "+" : "") + dFP.toFixed(2)}, ΔTPR = ${(dTP >= 0 ? "+" : "") + dTP.toFixed(2)}, ` +
-        `Δ<sub>AI</sub> = ΔFP/ΔTP = ${Number.isFinite(slope) ? slope.toFixed(2) : (Number.isNaN(slope) ? "undefined" : (slope > 0 ? "+∞" : "−∞"))}`;
     }
 
     root.querySelectorAll("[data-preset]").forEach((btn) => {
       btn.addEventListener("click", () => {
-        const [au, av, bu, bv] = btn.dataset.preset.split(",").map(Number);
-        state.A = { u: au, v: av }; state.B = { u: bu, v: bv };
+        // data-preset = "control FPR, AI FPR, AI curve (high | low)"
+        const [au, bu, curve] = btn.dataset.preset.split(",");
+        state.A = { k: LOW, u: Number(au) };
+        state.B = { k: curve === "low" ? LOW : HIGH, u: Number(bu) };
         render();
       });
     });
@@ -316,13 +336,13 @@
         verdict.innerHTML = `<span class="title">Same as the control threshold (ζ = ½)</span>Lower the threshold to see which polyps get excised next.`;
       } else if (dTP > 1e-9 && dFP <= 1e-9) {
         verdict.classList.add("warn");
-        verdict.innerHTML = `<span class="title">More true positives, no new false positives</span>Compared with ζ = ½ this looks like improved skill (Δ<sub>AI</sub> = ΔFP/ΔTP = ${fmt(dFP / dTP, 2)}). But nothing about the physician changed except the threshold.`;
+        verdict.innerHTML = `<span class="title">Increase in TP with no change in FP.</span>Although a strict increase in true positives with no change in false positives would indicate a skill improvement, we can replicate the same change can be achieved by only changing the threshold of this decision function.`;
       } else if (dTP > 1e-9) {
         verdict.classList.add("neutral");
-        verdict.innerHTML = `<span class="title">Both error types moved</span>ΔTP = +${fmtPct(dTP)}, ΔFP = +${fmtPct(dFP)}, so Δ<sub>AI</sub> = ${fmt(dFP / dTP, 2)}.`;
+        verdict.innerHTML = `<span class="title">Increase in FP and TP.</span>Excessively decreasing the threshold increases the number of excisions, leading to more FPs and TPs.`;
       } else {
         verdict.classList.add("neutral");
-        verdict.innerHTML = `<span class="title">Stricter than the control</span>Raising the threshold removes excisions; here it drops ${fmtPct(-dFP)} false positives and ${fmtPct(-dTP)} true positives.`;
+        verdict.innerHTML = `<span class="title">Decrease in FP.</span>Increasing the threshold reduces the number of excisions, leading to less FPs and TPs.`;
       }
     }
 
@@ -375,7 +395,7 @@
       if (dS <= 0) {
         big.textContent = "—";
         box.classList.add("neutral");
-        box.innerHTML = `<span class="title">ΔS ≤ 0: no additional excisions</span>With the AI arm excising no more than control, the margin inflation does not apply. If the AI still excised more malignant polyps, Δ<sub>AI</sub> &lt; 0 and skill improved without any extra assumptions.`;
+        box.innerHTML = `<span class="title">ΔS ≤ 0: no additional excisions</span>We assume the AI-assistance will cause additional excisions.`;
         return;
       }
       const inflation = S1 / dS;
@@ -392,13 +412,12 @@
       if (t <= 0) {
         box.classList.add("bad");
         big.textContent = "≤ 0";
-        box.innerHTML = `<span class="title">Vacuous: the test cannot fail</span>Non-inferiority is declared whenever the additional excisions have a malignancy rate above ${fmt(t, 3)}. A proportion is always ≥ 0, so the null is rejected even if every one of the ${dS} additional polyps is benign.`;
+        box.innerHTML = `<span class="title">Vacuous Test</span>Because the test rejects if a non-positive number of additional false positives are excised in the AI-assisted arm, the test will always conclude non-inferiority.`;
       } else {
-        const need = Math.ceil(t * dS);
         const nearly = t < 0.5 * THR0;
         box.classList.add(nearly ? "warn" : "good");
         big.textContent = fmtPct(t);
-        box.innerHTML = `<span class="title">${nearly ? "Nearly vacuous" : "Test has teeth"}</span>Non-inferiority is declared if more than ${fmtPct(t)} of the additional excisions are malignant: about ${need} of ${dS} extra polyps. For comparison, a superiority test (N = 0) would require them to beat the control THR of ${fmtPct(THR0)}, i.e. ${Math.ceil(THR0 * dS)} of ${dS}.`;
+        box.innerHTML = `<span class="title">${nearly ? "Nearly Vacuous Test" : "Non-Vacuous Test"}</span>Because the test rejects if a positive number of additional false positives are excised in the AI-assisted arm, the test is able to conclude that the AI-assistance THR is not non-inferior.`;
       }
     }
 
@@ -587,10 +606,10 @@
           verdict.innerHTML = `<span class="title">No extra excisions</span>Both arms excise the same polyps, so THR is identical. Drag the slider to let the AI arm excise some of the polyps that control left in place.`;
         } else if (pass) {
           verdict.classList.add("bad");
-          verdict.innerHTML = `<span class="title">Declared non-inferior</span>THR falls by ${ptsDrop} points, inside the ${marginTxt} margin. The AI arm found no additional malignant polyps; all ${K} of its extra excisions were benign. It could have made up to ${Kstar} such excisions (${fmtPct(Kstar / S0, 0)} more than control) and still passed.`;
+          verdict.innerHTML = `<span class="title">Declared non-inferior</span>THR falls by ${ptsDrop} points, inside the ${marginTxt} margin, even though the AI arm found no additional malignant polyps. It could have made up to ${Kstar} such excisions (${fmtPct(Kstar / S0, 0)} more than control) and still passed.`;
         } else {
           verdict.classList.add("good");
-          verdict.innerHTML = `<span class="title">Non-inferiority not shown</span>THR falls by ${ptsDrop} points, past the ${marginTxt} margin, so the test finally fails. It took ${Kstar + 1} extra excisions, all benign and ${fmtPct((Kstar + 1) / S0, 0)} more than control, to get here.`;
+          verdict.innerHTML = `<span class="title">Non-inferiority not shown</span>THR falls by ${ptsDrop} points, past the ${marginTxt} margin, so the test fails. An additional ${K} false positives were excised, more than the required ${Kstar + 1} extra excisions for the test to fail to reject.`;
         }
         readout.textContent = `ΔS = ${K}, ΔTP = 0, so π_Δ = 0. Passes while ${fmtN(X)} / (${fmtN(S0)} + K) > ${fmtPct(lo)}, i.e. K ≤ ${Kstar}.`;
       };
