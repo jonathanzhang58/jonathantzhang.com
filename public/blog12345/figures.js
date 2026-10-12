@@ -135,7 +135,7 @@
     const CURVES = [LOW, HIGH];
     const tpr = (p) => Math.pow(p.u, p.k);
     el("line", { class: "chance", x1: f.x(0), y1: f.y(0), x2: f.x(1), y2: f.y(1) }, svg);
-    for (const k of CURVES) el("path", { class: "ref-curve", d: samplePath((u) => Math.pow(u, k), f) }, svg);
+    const refPaths = new Map(CURVES.map((k) => [k, el("path", { class: "ref-curve", d: samplePath((u) => Math.pow(u, k), f) }, svg)]));
     drawAxes(svg, f, "false positive rate", "true positive rate", ticks, ticks);
 
     const fit = el("path", { class: "fit-curve", d: "" }, svg);
@@ -194,6 +194,10 @@
       const bUpLeft = dFP <= eps && dTP >= -eps && !same;   // AI point up-and-left of control
       const bDownRight = dFP >= -eps && dTP <= eps && !same; // control point up-and-left of AI
 
+      // when both points sit on the same reference curve, that curve is the one passing through both
+      const shared = state.A.k === state.B.k;
+      refPaths.forEach((path) => path.classList.remove("fit-curve"));
+
       verdict.className = "verdict";
       if (same) {
         verdict.classList.add("neutral");
@@ -210,8 +214,13 @@
       } else {
         verdict.classList.add("warn");
         verdict.innerHTML = `<span class="title">Fail to reject the null</span>Although it could be true that these points were from different ROC curves, we cannot determine this from the data alone, because a valid monotone curve passes through both (drawn in black).`;
-        const lo = A.u <= B.u ? A : B, hi = lo === A ? B : A;
-        fit.setAttribute("d", monotonePath([[0, 0], [lo.u, lo.v], [hi.u, hi.v], [1, 1]], f));
+        if (shared) {
+          refPaths.get(state.A.k).classList.add("fit-curve");
+          fit.setAttribute("d", "");
+        } else {
+          const lo = A.u <= B.u ? A : B, hi = lo === A ? B : A;
+          fit.setAttribute("d", monotonePath([[0, 0], [lo.u, lo.v], [hi.u, hi.v], [1, 1]], f));
+        }
       }
     }
 
